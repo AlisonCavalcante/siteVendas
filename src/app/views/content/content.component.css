@@ -2,9 +2,13 @@
   max-width: 400px;
   display: inline-block;
   margin: 50px ;
+  border-radius: 20px;
 }
 
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+.button-comprar{
+  margin-left: 100px;
 }
