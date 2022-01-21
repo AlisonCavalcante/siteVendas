@@ -1,0 +1,13 @@
+.mat-toolbar {
+  background-color: burlywood;
+  margin-top: 200px;
+  display: flexbox;
+}
+
+.lista-menu {
+  display: flex;
+  justify-content: space-around;
+}
+li {
+  margin: 100px;
+}

@@ -1,0 +1,25 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    [(opened)]="sidenav_opened"
+    class="sidenav"
+    color="primary"
+    mode="side"
+    #sidenav
+    fixedInViewport="true"
+    fixedTopGap="64"
+  >
+    <mat-nav-list class="nav-list">
+      <a (click)="sidenav_opened =!sidenav_opened" mat-list-item routerLink="">
+        <i class="material-icons"> home </i>
+        Início
+      </a>
+      <a mat-list-item routerLink="">
+        <i class="material-icons"> storefront </i>
+        Produtos
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <app-content></app-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

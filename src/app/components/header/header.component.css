@@ -1,0 +1,12 @@
+.mat-toolbar {
+  display: flexbox;
+  justify-content: space-between;
+}
+.input-pesquisar {
+width: 300px;
+margin-right: 5px;
+box-sizing: border-box;
+border-radius: 30px;
+padding: 5px;
+box-shadow: 2px 2px #666;
+}
