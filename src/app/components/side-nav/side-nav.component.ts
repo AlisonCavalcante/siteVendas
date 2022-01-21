@@ -1,4 +1,3 @@
-import { ServiceService } from './../../service.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

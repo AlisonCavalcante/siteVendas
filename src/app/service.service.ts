@@ -6,7 +6,7 @@ import { Produtos } from './components/produtos.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class ProdutoService {
 
   urlBase: string = "http://localhost:3001/produtos";
   sidenav_opened = true;
