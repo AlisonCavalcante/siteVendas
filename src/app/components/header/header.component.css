@@ -1,9 +1,23 @@
-.mat-toolbar {
-  display: flexbox;
+/* .mat-toolbar {
+  display: flex;
+
+} */
+.toolbar-row-1 {
+  display: flex;
   justify-content: space-between;
 }
+.toolbar-row-2{
+  display: flex;
+  justify-content: space-between;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.mat-toolbar-row{
+  background-color: #4682B4;
+}
 .input-pesquisar {
-width: 300px;
+width: 400px;
 margin-right: 5px;
 box-sizing: border-box;
 border-radius: 30px;
@@ -13,4 +27,8 @@ box-shadow: 2px 2px #666;
 button{
   border: none;
   background: transparent;
+}
+a{
+  color: white;
+  text-decoration: none;
 }
