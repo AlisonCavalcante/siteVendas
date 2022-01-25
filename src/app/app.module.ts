@@ -22,6 +22,7 @@ import { ContentComponent } from './views/content/content.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-page.component';
 import { HomeComponent } from './views/home/home.component';
+import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
 
 
@@ -34,7 +35,8 @@ import { HomeComponent } from './views/home/home.component';
     ContentComponent,
     SideNavComponent,
     EletronicosPageComponent,
-    HomeComponent
+    HomeComponent,
+    CestaComprasComponent
   ],
   imports: [
     BrowserModule,

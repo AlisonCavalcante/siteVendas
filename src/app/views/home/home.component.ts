@@ -1,3 +1,5 @@
+import { Produtos } from './../../components/produtos.model';
+import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  produto!: Produtos[];
+  constructor(private service: ProdutoService) { }
 
   ngOnInit(): void {
+  }
+  buscarprodutoTipo(){
+    this.service.buscarProdutoTipo("Eletronico").subscribe(produto=>{
+      this.produto = produto;
+      console.log(this.produto);
+      }
+    )
   }
 
 }

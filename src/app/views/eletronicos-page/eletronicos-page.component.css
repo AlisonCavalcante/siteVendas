@@ -1,0 +1,23 @@
+h2{
+  color: black;
+  text-align: center;
+}
+.container{
+  align-items: center;
+}
+.example-card{
+  width: 150px;
+  border-radius: 50px;
+}
+img{
+    width: 100px;
+}
+.email-card{
+
+  margin: 0px 50px 0px 50px;
+}
+mat-form-field{
+  justify-content: center;
+  margin: 0px 50px 0px 50px;
+}
+
