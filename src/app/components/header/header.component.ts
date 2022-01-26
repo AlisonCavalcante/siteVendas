@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  teste(): void {
+    console.log('testando');
   }
-  teste():void{
-    console.log("testando");
+  navegar(tela: string) {
+    if (tela == 'cesta') {
+      this.router.navigate(['/cesta']);
+    } else if (tela == 'cadastro') {
+      this.router.navigate(['/cadastro']);
+    }
   }
-
 }

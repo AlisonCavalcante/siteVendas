@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +15,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -23,6 +27,9 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-page.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
+import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
+import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 
 
 
@@ -36,7 +43,10 @@ import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.compo
     SideNavComponent,
     EletronicosPageComponent,
     HomeComponent,
-    CestaComprasComponent
+    CestaComprasComponent,
+    CadastroComponent,
+    EletrodomesticosPageComponent,
+    MaterialEscolarPageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,11 @@ import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.compo
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatStepperModule,
+    MatSnackBarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

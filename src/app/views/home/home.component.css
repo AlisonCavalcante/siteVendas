@@ -1,0 +1,16 @@
+.promo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 30%;
+  flex-direction: row;
+}
+.card{
+  margin-left: 50px;
+}
+.img{
+  height: 200px;
+  width: 200px;
+}
+

@@ -1,23 +1,61 @@
-h2{
+.promo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 30%;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.card{
+  margin-left: 50px;
+}
+.img{
+  height: 200px;
+  width: 200px;
+  align-items: center;
+
+}
+.p-valor{
+  font-weight: bold;
+}
+.button-add{
+  background-color: white;
+  color: #1E90FF;
+  border-style: solid;
+  justify-content: center;
+}
+.button-content{
+  display: flex;
+  justify-content: center;
+}
+h2 {
   color: black;
   text-align: center;
+  margin-top: 20px;
 }
-.container{
+.container {
   align-items: center;
 }
-.example-card{
-  width: 150px;
+/* .card-outrosProdutos {
+  width: 300px;
   border-radius: 50px;
+  margin-left: 50px;
+} */
+.img-outrosProdutos{
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  border-radius: 100px;
+  margin-left: 30px;
 }
-img{
-    width: 100px;
+.email-card {
+  margin: 0px 50px 100px 50px;
 }
-.email-card{
 
-  margin: 0px 50px 0px 50px;
-}
-mat-form-field{
+mat-form-field {
   justify-content: center;
-  margin: 0px 50px 0px 50px;
+  margin: 0px 100px 0px 30px;
+  width: 250px;
 }
 

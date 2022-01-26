@@ -20,11 +20,11 @@
       <mat-icon>supervisor_account</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="navegar('cesta')">
         <mat-icon>shopping_basket</mat-icon>
         <span>Pedidos</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="navegar('cadastro')">
         <mat-icon>supervised_user_circle</mat-icon>
         <span>Cadastro</span>
       </button>
@@ -33,17 +33,19 @@
         <span>Sair da Conta</span>
       </button>
     </mat-menu>
-    <button>
+    <button (click)="navegar('cesta')">
       <mat-icon>local_grocery_store</mat-icon>
     </button>
   </mat-toolbar-row>
+
+
   <mat-toolbar-row class="toolbar-row-2">
     <span></span>
-    <a routerLink=""> Eletrodomésticos</a>
+    <a routerLink="eletrodomesticos"> Eletrodomésticos</a>
     <span></span>
-    <a routerLink=""> Material escolar</a>
+    <a routerLink="/materialEscolar"> Material escolar</a>
     <span></span>
-    <a routerLink="/eletronicos"> Eletrônicos</a>
+    <a  routerLink="/eletronicos" active> Eletrônicos</a>
     <span></span>
     <a routerLink=""> Cosméticos</a>
   </mat-toolbar-row>

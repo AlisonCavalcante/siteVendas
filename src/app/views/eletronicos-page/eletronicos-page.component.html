@@ -1,32 +1,117 @@
 <app-header></app-header>
 <!-- <app-side-nav></app-side-nav> -->
-<h2>Aqui também tem</h2>
-<ng-container class="container">
-  <mat-card class="example-card mat-elevation-z4" >
+<h2>Novos Produtos</h2>
+<div class="promo">
+  <mat-card class="card mat-elevation-z4">
     <mat-card-content>
-      <!-- <img
-        mat-card-image
-        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-        alt="Photo of a Shiba Inu"
-      /> -->
+      <img
+        class="img"
+        src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpg"
+      />
+      <p>Descrição</p>
+      <p class="p-valor">R$: valor</p>
+      <div class="button-content">
+        <button mat-flat-button (click)="openSnackBar('Produto Adicionado','X')" class="button-add" color="primary">
+          Adicionar ao Carrinho
+        </button>
+      </div>
     </mat-card-content>
-    <mat-card-actions> </mat-card-actions>
   </mat-card>
-</ng-container>
-<br>
+  <mat-card class="card mat-elevation-z4">
+    <mat-card-content>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      />
+      <p>Descrição</p>
+      <p class="p-valor">R$: valor</p>
+      <div class="button-content">
+      <button mat-flat-button (click)="openSnackBar('Produto Adicionado','X')" class="button-add" color="primary">Adicionar ao Carrinho</button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card mat-elevation-z4">
+    <mat-card-content>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      />
+      <p>Descrição</p>
+      <p class="p-valor">R$: valor</p>
+      <div class="button-content">
+      <button mat-flat-button (click)="openSnackBar('Produto Adicionado','X')" class="button-add" color="primary">Adicionar ao Carrinho</button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card mat-elevation-z4">
+    <mat-card-content>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      />
+      <p>Descrição</p>
+      <p class="p-valor">R$: valor</p>
+      <div class="button-content">
+      <button (click)="openSnackBar('Produto Adicionado','X')" mat-flat-button class="button-add" color="primary">Adicionar ao Carrinho</button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<h2>Aqui também tem</h2>
+<div class="promo">
+  <img
+    routerLink="/materialEscolar"
+    class="img-outrosProdutos"
+    src="https://images.unsplash.com/photo-1503236712874-d64b828dc314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+  />
+
+  <img
+    routerLink="/eletrodomesticos"
+    class="img-outrosProdutos"
+    src="https://images.unsplash.com/photo-1602872030378-f30ea2947b03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1926&q=80"
+  />
+
+  <img
+    class="img-outrosProdutos"
+    src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  />
+
+  <img
+    class="img-outrosProdutos"
+    src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpg"
+  />
+</div>
+<br />
 <h2>Receba ofertas e descontos exclusivos:</h2>
 
-<ng-container >
-  <mat-card class="email-card mat-elevation-z4" >
+<ng-container>
+  <mat-card class="email-card mat-elevation-z4">
     <mat-card-content>
       <form class="example-form">
-        <mat-form-field  appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Nome</mat-label>
-          <input matInput type="text" matInput >
+          <input matInput type="text" />
         </mat-form-field>
-        <mat-form-field  appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput type="email" matInput >
+          <input matInput type="email" />
+        </mat-form-field>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Categoria</mat-label>
+          <mat-select >
+            <mat-option *ngFor="let categoria of categorias">
+              {{categoria.tipo}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Categoria</mat-label>
+          <mat-select>
+            <mat-option value="one">Eletrodomésticos</mat-option>
+            <mat-option value="two">Eletrônicos</mat-option>
+            <mat-option value="two">Material Escolar</mat-option>
+            <mat-option value="two">Cosméticos</mat-option>
+          </mat-select>
         </mat-form-field>
         <button mat-flat-button color="primary">Enviar</button>
       </form>
@@ -34,6 +119,5 @@
     <mat-card-actions> </mat-card-actions>
   </mat-card>
 </ng-container>
-
 
 <app-footer></app-footer>
