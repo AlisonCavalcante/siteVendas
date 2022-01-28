@@ -3,45 +3,60 @@
   flex-direction: column;
   background-color: slategray;
 } */
-.content-tab{
+.content-tab {
   display: flex;
 }
-.card-content{
+.card-content {
   display: flex;
 }
-.tipo-frete{
+.cardItens-content {
+  display: flex;
+  justify-content: end;
+  margin-top: 5%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+.tipo-frete {
   margin: 30px;
 }
-
 .card-cesta {
   background-color: white;
-  height: 300px;
-  width: 600px;
   margin-left: 20%;
   margin-top: 20px;
   border: 2px solid silver;
 }
-.card-endereco{background-color: white;
-  /* height: 160px;
-  width: 300px; */
-  background-color: #D3D3D3;
+.descricao-produto p {
+  font-weight: bold;
+}
+.card-endereco {
+  background-color: white;
+  background-color: #d3d3d3;
   margin-left: 20%;
   margin-top: 20px;
   margin-right: 10%;
   border: 2px solid silver;
-
 }
-.button-alterarEndereco{
+
+.card-itensPedido {
+  display: flex;
+  background-color: #d3d3d3;
+}
+.content-itensPedidos p {
+  display: inline-block;
+  font-weight: bold;
+  width: 250px;
+  margin-right: 0px;
+  padding: 0px;
+}
+.button-alterarEndereco {
   background-color: transparent;
   border: 2px solid black;
 }
-
 
 .form-pagamento {
   display: flex;
   flex-direction: column;
   margin: 20px 30% 0px 30%;
-
 }
 .mes-field {
   width: 100px;
@@ -52,11 +67,11 @@
 .opcoesPagemento-field {
   width: 250px;
 }
-.confimar-cartao{
+.confimar-cartao {
   width: 300px;
   text-align: center;
   display: flex;
 }
-.teste{
+.teste {
   height: 100px;
 }

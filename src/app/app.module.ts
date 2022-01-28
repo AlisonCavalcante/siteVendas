@@ -22,6 +22,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -34,6 +35,7 @@ import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.compo
 import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
+import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 
 
 
@@ -50,7 +52,8 @@ import { MaterialEscolarPageComponent } from './views/material-escolar-page/mate
     CestaComprasComponent,
     CadastroComponent,
     EletrodomesticosPageComponent,
-    MaterialEscolarPageComponent
+    MaterialEscolarPageComponent,
+    DialogAlterarEnderecoComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ import { MaterialEscolarPageComponent } from './views/material-escolar-page/mate
     MatBadgeModule,
     MatTabsModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
 
   ],
   providers: [],

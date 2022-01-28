@@ -1,0 +1,26 @@
+<h2 class="titulo" mat-dialog-title>Endereços Cadastrados</h2>
+<h3><a routerLink="#">Cadastrar outro endereço</a></h3>
+<mat-dialog-content class="content">
+<mat-card class="cards mat-elevation-z4">
+  <p style="font-weight: bold;">Principal</p>
+  <p>Rua:</p>
+  <p>Bairro:</p>
+  <p>Cidade:</p>
+  <p>CEP:</p>
+  <a routerLink="">Editar</a>
+  <button color=warn mat-flat-button>Utilizar Este</button>
+</mat-card>
+<mat-card class="cards mat-elevation-z4">
+  <p  style="font-weight: bold;">Principal</p>
+  <p>Rua:</p>
+  <p>Bairro:</p>
+  <p>Cidade:</p>
+  <p>CEP:</p>
+  <a routerLink="">Editar</a>
+  <button color=warn mat-flat-button>Utilizar Este</button>
+</mat-card>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="button-cancelar" mat-button [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
+</mat-dialog-actions>

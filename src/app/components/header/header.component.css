@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .toolbar-row-2{
   display: flex;
   justify-content: space-between;
@@ -35,4 +36,25 @@ a{
   color: white;
   text-decoration: none;
   margin-left: 10px;
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+}
+.card-descricao{
+  margin: 0px;
+  width: 100%;
+}
+.card-Cesta{
+  display: flex;
+  margin: 10px;
+}
+.card-buttonCesta {
+  background-color: silver;
+}
+.img {
+  height: 100px;
+  width: 100px;
+  align-items: center;
+  border-radius: 10px;
 }

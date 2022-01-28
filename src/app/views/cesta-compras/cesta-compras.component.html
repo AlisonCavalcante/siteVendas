@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <mat-tab-group animationDuration="2000ms">
-  <mat-tab label="Qual tipo de entrega você deseja?">
+  <mat-tab label="Minha Cesta">
     <!--Card de Detalhe da Cesta de Produtos-->
     <div class="content-tab">
       <mat-card class="card-cesta mat-elevation-z4">
@@ -12,6 +12,8 @@
             <p>Descrição:</p>
             <p>Cor:</p>
             <p>Tamanho:</p>
+            <input style="width: 50px" placeholder="Qtd" type="number" />
+            <a routerLink="" style="margin-left: 5px;">remover</a>
           </mat-card-content>
           <mat-card-content class="tipo-frete">
             <p style="font-weight: bold">Escolha seu frete</p>
@@ -32,8 +34,38 @@
           <p>Cidade:</p>
           <p>Cep:</p>
           <mat-divider></mat-divider>
-          <p style="margin-top: 20px;">Quer receber seus produtos em outro endereço?</p>
-          <button class="button-alterarEndereco" mat-flat-button>Alterar Endereço</button>
+          <p style="margin-top: 20px">
+            Quer receber seus produtos em outro endereço?
+          </p>
+          <button (click)="openDialog()" class="button-alterarEndereco" mat-flat-button>
+            Alterar Endereço
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!--Card Itens do Pedido-->
+    <div class="cardItens-content">
+      <mat-card class="card-itensPedido mat-elevation-z4">
+        <mat-card-content class="content-itensPedidos">
+          <p>Itens do Pedido</p>
+          <p>Quantidade</p>
+          <p>Preço</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="cardItens-content">
+      <mat-card class="card-itensPedido mat-elevation-z4">
+        <mat-card-content class="content-itensPedidos">
+          <p>Frete</p>
+          <p>R$:</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="cardItens-content">
+      <mat-card class="card-itensPedido mat-elevation-z4">
+        <mat-card-content class="content-itensPedidos">
+          <p>Total</p>
+          <p>R$:</p>
         </mat-card-content>
       </mat-card>
     </div>
