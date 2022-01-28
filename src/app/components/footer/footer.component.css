@@ -1,7 +1,7 @@
-.footer {
+.mat-toolbar{
   position: fixed;
   bottom: 0;
-  display: flex;
+  height: 50px;
 }
 a{
   margin-left: 30px;

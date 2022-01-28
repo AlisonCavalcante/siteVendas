@@ -1,2 +1,88 @@
 <app-header></app-header>
+
+<mat-tab-group animationDuration="2000ms">
+  <mat-tab label="Qual tipo de entrega você deseja?">
+    <!--Card de Detalhe da Cesta de Produtos-->
+    <div class="content-tab">
+      <mat-card class="card-cesta mat-elevation-z4">
+        <div class="card-content">
+          <mat-card-content class="descricao-produto">
+            <p>Carrinho de Compras</p>
+            <mat-divider></mat-divider>
+            <p>Descrição:</p>
+            <p>Cor:</p>
+            <p>Tamanho:</p>
+          </mat-card-content>
+          <mat-card-content class="tipo-frete">
+            <p style="font-weight: bold">Escolha seu frete</p>
+            <mat-radio-group>
+              <mat-radio-button value="auto">Normal:</mat-radio-button>
+              <mat-radio-button style="margin-left: 10px" value="always"
+                >Expressa:</mat-radio-button
+              >
+            </mat-radio-group>
+          </mat-card-content>
+        </div>
+      </mat-card>
+      <!--Card de Endereço de Entrega-->
+      <mat-card class="card-endereco mat-elevation-z4">
+        <mat-card-content>
+          <h3>Endereço de Entrega</h3>
+          <p>Bairro:</p>
+          <p>Cidade:</p>
+          <p>Cep:</p>
+          <mat-divider></mat-divider>
+          <p style="margin-top: 20px;">Quer receber seus produtos em outro endereço?</p>
+          <button class="button-alterarEndereco" mat-flat-button>Alterar Endereço</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Pagamento">
+    <h2>Pague com o cartão de Crédito</h2>
+    <mat-divider></mat-divider>
+    <div>
+      <form class="form-pagamento">
+        <mat-form-field appearance="fill">
+          <mat-label>Número do Cartão</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome do Titular(como está gravado no cartão)</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="mes-field" appearance="fill">
+          <mat-label>Mês</mat-label>
+          <mat-select>
+            <mat-option value="one" *ngFor="let ano of anos">{{
+              ano
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="codigoSeguranca-field" appearance="fill">
+          <mat-label>Código de Segurança</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="opcoesPagemento-field" appearance="fill">
+          <mat-label>Opções de Pagamento</mat-label>
+          <mat-select>
+            <mat-option value="one"></mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="confimar-cartao" mat-flat-button color="primary">
+          Concluir Pedido com Cartão <br />
+          de Crédito
+        </button>
+      </form>
+    </div>
+    <mat-divider style="margin-top: 10px"></mat-divider>
+    <h2>Pague com Boleto Bancário</h2>
+    <p>Total</p>
+    <button mat-flat-button color="primary">
+      Concluir Pedido com Boleto Bancário
+    </button>
+  </mat-tab>
+  <mat-tab label="Confirmação">Content 3</mat-tab>
+</mat-tab-group>
+
 <app-footer></app-footer>

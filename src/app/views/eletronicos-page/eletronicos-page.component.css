@@ -7,25 +7,25 @@
   flex-direction: row;
   margin-top: 20px;
 }
-.card{
+
+.card {
   margin-left: 50px;
 }
-.img{
+.img {
   height: 200px;
   width: 200px;
   align-items: center;
-
 }
-.p-valor{
+.p-valor {
   font-weight: bold;
 }
-.button-add{
+.button-add {
   background-color: white;
-  color: #1E90FF;
+  color: #1e90ff;
   border-style: solid;
   justify-content: center;
 }
-.button-content{
+.button-content {
   display: flex;
   justify-content: center;
 }
@@ -34,15 +34,15 @@ h2 {
   text-align: center;
   margin-top: 20px;
 }
-.container {
+/* .container {
   align-items: center;
-}
+} */
 /* .card-outrosProdutos {
   width: 300px;
   border-radius: 50px;
   margin-left: 50px;
 } */
-.img-outrosProdutos{
+.img-outrosProdutos {
   height: 200px;
   width: 200px;
   align-items: center;
@@ -50,7 +50,7 @@ h2 {
   margin-left: 30px;
 }
 .email-card {
-  margin: 0px 50px 100px 50px;
+  margin: 10px 50px 100px 50px;
 }
 
 mat-form-field {
@@ -58,4 +58,3 @@ mat-form-field {
   margin: 0px 100px 0px 30px;
   width: 250px;
 }
-

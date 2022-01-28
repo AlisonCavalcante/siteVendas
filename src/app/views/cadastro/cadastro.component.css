@@ -1,11 +1,19 @@
+.content{
+  display: flex;
+  width: 100%;
+}
 .form-cliente{
   display: flex;
   flex-direction: column;
-  margin: 20px 30% 0px 30%;
+  width: 400px;
+  margin-top: 10%;
+  margin-left: 20%;
 }
-
 .form-cadastro{
   display: flex;
   flex-direction: column;
-  margin: 100px 30% 150px 30%;
+  width: 350px;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 10%;
 }

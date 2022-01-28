@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+
+  qtdProdutosCesta: number = 5;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

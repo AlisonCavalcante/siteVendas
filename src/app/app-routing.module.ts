@@ -1,3 +1,4 @@
+import { AppComponent } from './app.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';

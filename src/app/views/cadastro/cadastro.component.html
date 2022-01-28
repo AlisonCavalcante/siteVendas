@@ -1,5 +1,6 @@
 <html>
 <app-header></app-header>
+<div class="content">
 <div class="form-cliente">
   <h2>Já sou Cliente</h2>
 <mat-form-field appearance="fill">
@@ -12,6 +13,8 @@
 </mat-form-field>
 <button mat-flat-button color="primary">Acessar Conta</button>
 </div>
+<br>
+<mat-divider [vertical]="true" style="margin-left: 30px; margin-top: 30px; background-color: blue;"></mat-divider>
 <div class="form-cadastro">
   <h2>Criar Conta</h2>
 <mat-form-field appearance="fill">
@@ -20,6 +23,6 @@
 </mat-form-field>
 <button mat-flat-button color="primary">Prosseguir</button>
 </div>
-
+</div>
 <app-footer></app-footer>
 </html>

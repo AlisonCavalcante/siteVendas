@@ -34,14 +34,14 @@
       </button>
     </mat-menu>
     <button (click)="navegar('cesta')">
-      <mat-icon>local_grocery_store</mat-icon>
+      <mat-icon [matBadge]= "qtdProdutosCesta" matBadgeColor="warn" >local_grocery_store</mat-icon>
     </button>
   </mat-toolbar-row>
 
 
   <mat-toolbar-row class="toolbar-row-2">
     <span></span>
-    <a routerLink="eletrodomesticos"> Eletrodomésticos</a>
+    <a routerLink="/eletrodomesticos"> Eletrodomésticos</a>
     <span></span>
     <a routerLink="/materialEscolar"> Material escolar</a>
     <span></span>
