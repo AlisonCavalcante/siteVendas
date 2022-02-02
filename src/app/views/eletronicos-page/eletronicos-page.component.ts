@@ -1,3 +1,4 @@
+import { ProdutoService } from 'src/app/service.service';
 import { Produtos } from './../../components/produtos.model';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -16,10 +17,17 @@ export class EletronicosPageComponent implements OnInit {
   categorias: any[] = [{ tipo: 'Eletrônico' }, { tipo: 'Eletrodomésticos' }];
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+  produtos!:  Produtos[];
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private _snackBar: MatSnackBar, private service: ProdutoService) {
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void {
+    this.service.buscarProdutoTipo("Eletronico").subscribe(produtos=>{
+    this.produtos = produtos;
+    })
+  }
 
   openSnackBar(mensagem: string, acao: string) {
     this._snackBar.open(mensagem, acao, {

@@ -1,4 +1,6 @@
+import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
+import { Produtos } from 'src/app/components/produtos.model';
 
 @Component({
   selector: 'app-eletrodomesticos-page',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EletrodomesticosPageComponent implements OnInit {
 
-  constructor() { }
+  produtos!: Produtos[];
+
+  constructor(private service: ProdutoService) { }
 
   ngOnInit(): void {
+    this.service.buscarProdutoTipo("Eletronico").subscribe(produtos=>{
+      this.produtos = produtos;
+      console.log(this.produtos);
+    })
   }
 
 }

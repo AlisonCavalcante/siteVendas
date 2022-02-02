@@ -1,0 +1,51 @@
+.content{
+  display: flex;
+  margin-right: 10%;
+}
+.teste{
+  margin-right: 20px;
+}
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+}
+a{
+  text-decoration: none;
+}
+.chip{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+.promo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 30%;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.card {
+  margin-left: 50px;
+}
+.img {
+  height: 200px;
+  width: 200px;
+  align-items: center;
+}
+.p-valor {
+  font-weight: bold;
+}
+.button-add {
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
+}
+.button-content {
+  display: flex;
+  justify-content: center;
+}

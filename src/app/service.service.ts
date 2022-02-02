@@ -21,7 +21,7 @@ export class ProdutoService {
     return this.http.get<Produtos[]>(this.urlBase)
   }
   buscarProdutoTipo(tipo: string): Observable<Produtos[]>{
-    const url = `${this.urlBase}/${tipo}`;
+    const url = `${this.urlBase}/${"?tipo="}${tipo}`;
     return this.http.get<Produtos[]>(url);
   }
 

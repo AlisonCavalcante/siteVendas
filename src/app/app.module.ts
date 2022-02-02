@@ -23,6 +23,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -36,6 +38,7 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
+import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 
 
 
@@ -53,7 +56,8 @@ import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-ende
     CadastroComponent,
     EletrodomesticosPageComponent,
     MaterialEscolarPageComponent,
-    DialogAlterarEnderecoComponent
+    DialogAlterarEnderecoComponent,
+    CosmeticosPageComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,9 @@ import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-ende
     MatTabsModule,
     MatDividerModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule,
+    MatCheckboxModule
 
   ],
   providers: [],
