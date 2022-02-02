@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<app-header-menu></app-header-menu>
 <mat-tab-group animationDuration="2000ms">
   <mat-tab label="Minha Cesta">
     <!--Card de Detalhe da Cesta de Produtos-->
@@ -13,7 +13,7 @@
             <p>Cor:</p>
             <p>Tamanho:</p>
             <input style="width: 50px" placeholder="Qtd" type="number" />
-            <a routerLink="" style="margin-left: 5px;">remover</a>
+            <a routerLink="" style="margin-left: 5px">remover</a>
           </mat-card-content>
           <mat-card-content class="tipo-frete">
             <p style="font-weight: bold">Escolha seu frete</p>
@@ -37,7 +37,11 @@
           <p style="margin-top: 20px">
             Quer receber seus produtos em outro endereço?
           </p>
-          <button (click)="openDialog()" class="button-alterarEndereco" mat-flat-button>
+          <button
+            (click)="openDialog()"
+            class="button-alterarEndereco"
+            mat-flat-button
+          >
             Alterar Endereço
           </button>
         </mat-card-content>

@@ -1,13 +1,19 @@
-.mat-toolbar {
-  background-color: burlywood;
-  margin-top: 200px;
-  display: flexbox;
-}
 
-.lista-menu {
+.mat-toolbar{
+  position: relative;
+  height: 50px;
+  top: 0;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #4682B4;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }
-li {
-  margin: 100px;
+a{
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
 }

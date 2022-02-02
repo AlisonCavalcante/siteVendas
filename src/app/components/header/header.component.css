@@ -1,8 +1,18 @@
-/* .mat-toolbar {
-  position: fixed;
+
+.mat-toolbar{
+  position: relative;
+  height: 50px;
   top: 0;
   display: flex;
-} */
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #4682B4;
+}
+a{
+  margin-left: 30px;
+  text-decoration: none;
+}
+
 .toolbar-row-1 {
   display: flex;
   justify-content: space-between;

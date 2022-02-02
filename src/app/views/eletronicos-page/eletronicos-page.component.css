@@ -1,13 +1,23 @@
-.promo {
+.promo  {
   width: 300px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   margin-left: 40%;
   margin-right: 30%;
-  flex-direction: row;
+  /* flex-direction: row; */
   margin-top: 20px;
 }
-
+.outros{
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 30%;
+  /* flex-direction: row; */
+  margin-top: 20px;
+}
 .card {
   margin-left: 50px;
 }
@@ -34,14 +44,7 @@ h2 {
   text-align: center;
   margin-top: 20px;
 }
-/* .container {
-  align-items: center;
-} */
-/* .card-outrosProdutos {
-  width: 300px;
-  border-radius: 50px;
-  margin-left: 50px;
-} */
+
 .img-outrosProdutos {
   height: 200px;
   width: 200px;
@@ -58,3 +61,38 @@ mat-form-field {
   margin: 0px 100px 0px 30px;
   width: 250px;
 }
+
+@media (max-width: 1191px) {
+  .promo{
+    grid-template-columns: 1fr 1fr;
+
+  }
+  .card{
+    margin-top: 10px;
+  }
+ }
+
+
+
+@media (max-width: 720px){
+  .promo{
+    grid-template-columns: 1fr;
+
+  }
+  .card{
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1072px){
+  .outros{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 838px){
+  .outros{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
