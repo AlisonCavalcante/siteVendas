@@ -1,4 +1,26 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
-<p *ngFor="let produto of produtos">{{produto.nome}}</p>
+<h2>Novos Produtos</h2>
+<div class="mes-field">
+  <mat-form-field  appearance="fill">
+  <mat-label>Ordenar por</mat-label>
+  <mat-select>
+    <mat-option value="one" *ngFor="let ano of anos">{{ ano }}</mat-option>
+  </mat-select>
+  </mat-form-field>
+</div>
+<div class="promo">
+  <mat-card *ngFor="let produto of produtos" class="mat-elevation-z4">
+    <mat-card-content>
+      <img class="img" src="{{ produto.img }}" />
+      <p>{{ produto.descricao }}</p>
+      <p class="p-valor">R$: {{ produto.preco }}</p>
+      <div class="button-content">
+        <button mat-flat-button class="button-add" color="primary">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
 <app-footer></app-footer>

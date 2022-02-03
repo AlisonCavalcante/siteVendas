@@ -10,6 +10,7 @@ import { Produtos } from 'src/app/components/produtos.model';
 export class EletrodomesticosPageComponent implements OnInit {
 
   produtos!: Produtos[];
+  anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"]
 
   constructor(private service: ProdutoService) { }
 

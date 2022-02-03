@@ -1,8 +1,42 @@
-<mat-toolbar class="footer">
-  <span></span>
-  <a > Institucional</a>
-  <span></span>
-  <a >Ajuda</a>
-  <span></span>
-  <a routerLink="/cesta"> Meus pedidos</a>
+<mat-toolbar>
+  <mat-divider></mat-divider>
+  <div style="display: flex;flex-direction: row;">
+    <div>
+      <ul>
+        <li>
+          <a style="color: blueviolet;">Institucional</a>
+        </li>
+        <li>
+          <a>Sobre</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a style="color: blueviolet;">Ajuda</a>
+        </li>
+        <li>
+          <a routerLink="/cesta"> Meus pedidos</a>
+        </li>
+        <li>
+          <a>Troca e Devoluções</a>
+        </li>
+        <li>
+          <a>Pagamentos</a>
+        </li>
+        <li>
+          <a>Minha Conta</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a>Central de Relacionamentos</a></li>
+        <li>
+          <button mat-flat-button class="button-duvidas">Tire suas Dúvidas</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </mat-toolbar>

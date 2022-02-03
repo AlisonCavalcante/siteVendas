@@ -70,3 +70,9 @@
 .teste {
   height: 100px;
 }
+.button-boleto{
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}

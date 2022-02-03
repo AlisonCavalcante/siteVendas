@@ -1,9 +1,20 @@
 .mat-toolbar{
   position: relative;
   bottom: 0;
-  height: 50px;
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+ul{
+  list-style-type: none;
 }
 a{
   margin-left: 30px;
   text-decoration: none;
+}
+.button-duvidas{
+  background-color: transparent;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
 }

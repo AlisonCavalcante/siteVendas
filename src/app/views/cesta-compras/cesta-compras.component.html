@@ -29,7 +29,7 @@
       <!--Card de Endereço de Entrega-->
       <mat-card class="card-endereco mat-elevation-z4">
         <mat-card-content>
-          <h3>Endereço de Entrega</h3>
+          <h3 style="font-weight: bold;">Endereço de Entrega</h3>
           <p>Bairro:</p>
           <p>Cidade:</p>
           <p>Cep:</p>
@@ -75,7 +75,7 @@
     </div>
   </mat-tab>
   <mat-tab label="Pagamento">
-    <h2>Pague com o cartão de Crédito</h2>
+    <h2 style="text-align: center;">Pague com o cartão de Crédito</h2>
     <mat-divider></mat-divider>
     <div>
       <form class="form-pagamento">
@@ -112,11 +112,14 @@
       </form>
     </div>
     <mat-divider style="margin-top: 10px"></mat-divider>
-    <h2>Pague com Boleto Bancário</h2>
-    <p>Total</p>
-    <button mat-flat-button color="primary">
-      Concluir Pedido com Boleto Bancário
-    </button>
+        <h2 style="text-align: center;">Pague com Boleto Bancário</h2>
+        <p style="text-align: center; font-size: 20px;">R$: Total</p>
+        <div class="button-boleto">
+        <button  mat-flat-button color="primary">
+          Concluir Pedido com Boleto<br>
+          Bancário
+        </button>
+      </div>
   </mat-tab>
   <mat-tab label="Confirmação">Content 3</mat-tab>
 </mat-tab-group>
