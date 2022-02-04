@@ -1,20 +1,39 @@
-.mat-toolbar{
+.mat-toolbar {
   position: relative;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: auto;
 }
-ul{
+ul {
   list-style-type: none;
 }
-a{
-  margin-left: 30px;
+a {
   text-decoration: none;
 }
-.button-duvidas{
+.central-relacionamentos {
+  margin-left: 10%;
+}
+.button-duvidas {
   background-color: transparent;
   color: #1e90ff;
   border-style: solid;
   justify-content: center;
+}
+mat-form-field {
+  justify-content: center;
+  margin: 0px 100px 0px 30px;
+  width: 250px;
+}
+
+.content-emailCard {
+  display: flex;
+  width: 100%;
+}
+.email-card {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: auto;
 }

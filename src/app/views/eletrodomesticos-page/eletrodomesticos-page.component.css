@@ -1,3 +1,6 @@
+.content{
+  display: flex;
+}
 .mes-field{
   display: flex;
   justify-content: flex-end;
@@ -7,18 +10,21 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 1500px;
+  justify-content: center;
 }
-.promo > mat-card {
-  /* flex: 1 1 200px; */
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-  padding: auto;
+mat-card{
+  margin-left: 50px;
+  height: 300px;
 }
 .img {
   height: 200px;
   width: 200px;
   border-radius: 10px;
   align-items: center;
+}
+.button-add {
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
 }

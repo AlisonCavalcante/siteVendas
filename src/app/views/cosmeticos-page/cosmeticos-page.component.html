@@ -1,54 +1,40 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
-<div class="content"><div>
-  <div class="teste">
-  <ul >
-    <li ><a routerLink="#">cabelos</a></li>
-    <li ><a >maquiagem</a></li>
-    <li ><a >perfumes</a></li>
-    <li ><a >salão de beleza</a></li>
-    <li ><a >barbearia</a></li>
-    <li ><a >unha</a></li>
-  </ul>
-  <mat-divider></mat-divider>
-  <section class="example-section">
-    <h4>Marca</h4>
-    <p><mat-checkbox >Pepperoni</mat-checkbox></p>
-    <p><mat-checkbox >Extra Cheese</mat-checkbox></p>
-    <p><mat-checkbox >Mushroom</mat-checkbox></p>
-  </section>
+<section class="content" >
+  <app-filtros></app-filtros>
+  <div>
+  <!-- <div class="conteudo"> -->
+    <div class="chip">
+      <mat-chip-list aria-label="Fish selection">
+        <div class="chip">
+          <mat-chip>#Cabelos</mat-chip>
+          <mat-chip color="warn" selected>#Maquiagens</mat-chip>
+          <mat-chip color="primary" selected>#Perfumes</mat-chip>
+          <mat-chip color="accent" selected>#Barbearia</mat-chip>
+        </div>
+      </mat-chip-list>
+    </div>
+    <h2 style="margin-left: 100px; margin-top: 30px">Novos Produtos</h2>
+    <div class="promo">
+      <mat-card *ngFor="let produto of produtos" class="card mat-elevation-z4">
+        <mat-card-content>
+          <img class="img" src="{{ produto.img }}" />
+          <p>{{ produto.descricao }}</p>
+          <p class="p-valor">R$: {{ produto.preco }}</p>
+          <div class="button-content">
+            <button
+              mat-flat-button
+              class="button-add"
+              (click)="openSnackBar('Produto Adicionado', 'X')"
+              color="primary"
+            >
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  <!-- </div> -->
 </div>
-</div>
-<div class="conteudo">
-<div class="chip">
-<mat-chip-list  aria-label="Fish selection">
-  <div class="chip">
-  <mat-chip>Cabelos</mat-chip>
-  <mat-chip color="warn" selected>Maquiagens</mat-chip>
-  <mat-chip color="primary" selected>Perfumes</mat-chip>
-  <mat-chip color="accent" selected>Barbearia</mat-chip>
-</div>
-</mat-chip-list>
-</div>
-<h2 style="margin-left: 100px; margin-top: 30px;">Novos Produtos</h2>
-<div class="promo">
-  <mat-card  *ngFor="let produto of produtos" class="card mat-elevation-z4">
-    <mat-card-content>
-      <img
-        class="img"
-        src={{produto.img}}
-      />
-      <p>{{produto.descricao}}</p>
-      <p class="p-valor">R$: {{produto.preco}}</p>
-      <div class="button-content">
-        <button mat-flat-button  class="button-add" (click)="openSnackBar('Produto Adicionado','X')" color="primary">
-          Adicionar ao Carrinho
-        </button>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-</div>
-</div>
-
+</section>
 <app-footer></app-footer>

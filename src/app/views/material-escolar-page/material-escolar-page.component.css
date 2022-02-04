@@ -1,0 +1,38 @@
+.content{
+  display: flex;
+  margin-bottom: 20px;
+}
+.filtros > mat-card{
+  /* text-align: center; */
+  margin: 10px;
+  height: auto;
+  padding: 30px;
+}
+h4{
+  font-weight: bold;
+}
+
+li a {
+  text-decoration: none;
+
+}
+.promo{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+mat-card{
+  margin-left: 50px;
+  height: 300px;
+}
+.img{
+  height: 200px;
+  width: 200px;
+}
+.button-add {
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
+}

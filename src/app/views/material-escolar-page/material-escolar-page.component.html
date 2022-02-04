@@ -1,3 +1,32 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
+<section class="content">
+<app-filtros></app-filtros>
+  <div>
+    <div>
+      <h2 style="margin-left: 30px">Novos Produtos</h2>
+    </div>
+    <div class="promo">
+      <mat-card *ngFor="let produto of produtos" class="card mat-elevation-z2">
+        <mat-card-content>
+          <img class="img" src="{{ produto.img }}" />
+          <p>{{ produto.descricao }}</p>
+          <p class="p-valor">R$: {{ produto.preco }}</p>
+          <div class="button-content">
+            <button
+              mat-flat-button
+              (click)="openSnackBar('Produto Adicionado', 'X')"
+              class="button-add"
+              color="primary"
+            >
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+</section>
+
 <app-footer></app-footer>

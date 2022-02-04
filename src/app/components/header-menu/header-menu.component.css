@@ -7,10 +7,10 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-  background-color: #4682B4;
+  background-color: #2F4F4F;
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: white;
 }
 a{
   color: white;

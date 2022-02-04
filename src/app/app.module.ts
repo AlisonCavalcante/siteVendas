@@ -39,6 +39,7 @@ import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/ele
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
+import { FiltrosComponent } from './components/filtros/filtros.component';
 
 
 
@@ -57,7 +58,8 @@ import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page
     EletrodomesticosPageComponent,
     MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
-    CosmeticosPageComponent
+    CosmeticosPageComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,

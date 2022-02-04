@@ -1,0 +1,13 @@
+.filtros{
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background-color: #DCDCDC;
+  border-radius: 5px;
+}
+.filtros > mat-card{
+  /* text-align: center; */
+  margin: 10px;
+  height: auto;
+  padding: 30px;
+}

@@ -1,20 +1,55 @@
 <mat-toolbar>
+  <h2>Receba ofertas e descontos exclusivos:</h2>
+    <ng-container>
+      <mat-card class="email-card mat-elevation-z4">
+        <mat-card-content>
+          <form class="example-form">
+            <mat-form-field appearance="fill">
+              <mat-label>Nome</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Categoria</mat-label>
+              <mat-select>
+                <mat-option value="one">Eletrodomésticos</mat-option>
+                <mat-option value="two">Eletrônicos</mat-option>
+                <mat-option value="two">Material Escolar</mat-option>
+                <mat-option value="two">Cosméticos</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-flat-button color="primary">Enviar</button>
+          </form>
+        </mat-card-content>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </ng-container>
+
   <mat-divider></mat-divider>
-  <div style="display: flex;flex-direction: row;">
+  <div style="display: flex; flex-direction: row; margin-top: 10px;">
     <div>
       <ul>
         <li>
-          <a style="color: blueviolet;">Institucional</a>
+          <a style="color: blueviolet">Institucional</a>
         </li>
         <li>
           <a>Sobre</a>
+        </li>
+        <li>
+          <a>Garantia Estendida</a>
+        </li>
+        <li>
+          <a>Política de Privacidade</a>
         </li>
       </ul>
     </div>
     <div>
       <ul>
         <li>
-          <a style="color: blueviolet;">Ajuda</a>
+          <a style="color: blueviolet">Ajuda</a>
         </li>
         <li>
           <a routerLink="/cesta"> Meus pedidos</a>
@@ -28,13 +63,25 @@
         <li>
           <a>Minha Conta</a>
         </li>
+        <li>
+          <a>Atendimento</a>
+        </li>
       </ul>
     </div>
-    <div>
-      <ul>
+    <div class="central-relacionamentos">
+      <ul
+        style="
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 15px;
+        "
+      >
         <li><a>Central de Relacionamentos</a></li>
         <li>
-          <button mat-flat-button class="button-duvidas">Tire suas Dúvidas</button>
+          <button mat-flat-button class="button-duvidas">
+            Tire suas Dúvidas
+          </button>
         </li>
       </ul>
     </div>

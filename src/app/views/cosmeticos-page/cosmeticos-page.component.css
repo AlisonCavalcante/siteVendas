@@ -1,39 +1,25 @@
-.content{
+.content {
   display: flex;
-  margin-right: 10%;
 }
-.teste{
-  margin-right: 20px;
-}
-.conteudo{
+.promo {
   display: flex;
-  flex-direction: column;
-  margin-left: 25%;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
-a{
-  text-decoration: none;
-}
-.chip{
+.chip {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
 }
-.promo {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  margin-left: 40%;
-  margin-right: 30%;
-  flex-direction: row;
-  margin-top: 20px;
-}
-.card {
+mat-card {
   margin-left: 50px;
+  height: 300px;
 }
 .img {
   height: 200px;
   width: 200px;
+  border-radius: 10px;
   align-items: center;
 }
 .p-valor {

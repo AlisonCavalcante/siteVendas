@@ -1,6 +1,6 @@
 <mat-toolbar  class="footer">
     <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
+      <mat-icon style="color: white;">menu</mat-icon>
     </button>
     <input
       class="input-pesquisar"
@@ -9,14 +9,15 @@
       placeholder="O que você está procurando?"
     />
     <button (click)="teste()">
-      <mat-icon class="icon-pesquisar">search</mat-icon>
+      <mat-icon class="icon-pesquisar"  style="color: white;">search</mat-icon>
     </button>
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"
+      style="color: white;"
       aria-label="Example icon-button with a menu"
     >
-      <mat-icon>supervisor_account</mat-icon>
+      <mat-icon  style="color: white;">supervisor_account</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="navegar('cesta')">
@@ -33,7 +34,7 @@
       </button>
     </mat-menu>
     <button [matMenuTriggerFor]="menuCesta">
-      <mat-icon [matBadge]="qtdProdutosCesta" matBadgeColor="warn"
+      <mat-icon  style="color: white;" [matBadge]="qtdProdutosCesta" matBadgeColor="warn"
         >local_grocery_store</mat-icon
       >
     </button>
