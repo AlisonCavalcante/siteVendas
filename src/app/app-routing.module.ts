@@ -1,3 +1,4 @@
+import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { AppComponent } from './app.component';
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'novoEndereco',
     component: FormNovoEnderecoComponent,
+  },
+  {
+    path: 'detalheProduto',
+    component: DetalheProdutoComponent,
   },
 ];
 

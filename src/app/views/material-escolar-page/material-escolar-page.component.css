@@ -1,32 +1,36 @@
-.content{
+.content {
   display: flex;
   margin-bottom: 20px;
 }
-.filtros > mat-card{
+.filtros > mat-card {
   /* text-align: center; */
   margin: 10px;
   height: auto;
   padding: 30px;
 }
-h4{
+.mes-field {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5%;
+}
+h4 {
   font-weight: bold;
 }
 
 li a {
   text-decoration: none;
-
 }
-.promo{
+.promo {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
 }
-mat-card{
+mat-card {
   margin-left: 50px;
   height: 300px;
 }
-.img{
+.img {
   height: 200px;
   width: 200px;
 }

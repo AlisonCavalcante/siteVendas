@@ -15,6 +15,7 @@ export class CosmeticosPageComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!: Produtos[];
+  anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
 
   constructor(private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 

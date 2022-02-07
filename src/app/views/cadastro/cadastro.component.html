@@ -1,28 +1,30 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
 <div class="content">
-<div class="form-cliente">
-  <h2>Já sou Cliente</h2>
-<mat-form-field appearance="fill">
-  <mat-label>E-mail, Cpf</mat-label>
-  <input matInput>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Email</mat-label>
-  <input type="email"  matInput>
-</mat-form-field>
-<button mat-flat-button color="primary">Acessar Conta</button>
-</div>
-<br>
-<mat-divider [vertical]="true" style="margin-left: 30px; margin-top: 30px; background-color: blue;"></mat-divider>
-<div class="form-cadastro">
-  <h2>Criar Conta</h2>
-<mat-form-field appearance="fill">
-  <mat-label>Informe seu e-mail</mat-label>
-  <input type="email" matInput>
-</mat-form-field>
-<button mat-flat-button color="primary">Prosseguir</button>
-</div>
+  <div class="form-cliente">
+    <h2>Já sou Cliente</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail, Cpf</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput />
+    </mat-form-field>
+    <button mat-flat-button color="primary">Acessar Conta</button>
+  </div>
+  <br />
+  <mat-divider
+    [vertical]="true"
+    style="margin-left: 30px; margin-top: 30px; background-color: blue"
+  ></mat-divider>
+  <div class="form-cadastro">
+    <h2>Criar Conta</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Informe seu e-mail</mat-label>
+      <input type="email" matInput />
+    </mat-form-field>
+    <button mat-flat-button color="primary">Prosseguir</button>
+  </div>
 </div>
 <app-footer></app-footer>
-

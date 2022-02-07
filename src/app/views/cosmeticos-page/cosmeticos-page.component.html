@@ -14,6 +14,16 @@
         </div>
       </mat-chip-list>
     </div>
+    <div class="mes-field">
+      <mat-form-field appearance="fill">
+        <mat-label>Ordenar por</mat-label>
+        <mat-select>
+          <mat-option value="one" *ngFor="let ano of anos">{{
+            ano
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <h2 style="margin-left: 100px; margin-top: 30px">Novos Produtos</h2>
     <div class="promo">
       <mat-card *ngFor="let produto of produtos" class="card mat-elevation-z4">

@@ -17,6 +17,7 @@ export class MaterialEscolarPageComponent implements OnInit {
   produtos!: Produtos[];
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+  anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
   constructor(private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 
   ngOnInit(): void {

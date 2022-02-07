@@ -25,6 +25,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -41,6 +42,7 @@ import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-ende
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
+import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 
 
 
@@ -61,7 +63,8 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
     DialogAlterarEnderecoComponent,
     CosmeticosPageComponent,
     FiltrosComponent,
-    FormNovoEnderecoComponent
+    FormNovoEnderecoComponent,
+    DetalheProdutoComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +88,8 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
     MatRadioModule,
     MatDialogModule,
     MatChipsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatExpansionModule
 
   ],
   providers: [],

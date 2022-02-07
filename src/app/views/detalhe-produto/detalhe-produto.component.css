@@ -1,0 +1,27 @@
+.content{
+  background-color: #DCDCDC;
+  display: flex;
+}
+.detalhesProduto{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.cardDetalhes-compra{
+  margin: 20px 0px 20px 20px;
+}
+a{
+  text-decoration: none;
+}
+.butoes-compra{
+  display: flex;
+  flex-direction: column;
+}
+img{
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+.mat-accordion{
+
+}

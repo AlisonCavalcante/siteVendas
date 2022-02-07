@@ -1,8 +1,18 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
 <section class="content">
-<app-filtros></app-filtros>
+  <app-filtros></app-filtros>
   <div>
+    <div class="mes-field">
+      <mat-form-field appearance="fill">
+        <mat-label>Ordenar por</mat-label>
+        <mat-select>
+          <mat-option value="one" *ngFor="let ano of anos">{{
+            ano
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div>
       <h2 style="margin-left: 30px">Novos Produtos</h2>
     </div>
@@ -26,7 +36,6 @@
       </mat-card>
     </div>
   </div>
-
 </section>
 
 <app-footer></app-footer>
