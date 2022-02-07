@@ -40,6 +40,7 @@ import { MaterialEscolarPageComponent } from './views/material-escolar-page/mate
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
+import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 
 
 
@@ -59,7 +60,8 @@ import { FiltrosComponent } from './components/filtros/filtros.component';
     MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
     CosmeticosPageComponent,
-    FiltrosComponent
+    FiltrosComponent,
+    FormNovoEnderecoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,24 @@
-.content{
+.content {
   display: flex;
 }
-.card-promo{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-}
-.card-outros{
+.card-promo {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
 }
-mat-card{
+.card-outros {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+.mes-field {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5%;
+}
+mat-card {
   margin-left: 50px;
   height: 300px;
 }
@@ -87,36 +92,29 @@ mat-form-field {
 }
 
 @media (max-width: 1191px) {
-  .promo{
+  .promo {
     grid-template-columns: 1fr 1fr;
-
   }
-  .card{
-    margin-top: 10px;
-  }
- }
-
-
-
-@media (max-width: 720px){
-  .promo{
-    grid-template-columns: 1fr;
-
-  }
-  .card{
+  .card {
     margin-top: 10px;
   }
 }
-@media (max-width: 1072px){
-  .outros{
+
+@media (max-width: 720px) {
+  .promo {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1072px) {
+  .outros {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media (max-width: 838px){
-  .outros{
+@media (max-width: 838px) {
+  .outros {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-
-

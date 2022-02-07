@@ -1,3 +1,4 @@
+import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { AppComponent } from './app.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'cosmetico',
     component: CosmeticosPageComponent,
+  },
+  {
+    path: 'novoEndereco',
+    component: FormNovoEnderecoComponent,
   },
 ];
 
