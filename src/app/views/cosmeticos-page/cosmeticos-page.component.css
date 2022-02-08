@@ -40,3 +40,6 @@ mat-card {
   display: flex;
   justify-content: center;
 }
+.mat-card:hover {
+  transform: scale(1.1);
+}

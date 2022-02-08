@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-  background-color: #2F4F4F;
+  background: linear-gradient(#7E2424, #E3BDE5);
   border-width: 1px;
   border-style: solid;
   border-color: white;
@@ -16,4 +16,11 @@ a{
   color: white;
   text-decoration: none;
   margin-left: 10px;
+  font-family: sans-serif;
+}
+
+a:hover{
+  transition: 1s;
+  background-color: #DCDCDC;
+  opacity: inherit;
 }

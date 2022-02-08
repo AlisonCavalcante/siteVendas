@@ -91,6 +91,11 @@ mat-form-field {
   width: 250px;
 }
 
+.card:hover {
+  transform: scale(1.1);
+}
+
+
 @media (max-width: 1191px) {
   .promo {
     grid-template-columns: 1fr 1fr;

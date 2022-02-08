@@ -25,9 +25,16 @@ h2 {
   border-radius: 10px;
   align-items: center;
 }
+.button-content {
+  display: flex;
+  justify-content: center;
+}
 .button-add {
   background-color: white;
   color: #1e90ff;
   border-style: solid;
   justify-content: center;
+}
+.mat-card:hover {
+  transform: scale(1.1);
 }

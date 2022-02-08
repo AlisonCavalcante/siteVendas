@@ -6,6 +6,19 @@
   width: 100%;
   height: auto;
 }
+input{
+  width: 350px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  margin-left: 10px;
+}
+label{
+  font-family: sans-serif;
+  margin-left: 10px;
+}
 ul {
   list-style-type: none;
 }
@@ -29,7 +42,7 @@ mat-form-field {
 
 .content-emailCard {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
 }
 .email-card {
   display: flex;

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Produtos } from './../../components/produtos.model';
 import { Component, OnInit } from '@angular/core';
@@ -7,19 +8,21 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 
+
 @Component({
   selector: 'app-eletronicos-page',
   templateUrl: './eletronicos-page.component.html',
   styleUrls: ['./eletronicos-page.component.css'],
 })
 export class EletronicosPageComponent implements OnInit {
+
   selectedValue: string = '';
   categorias: any[] = [{ tipo: 'Eletrônico' }, { tipo: 'Eletrodomésticos' }];
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!:  Produtos[];
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
-  constructor(private _snackBar: MatSnackBar, private service: ProdutoService) {
+  constructor(private _snackBar: MatSnackBar, private service: ProdutoService, private route: Router) {
 
   }
 
@@ -27,6 +30,9 @@ export class EletronicosPageComponent implements OnInit {
     this.service.buscarProdutoTipo("Eletronico").subscribe(produtos=>{
     this.produtos = produtos;
     })
+  }
+  detalheProduto(){
+    this.route.navigate(["/detalheProduto"]);
   }
 
   openSnackBar(mensagem: string, acao: string) {

@@ -1,16 +1,37 @@
+
 .conteudo {
   display: flex;
   justify-content: center;
 }
-
-mat-form-field{
+form{
+  margin: 10px 0px 10px 0px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.content {
   width: 500px;
-  height: 100px;
 }
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px 0px 30px 0px;
+}
+.content > div {
+  align-items: flex-start;
+}
 
+label {
+  display: flex;
+  align-items: flex-start;
+  font-family: sans-serif;
+}
+input {
+  width: 400px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
 }
