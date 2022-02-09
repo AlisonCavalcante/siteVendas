@@ -5,6 +5,17 @@
   <app-filtros></app-filtros>
   <!--Div Produtos-->
   <div>
+    <div class="carrousel">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpghttps://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpg">
+        </ng-template>
+        <ng-template carouselSlide><img src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+        </ng-template>
+        <ng-template carouselSlide><img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpghttps://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpg">
+        </ng-template>
+      </owl-carousel-o>
+      </div>
     <div class="mes-field">
       <mat-form-field appearance="fill">
         <mat-label>Ordenar por</mat-label>

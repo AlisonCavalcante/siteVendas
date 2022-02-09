@@ -1,6 +1,13 @@
 .content {
   display: flex;
 }
+.carrousel{
+  width: 500px;
+}
+.carrousel > img{
+  height: 500px;
+  width: 200px;
+}
 .card-promo {
   display: flex;
   flex-wrap: wrap;

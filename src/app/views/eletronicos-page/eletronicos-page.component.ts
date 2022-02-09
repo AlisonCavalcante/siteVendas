@@ -7,7 +7,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-eletronicos-page',
@@ -22,6 +22,22 @@ export class EletronicosPageComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!:  Produtos[];
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+    },
+    nav: true
+  }
+
   constructor(private _snackBar: MatSnackBar, private service: ProdutoService, private route: Router) {
 
   }
@@ -31,6 +47,9 @@ export class EletronicosPageComponent implements OnInit {
     this.produtos = produtos;
     })
   }
+
+
+
   detalheProduto(){
     this.route.navigate(["/detalheProduto"]);
   }

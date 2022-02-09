@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,6 +28,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
@@ -43,6 +45,7 @@ import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
+import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 
 
 
@@ -64,7 +67,8 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     CosmeticosPageComponent,
     FiltrosComponent,
     FormNovoEnderecoComponent,
-    DetalheProdutoComponent
+    DetalheProdutoComponent,
+    MoveisPageComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,8 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     MatDialogModule,
     MatChipsModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    CarouselModule
 
   ],
   providers: [],
