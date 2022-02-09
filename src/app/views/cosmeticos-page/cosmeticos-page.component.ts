@@ -7,6 +7,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-cosmeticos-page',
@@ -18,7 +19,21 @@ export class CosmeticosPageComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!: Produtos[];
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
-
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+    },
+    nav: true
+  }
   constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 
   ngOnInit(): void {

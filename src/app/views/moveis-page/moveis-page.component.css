@@ -1,11 +1,47 @@
-.container{
-display: flex;
-justify-content: center;
+.carrousel-container {
+  display: flex;
+  justify-content: center;
 }
-.carrousel{
+.conteudo {
+  display: flex;
+}
+.carrousel {
   width: 80%;
+  margin-top: 20px;
 }
-img{
+img {
   height: 500px;
   width: 200px;
+}
+.card-promo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+.card {
+  margin-left: 50px;
+}
+mat-card {
+  margin-left: 50px;
+  height: 300px;
+}
+.img {
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+  align-items: center;
+}
+.button-add {
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
+}
+.button-content {
+  display: flex;
+  justify-content: center;
+}
+.mat-card:hover {
+  transform: scale(1.2);
 }
