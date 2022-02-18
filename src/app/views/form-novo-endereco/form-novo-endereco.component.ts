@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormNovoEnderecoComponent implements OnInit {
   formulario!: FormGroup;
-  enderecos!: Endereco[];
+  enderecos!: Endereco;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,8 +23,9 @@ export class FormNovoEnderecoComponent implements OnInit {
       rua: [null, Validators.required],
       numeroResidencia: [null, Validators.required],
       complemento: [null],
-      cidade: [null, Validators.required],
       bairro: [null, Validators.required],
+      cidade: [null, Validators.required],
+      uf:[null, Validators.required],
     });
   }
   consultarCep() {
@@ -39,7 +40,7 @@ export class FormNovoEnderecoComponent implements OnInit {
         this.rersetaDadosForm();
         this.service.consultarCep(cep).subscribe(endereco => {
           this.enderecos = endereco;
-          console.log(this.enderecos)
+          this.popularDadosForm(this.enderecos);
         });
       }
     }
@@ -52,10 +53,14 @@ export class FormNovoEnderecoComponent implements OnInit {
     this.formulario.reset();
   }
   rersetaDadosForm() {}
-  // popularDadosForm(endereco: any) {
-  //   this.formulario.patchValue({
-  //     cidade: endereco.cidade,
-  //     estado: endereco.uf,
-  //   });
-  // }
+  popularDadosForm(endereco: Endereco) {
+    console.log(endereco.uf)
+    this.formulario.patchValue({
+      cidade: endereco.localidade,
+      uf: endereco.uf,
+      bairro: endereco.bairro,
+      complemento: endereco.complemento,
+      rua: endereco.logradouro
+    });
+   }
 }

@@ -5,13 +5,11 @@
     <div class="content">
       <div>
         <label>CEP</label>
-        <input type="text" formControlName="cep" />
+        <input type="text" formControlName="cep" (blur)="consultarCep()"/>
       </div>
       <div>
         <label>Rua</label>
-        <input type="text" formControlName="rua"
-        (blur)="consultarCep()"
-        />
+        <input type="text" formControlName="rua" />
       </div>
       <div>
         <label>Número da Residência</label>
@@ -22,15 +20,24 @@
         <input type="text" formControlName="complemento" />
       </div>
       <div>
-        <label>Cidade</label>
-        <input type="text" formControlName="cidade" />
-      </div>
-      <div>
         <label>Bairro</label>
         <input type="text" formControlName="bairro" />
       </div>
       <div>
-        <button type="submit" style="margin-right: 5px;" color="primary" mat-flat-button>
+        <div>
+          <label>Cidade</label>
+          <input type="text" formControlName="cidade" />
+        </div>
+        <div>
+          <label>UF</label>
+          <input type="text" formControlName="uf" />
+        </div>
+        <button
+          type="submit"
+          style="margin-right: 5px"
+          color="primary"
+          mat-flat-button
+        >
           Usar este endereço
         </button>
         <button (click)="resetarCampos()" color="warn" mat-flat-button>

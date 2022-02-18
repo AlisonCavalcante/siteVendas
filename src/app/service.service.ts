@@ -26,8 +26,8 @@ export class ProdutoService {
     return this.http.get<Produtos[]>(url);
   }
 
-  consultarCep(cep: string): Observable<Endereco[]>{
-   return this.http.get<Endereco[]>(`https://viacep.com.br/ws/${cep}/json/`);
+  consultarCep(cep: string): Observable<Endereco>{
+   return this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`);
   }
 
 
