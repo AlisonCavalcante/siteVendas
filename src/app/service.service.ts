@@ -1,3 +1,4 @@
+import { Endereco } from './components/endereco.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -24,5 +25,10 @@ export class ProdutoService {
     const url = `${this.urlBase}/${"?tipo="}${tipo}`;
     return this.http.get<Produtos[]>(url);
   }
+
+  consultarCep(cep: string): Observable<Endereco[]>{
+   return this.http.get<Endereco[]>(`https://viacep.com.br/ws/${cep}/json/`);
+  }
+
 
 }

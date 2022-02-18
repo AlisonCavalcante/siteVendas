@@ -76,7 +76,7 @@ mat-card {
   .promo {
     grid-template-columns: 1fr 1fr;
   }
-  .card {
+  .card { 
     margin-top: 10px;
   }
 }

@@ -1,15 +1,61 @@
+import { Endereco } from './../../components/endereco.model';
+import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-novo-endereco',
   templateUrl: './form-novo-endereco.component.html',
-  styleUrls: ['./form-novo-endereco.component.css']
+  styleUrls: ['./form-novo-endereco.component.css'],
 })
 export class FormNovoEnderecoComponent implements OnInit {
+  formulario!: FormGroup;
+  enderecos!: Endereco[];
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: ProdutoService
+  ) {}
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      cep: [null, Validators.required],
+      rua: [null, Validators.required],
+      numeroResidencia: [null, Validators.required],
+      complemento: [null],
+      cidade: [null, Validators.required],
+      bairro: [null, Validators.required],
+    });
+  }
+  consultarCep() {
+    let cep = this.formulario.get('cep')?.value;
+    cep = cep.replace(/\D/g, '');
+
+    if (cep != '') {
+      // Expressão regular para validar o cep
+      var validaCep = /^[0-9]{8}$/;
+
+      if (validaCep.test(cep)) {
+        this.rersetaDadosForm();
+        this.service.consultarCep(cep).subscribe(endereco => {
+          this.enderecos = endereco;
+          console.log(this.enderecos)
+        });
+      }
+    }
   }
 
+  onSubmit() {
+    console.log(this.formulario);
+  }
+  resetarCampos() {
+    this.formulario.reset();
+  }
+  rersetaDadosForm() {}
+  // popularDadosForm(endereco: any) {
+  //   this.formulario.patchValue({
+  //     cidade: endereco.cidade,
+  //     estado: endereco.uf,
+  //   });
+  // }
 }

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -94,7 +95,8 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     MatChipsModule,
     MatCheckboxModule,
     MatExpansionModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

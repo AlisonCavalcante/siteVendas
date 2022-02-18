@@ -1,41 +1,42 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
 <div class="conteudo">
-  <form>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="content">
       <div>
-        <label>Nome Completo</label>
-        <input type="text" />
-      </div>
-      <div>
-        <label>Telefone</label>
-        <input type="text" />
-      </div>
-      <div>
         <label>CEP</label>
-        <input type="text" />
+        <input type="text" formControlName="cep" />
       </div>
       <div>
-        <label>Endereço</label>
-        <input type="text" />
+        <label>Rua</label>
+        <input type="text" formControlName="rua"
+        (blur)="consultarCep()"
+        />
       </div>
       <div>
         <label>Número da Residência</label>
-        <input type="text" />
+        <input type="text" formControlName="numeroResidencia" />
       </div>
       <div>
         <label>Complemento</label>
-        <input type="text" />
+        <input type="text" formControlName="complemento" />
       </div>
       <div>
         <label>Cidade</label>
-        <input type="text" />
+        <input type="text" formControlName="cidade" />
       </div>
       <div>
         <label>Bairro</label>
-        <input type="text" />
+        <input type="text" formControlName="bairro" />
       </div>
-      <button color="primary" mat-flat-button>Usar este endereço</button>
+      <div>
+        <button type="submit" style="margin-right: 5px;" color="primary" mat-flat-button>
+          Usar este endereço
+        </button>
+        <button (click)="resetarCampos()" color="warn" mat-flat-button>
+          Cancelar
+        </button>
+      </div>
     </div>
   </form>
 </div>
