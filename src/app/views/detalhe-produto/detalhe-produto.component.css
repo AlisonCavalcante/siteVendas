@@ -1,6 +1,7 @@
 .content{
   /* background-color: #DCDCDC; */
   display: flex;
+  margin-left: 10%;
 }
 .detalhesProduto{
   display: flex;

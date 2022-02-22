@@ -39,7 +39,7 @@
   <div class="card-promo">
     <mat-card (click)="detalheProduto()" *ngFor="let produto of produtos" class="card mat-elevation-z4">
       <mat-card-content>
-        <img class="img" src="{{ produto.img }}" />
+        <img class="img" src="{{produto.img}}" />
         <p>{{ produto.descricao }}</p>
         <p class="p-valor">R$: {{ produto.preco }}</p>
         <div class="button-content">

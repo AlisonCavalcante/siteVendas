@@ -12,7 +12,7 @@ export class CriarContaComponent implements OnInit {
 
   formulario!: FormGroup;
   enderecos!: Endereco;
-
+  meses: string[] = ["01", "02","03","04","05","06","07","08","09","10","11","12"]
   constructor(private formBuilder: FormBuilder, private service: ProdutoService) { }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class CriarContaComponent implements OnInit {
       cep: [null, Validators.required],
       cidade: [null, Validators.required],
       uf: [null, Validators.required],
+      rua: [null, Validators.required],
       senha: [null, Validators.required]
     })
   }
@@ -50,6 +51,7 @@ export class CriarContaComponent implements OnInit {
     this.formulario.patchValue({
       cidade: endereco.localidade,
       uf: endereco.uf,
+      rua: endereco.logradouro,
     });
    }
 }

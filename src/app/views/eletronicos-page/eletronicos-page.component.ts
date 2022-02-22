@@ -45,6 +45,7 @@ export class EletronicosPageComponent implements OnInit {
   ngOnInit(): void {
     this.service.buscarProdutoTipo("Eletronico").subscribe(produtos=>{
     this.produtos = produtos;
+    console.log(produtos);
     })
   }
 

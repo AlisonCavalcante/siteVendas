@@ -17,13 +17,43 @@
         <input type="text" formControlName="cpf" />
       </div>
       <div>
+        <mat-form-field class="mes-field" appearance="fill">
+          <mat-label>Dia</mat-label>
+          <mat-select>
+            <mat-option value="one" *ngFor="let mes of meses">{{
+              mes
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="mes-field" appearance="fill">
+          <mat-label>Mês</mat-label>
+          <mat-select>
+            <mat-option value="one" *ngFor="let mes of meses">{{
+              mes
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="mes-field" appearance="fill">
+          <mat-label>Ano</mat-label>
+          <mat-select>
+            <mat-option value="one" *ngFor="let mes of meses">{{
+              mes
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
         <label>Cep</label>
-        <input type="text" formControlName="cep"  (blur)="obterCep()"/>
+        <input type="text" formControlName="cep" (blur)="obterCep()" />
       </div>
       <div>
         <div>
           <label>Cidade</label>
           <input type="text" formControlName="cidade" />
+        </div>
+        <div>
+          <label>Nome da Rua</label>
+          <input type="text" formControlName="rua" />
         </div>
         <div>
           <label>Estado</label>
@@ -40,7 +70,7 @@
           color="primary"
           mat-flat-button
         >
-         Cadastrar
+          Cadastrar
         </button>
         <button (click)="resetarCampos()" color="warn" mat-flat-button>
           Cancelar

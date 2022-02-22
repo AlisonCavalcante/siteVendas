@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,12 +9,20 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  formulario!: FormGroup;
+
+  constructor(private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      login: [null, Validators.required],
+      senha: [null, Validators.required]
+    });
   }
   cadastro(){
     this.route.navigate(["/criarContaPage"])
   }
+  onSubmit(){
 
+  }
 }

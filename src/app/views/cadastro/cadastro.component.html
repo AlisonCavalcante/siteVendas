@@ -2,16 +2,28 @@
 <app-header-menu></app-header-menu>
 <div class="content">
   <div class="form-cliente">
-    <h2>Já sou Cliente</h2>
-    <mat-form-field appearance="fill">
-      <mat-label>E-mail, Cpf</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Email</mat-label>
-      <input type="email" matInput />
-    </mat-form-field>
-    <button mat-flat-button color="primary">Acessar Conta</button>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div style="display: flex; flex-direction: column;">
+        <h2>Já sou Cliente</h2>
+        <mat-form-field appearance="fill">
+          <mat-label>E-mail, Cpf</mat-label>
+          <input matInput formControlName="login" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input type="password" matInput formControlName="senha" />
+        </mat-form-field>
+        <a style="margin-bottom: 10px" routerLink="#">Esqueci minha senha?</a>
+        <button
+          [disabled]="!formulario.valid"
+          type="submit"
+          mat-flat-button
+          color="primary"
+        >
+          Acessar Conta
+        </button>
+      </div>
+    </form>
   </div>
   <br />
   <mat-divider
@@ -24,7 +36,9 @@
       <mat-label>Informe seu e-mail</mat-label>
       <input type="email" matInput />
     </mat-form-field>
-    <button (click)="cadastro()" mat-flat-button color="primary">Prosseguir</button>
+    <button (click)="cadastro()" mat-flat-button color="primary">
+      Prosseguir
+    </button>
   </div>
 </div>
 <app-footer></app-footer>

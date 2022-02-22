@@ -29,7 +29,7 @@
       <!--Card de Endereço de Entrega-->
       <mat-card class="card-endereco mat-elevation-z4">
         <mat-card-content>
-          <h3 style="font-weight: bold;">Endereço de Entrega</h3>
+          <h3 style="font-weight: bold">Endereço de Entrega</h3>
           <p>Bairro:</p>
           <p>Cidade:</p>
           <p>Cep:</p>
@@ -75,29 +75,44 @@
     </div>
   </mat-tab>
   <mat-tab label="Pagamento">
-    <h2 style="text-align: center;">Pague com o cartão de Crédito</h2>
+    <h2 style="text-align: center">Pague com o cartão de Crédito</h2>
     <mat-divider></mat-divider>
     <div>
-      <form class="form-pagamento">
+      <form
+        [formGroup]="formularioPagamento"
+        (ngSubmit)="onSubmit()"
+        class="form-pagamento"
+      >
         <mat-form-field appearance="fill">
           <mat-label>Número do Cartão</mat-label>
-          <input matInput />
+          <input matInput formControlName="numeroCartao" />
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Nome do Titular(como está gravado no cartão)</mat-label>
-          <input matInput />
+          <input matInput formControlName="nomeTitular" />
         </mat-form-field>
-        <mat-form-field class="mes-field" appearance="fill">
-          <mat-label>Mês</mat-label>
-          <mat-select>
-            <mat-option value="one" *ngFor="let ano of anos">{{
-              ano
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <label>Data de Validade</label>
+        <div>
+          <mat-form-field style="margin-right: 10px;" class="mes-field" appearance="fill">
+            <mat-label>Mês</mat-label>
+            <mat-select>
+              <mat-option value="one" *ngFor="let mes of meses">{{
+                mes
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="mes-field" appearance="fill">
+            <mat-label>Ano</mat-label>
+            <mat-select>
+              <mat-option value="one" *ngFor="let mes of meses">{{
+                mes
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
         <mat-form-field class="codigoSeguranca-field" appearance="fill">
           <mat-label>Código de Segurança</mat-label>
-          <input matInput />
+          <input matInput formControlName="codigoSeguranca" />
         </mat-form-field>
         <mat-form-field class="opcoesPagemento-field" appearance="fill">
           <mat-label>Opções de Pagamento</mat-label>
@@ -105,21 +120,32 @@
             <mat-option value="one"></mat-option>
           </mat-select>
         </mat-form-field>
-        <button class="confimar-cartao" mat-flat-button color="primary">
+        <button
+          type="submit"
+          [disabled]="!formularioPagamento.valid"
+          class="confimar-cartao"
+          mat-flat-button
+          color="primary"
+        >
           Concluir Pedido com Cartão <br />
           de Crédito
         </button>
       </form>
     </div>
     <mat-divider style="margin-top: 10px"></mat-divider>
-        <h2 style="text-align: center;">Pague com Boleto Bancário</h2>
-        <p style="text-align: center; font-size: 20px;">R$: Total</p>
-        <div class="button-boleto">
-        <button  mat-flat-button color="primary">
-          Concluir Pedido com Boleto<br>
-          Bancário
-        </button>
-      </div>
+    <h2 style="text-align: center">Pague com Boleto Bancário</h2>
+    <p style="text-align: center; font-size: 20px">R$: Total</p>
+    <p style="margin-left: 20px">
+      Você poderá visualizar ou imprimir após a finalização do pedido. A data de
+      vencimento é de 2 dias corridos após a conclusão do pedido. Após esta
+      data, ele perderá a validade.
+    </p>
+    <div class="button-boleto">
+      <button mat-flat-button color="primary">
+        Concluir Pedido com Boleto<br />
+        Bancário
+      </button>
+    </div>
   </mat-tab>
   <mat-tab label="Confirmação">Content 3</mat-tab>
 </mat-tab-group>
