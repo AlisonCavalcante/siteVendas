@@ -47,6 +47,7 @@ import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
+import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
 
 
 
@@ -69,7 +70,8 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     FiltrosComponent,
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
-    MoveisPageComponent
+    MoveisPageComponent,
+    CriarContaComponent
   ],
   imports: [
     BrowserModule,

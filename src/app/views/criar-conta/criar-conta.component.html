@@ -1,27 +1,24 @@
 <app-header></app-header>
 <app-header-menu></app-header-menu>
+<h1>Cadastre-se</h1>
 <div class="conteudo">
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="content">
       <div>
-        <label>CEP</label>
-        <input type="text" formControlName="cep" (blur)="consultarCep()"/>
+        <label>Nome</label>
+        <input type="text" formControlName="nome" />
       </div>
       <div>
-        <label>Rua</label>
-        <input type="text" formControlName="rua" />
+        <label>Sobrenome</label>
+        <input type="text" formControlName="sobrenome" />
       </div>
       <div>
-        <label>Número da Residência</label>
-        <input type="text" formControlName="numeroResidencia" />
+        <label>Cpf</label>
+        <input type="text" formControlName="cpf" />
       </div>
       <div>
-        <label>Complemento</label>
-        <input type="text" formControlName="complemento" />
-      </div>
-      <div>
-        <label>Bairro</label>
-        <input type="text" formControlName="bairro" />
+        <label>Cep</label>
+        <input type="text" formControlName="cep"  (blur)="obterCep()"/>
       </div>
       <div>
         <div>
@@ -29,8 +26,12 @@
           <input type="text" formControlName="cidade" />
         </div>
         <div>
-          <label>UF</label>
+          <label>Estado</label>
           <input type="text" formControlName="uf" />
+        </div>
+        <div>
+          <label>Senha</label>
+          <input type="password" formControlName="senha" />
         </div>
         <button
           type="submit"
@@ -39,7 +40,7 @@
           color="primary"
           mat-flat-button
         >
-          Usar este endereço
+         Cadastrar
         </button>
         <button (click)="resetarCampos()" color="warn" mat-flat-button>
           Cancelar

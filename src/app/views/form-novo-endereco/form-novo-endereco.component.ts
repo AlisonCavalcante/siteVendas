@@ -28,21 +28,15 @@ export class FormNovoEnderecoComponent implements OnInit {
       uf:[null, Validators.required],
     });
   }
+
   consultarCep() {
     let cep = this.formulario.get('cep')?.value;
-    cep = cep.replace(/\D/g, '');
-
-    if (cep != '') {
-      // Expressão regular para validar o cep
-      var validaCep = /^[0-9]{8}$/;
-
-      if (validaCep.test(cep)) {
+    if (cep != null && cep !== '') {
         this.rersetaDadosForm();
         this.service.consultarCep(cep).subscribe(endereco => {
           this.enderecos = endereco;
           this.popularDadosForm(this.enderecos);
         });
-      }
     }
   }
 
