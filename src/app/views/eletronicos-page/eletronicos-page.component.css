@@ -65,7 +65,7 @@ mat-card {
 }
 
 .card:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .img-outrosProdutos:hover {
   transform: scale(1.2);
@@ -76,7 +76,7 @@ mat-card {
   .promo {
     grid-template-columns: 1fr 1fr;
   }
-  .card { 
+  .card {
     margin-top: 10px;
   }
 }

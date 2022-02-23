@@ -63,8 +63,9 @@
   width: 250px;
 }
 .confimar-cartao {
-  width: 300px;
+  width: 150px;
   text-align: center;
+  padding: 10px;
   display: flex;
 }
 .teste {

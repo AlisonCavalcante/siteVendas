@@ -20,6 +20,9 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/cesta']);
     } else if (tela == 'cadastro') {
       this.router.navigate(['/cadastro']);
+    }else if(tela == 'minhaContaPage'){
+      console.log("entrando aqqui")
+      this.router.navigate(['/minhaContaPage']);
     }
   }
 }

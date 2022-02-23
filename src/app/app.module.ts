@@ -48,6 +48,7 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
+import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 
 
 
@@ -71,7 +72,8 @@ import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
     MoveisPageComponent,
-    CriarContaComponent
+    CriarContaComponent,
+    MinhaContaPageComponent
   ],
   imports: [
     BrowserModule,
