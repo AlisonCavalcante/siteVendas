@@ -1,3 +1,4 @@
+import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -28,7 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { MinhaContaModule } from './minha-conta/minhaConta.module';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -48,7 +49,6 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
-import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 
 
 
@@ -73,7 +73,7 @@ import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-pa
     DetalheProdutoComponent,
     MoveisPageComponent,
     CriarContaComponent,
-    MinhaContaPageComponent
+    MinhaContaPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +100,8 @@ import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-pa
     MatCheckboxModule,
     MatExpansionModule,
     CarouselModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MinhaContaModule
 
   ],
   providers: [],
