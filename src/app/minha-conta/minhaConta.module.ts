@@ -10,12 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-endereco-dialog.component';
 
 @NgModule({
   declarations:[
     MinhaContaComponent,
     MinhaContaDadosComponent,
-    MinhaContaEnderecosComponent
+    MinhaContaEnderecosComponent,
+    NovoEnderecoDialogComponent
   ],
   imports: [
     CommonModule,

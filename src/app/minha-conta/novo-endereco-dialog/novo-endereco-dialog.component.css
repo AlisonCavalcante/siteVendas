@@ -1,0 +1,18 @@
+input {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.input-duplo{
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+.input-duplo > input{
+  margin-right: 10px;
+}
