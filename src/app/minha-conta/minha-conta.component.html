@@ -1,3 +1,44 @@
-<h1>Meus Dados</h1>
-<router-outlet></router-outlet>
+<section>
+  <div class="conteudo">
+    <div class="menu-lateral">
+      <ul class="lista-filtros">
+        <li>
+          <button mat-flat-button>
+            <mat-icon>assignment_turned_in</mat-icon>
+            <span>Pedidos</span>
+          </button>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+          <button mat-flat-button>
+            <mat-icon>autorenew</mat-icon>
+            <span>Trocas</span>
+          </button>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+          <button mat-flat-button>
+            <mat-icon>supervisor_account</mat-icon>
+            <span routerLink="1">Meus Dados</span>
+          </button>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+          <button mat-flat-button>
+            <mat-icon>receipt</mat-icon>
+            <span routerLink="1/enderecos">Endereços</span>
+          </button>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+          <button mat-flat-button>
+            <mat-icon>exit_to_app</mat-icon> <span>Sair da Conta</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
 

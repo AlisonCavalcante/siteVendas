@@ -1,4 +1,3 @@
-
 import { MinhaContaComponent } from './minha-conta.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -8,21 +7,16 @@ import { MinhaContaEnderecosComponent } from './minha-conta-enderecos/minha-cont
 const minhaContaRoutes: Routes = [
   {
     path: 'minhaconta',
-    component: MinhaContaComponent
+    component: MinhaContaComponent,
+    children: [
+      { path: ':id', component: MinhaContaDadosComponent},
+      {  path: ':id/enderecos', component: MinhaContaEnderecosComponent},
+    ]
   },
-  {
-    path: 'minhaconta/dados',
-    component: MinhaContaDadosComponent
-  },
-  {
-    path: 'minhaconta/minhaconta/enderecos',
-    component: MinhaContaEnderecosComponent
-  },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(minhaContaRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MinhaContaRouting{}
+export class MinhaContaRouting {}
