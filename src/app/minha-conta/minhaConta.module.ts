@@ -5,19 +5,22 @@ import { MinhaContaRouting } from './minhaConta.routing.module';
 import { MinhaContaComponent } from './minha-conta.component';
 import { MinhaContaDadosComponent } from './minha-conta-dados/minha-conta-dados.component';
 import { MinhaContaEnderecosComponent } from './minha-conta-enderecos/minha-conta-enderecos.component';
+import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-endereco-dialog.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-endereco-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations:[
     MinhaContaComponent,
     MinhaContaDadosComponent,
     MinhaContaEnderecosComponent,
-    NovoEnderecoDialogComponent
+    NovoEnderecoDialogComponent,
+
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-enderec
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   exports: [
     MinhaContaDadosComponent

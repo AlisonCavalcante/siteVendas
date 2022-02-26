@@ -1,36 +1,37 @@
 <section>
   <h1>Adicionar endereço</h1>
-  <form>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="content">
       <div>
-        <input type="text" placeholder="Nome do Endereço" />
+        <input type="text" formControlName="nomeEndereco" placeholder="Nome do Endereço" />
+
       </div>
       <div style="display: flex; flex-direction: column;">
-        <input type="text" placeholder="Cep" />
+        <input (blur)="consultarCep()" formControlName="cep" type="text" placeholder="Cep" />
         <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" style="margin-bottom: 20px;">Não sei meu cep</a>
       </div>
       <div>
-        <input type="text" placeholder="Nome do destinatário" />
+        <input formControlName="nomeDestinatario" type="text" placeholder="Nome do destinatário" />
       </div>
       <div>
-        <input type="text" placeholder="Endereço" />
+        <input formControlName="endereco" type="text" placeholder="Endereço" />
       </div>
       <div class="input-duplo">
-        <input type="text" placeholder="Número" />
-        <input type="text" placeholder="Complemento(opcional)" />
+        <input formControlName="numeroCasa"  type="text" placeholder="Número" />
+        <input formControlName="complemento" type="text" placeholder="Complemento(opcional)" />
       </div>
       <div>
-        <input type="text" placeholder="Bairro" />
+        <input formControlName="bairro" type="text" placeholder="Bairro" />
       </div>
       <div class="input-duplo">
-        <input type="text" placeholder="Estado" />
-        <input type="text" placeholder="Cidade" />
+        <input formControlName="estado" type="text" placeholder="Estado" />
+        <input formControlName="cidade" type="text" placeholder="Cidade" />
       </div>
       <div>
         <input type="text" placeholder="Ponto de Referência" />
       </div>
       <div style="display: flex;text-align: center;align-items: center; flex-direction: column;">
-        <button style="display: flex;   background-color: #1e90ff; color: white;" mat-flat-button>Salvar Informações</button>
+        <button type="submit" style="display: flex;   background-color: #1e90ff; color: white;" mat-flat-button>Salvar Informações</button>
         <a routerLink="#">Cancelar</a>
       </div>
     </div>
