@@ -20,7 +20,7 @@ export class CadastroComponent implements OnInit {
     });
   }
   cadastro(){
-    this.route.navigate(["/criarContaPage"])
+    this.route.navigate(["cadastro/criarContaPage"])
   }
   onSubmit(){
 

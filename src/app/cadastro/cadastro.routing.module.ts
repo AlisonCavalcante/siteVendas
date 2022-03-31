@@ -5,9 +5,10 @@ import { CadastroComponent } from './cadastro.component';
 import { CriarContaComponent } from './criar-conta/criar-conta.component';
 
 
+
 const cadastroRoutes: Routes = [
   { path: '', component: CadastroComponent },
-  { path: 'criarContaPage', component: CriarContaComponent,},
+  { path: 'criarContaPage', component: CriarContaComponent},
 ];
 
 @NgModule({
