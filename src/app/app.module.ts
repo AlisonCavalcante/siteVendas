@@ -41,7 +41,6 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-page.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
-import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
@@ -65,7 +64,6 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     EletronicosPageComponent,
     HomeComponent,
     CestaComprasComponent,
-    CadastroComponent,
     EletrodomesticosPageComponent,
     MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
