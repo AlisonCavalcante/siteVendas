@@ -9,12 +9,14 @@ import {MatCardModule} from '@angular/material/card';
 
 import { CosmeticosPageComponent } from './cosmeticos-page/cosmeticos-page.component';
 import { VendasRoutingModule } from './vendas.routing.module';
+import { EletronicosPageComponent } from './eletronicos-page/eletronicos-page.component';
 
 
 
 @NgModule({
   declarations: [
-    CosmeticosPageComponent
+    CosmeticosPageComponent,
+    EletronicosPageComponent
   ],
   imports: [
     CommonModule,
