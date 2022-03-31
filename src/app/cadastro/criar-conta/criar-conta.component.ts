@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Endereco } from 'src/app/components/endereco.model';
 
 @Component({
-  selector: 'app-criar-conta',
+  selector: 'criar-conta',
   templateUrl: './criar-conta.component.html',
   styleUrls: ['./criar-conta.component.css']
 })

@@ -1,5 +1,4 @@
 import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
-import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
@@ -55,10 +54,10 @@ const routes: Routes = [
     path: 'moveisPage',
     component: MoveisPageComponent,
   },
-  {
-    path: 'criarContaPage',
-    component: CriarContaComponent,
-  },
+  // {
+  //   path: 'criarContaPage',
+  //   component: CriarContaComponent,
+  // },
   {
     path: 'minhaContaPage',
     component: MinhaContaPageComponent,
