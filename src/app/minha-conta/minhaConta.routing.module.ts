@@ -10,7 +10,7 @@ const minhaContaRoutes: Routes = [
     component: MinhaContaComponent,
     children: [
       { path: ':id', component: MinhaContaDadosComponent},
-      {  path: ':id/enderecos', component: MinhaContaEnderecosComponent},
+      { path: ':id/enderecos', component: MinhaContaEnderecosComponent},
     ]
   },
 ];

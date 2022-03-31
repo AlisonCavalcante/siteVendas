@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'minhaContaPage',
     component: MinhaContaPageComponent,
   },
+  {
+    path:'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroModule),
+  }
 ];
 
 @NgModule({

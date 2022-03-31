@@ -1,4 +1,3 @@
-import { CadastroModule } from './cadastro/cadastro.module';
 import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { MinhaContaModule } from './minha-conta/minhaConta.module';
+import {MinhaContaModule } from './minha-conta/minhaConta.module';
 
 
 import { HeaderComponent } from './components/header/header.component';
@@ -101,8 +100,6 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     CarouselModule,
     ReactiveFormsModule,
     MinhaContaModule,
-    CadastroModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { CadastroComponent } from './cadastro.component';
 import { CriarContaComponent } from './criar-conta/criar-conta.component';
 
+
 const cadastroRoutes: Routes = [
-  { path: 'cadastro', component: CadastroComponent },
+  { path: '', component: CadastroComponent },
   { path: 'criarContaPage', component: CriarContaComponent,},
 ];
 
