@@ -6,7 +6,7 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
 import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
-import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { CadastroComponent } from './cadastro/cadastro/cadastro.component';
 import { HomeComponent } from './views/home/home.component';
 import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-page.component';
 import { NgModule } from '@angular/core';
@@ -34,10 +34,10 @@ const routes: Routes = [
     path: 'cesta',
     component: CestaComprasComponent,
   },
-  {
-    path: 'cadastro',
-    component: CadastroComponent,
-  },
+  // {
+  //   path: 'cadastro',
+  //   component: CadastroComponent,
+  // },
   {
     path: 'cosmetico',
     component: CosmeticosPageComponent,

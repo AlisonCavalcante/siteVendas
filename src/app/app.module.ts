@@ -1,3 +1,4 @@
+import { CadastroModule } from './cadastro/cadastro.module';
 import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +32,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MinhaContaModule } from './minha-conta/minhaConta.module';
 
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
@@ -39,7 +41,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-page.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
-import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { CadastroComponent } from './cadastro/cadastro/cadastro.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
@@ -49,6 +51,7 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
+
 
 
 
@@ -101,7 +104,8 @@ import { CriarContaComponent } from './views/criar-conta/criar-conta.component';
     MatExpansionModule,
     CarouselModule,
     ReactiveFormsModule,
-    MinhaContaModule
+    MinhaContaModule,
+    CadastroModule
 
   ],
   providers: [],
