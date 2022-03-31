@@ -15,6 +15,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./cosmeticos-page.component.css']
 })
 export class CosmeticosPageComponent implements OnInit {
+
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!: Produtos[];
@@ -40,10 +41,11 @@ export class CosmeticosPageComponent implements OnInit {
     this.produtoService.buscarProdutoTipo("Cosmético").subscribe(produto=>{
       this.produtos = produto;
     })
+    console.log(this.produtos)
   }
 
   detalheProduto(){
-    this.route.navigate(["/detalheProduto"]);
+    // this.route.navigate(["/detalheProduto"]);
   }
 
   openSnackBar(mensagem: string, acao: string) {

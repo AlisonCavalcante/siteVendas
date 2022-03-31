@@ -43,11 +43,11 @@ import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.compo
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
-import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
+import { VendasModule } from './vendas/vendas.module';
 
 
 
@@ -66,7 +66,6 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     EletrodomesticosPageComponent,
     MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
-    CosmeticosPageComponent,
     FiltrosComponent,
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
@@ -99,6 +98,7 @@ import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
     MatExpansionModule,
     CarouselModule,
     ReactiveFormsModule,
+    VendasModule
 
   ],
   providers: [],

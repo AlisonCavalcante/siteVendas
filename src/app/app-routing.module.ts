@@ -1,7 +1,7 @@
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
-import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
+// import { CosmeticosPageComponent } from './views/cosmeticos-page/cosmeticos-page.component';
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
 
@@ -33,10 +33,10 @@ const routes: Routes = [
     path: 'cesta',
     component: CestaComprasComponent,
   },
-  {
-    path: 'cosmetico',
-    component: CosmeticosPageComponent,
-  },
+  // {
+  //   path: 'cosmetico',
+  //   component: CosmeticosPageComponent,
+  // },
   {
     path: 'novoEndereco',
     component: FormNovoEnderecoComponent,
