@@ -11,7 +11,7 @@ import { EletronicosPageComponent } from './views/eletronicos-page/eletronicos-p
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
-import { CadastroComponent } from './views/cadastro/cadastro.component';
+
 
 const routes: Routes = [
   {
@@ -34,10 +34,6 @@ const routes: Routes = [
     path: 'cesta',
     component: CestaComprasComponent,
   },
-   {
-     path: 'cadastro',
-     component: CadastroComponent,
-   },
   {
     path: 'cosmetico',
     component: CosmeticosPageComponent,
@@ -54,10 +50,6 @@ const routes: Routes = [
     path: 'moveisPage',
     component: MoveisPageComponent,
   },
-  // {
-  //   path: 'criarContaPage',
-  //   component: CriarContaComponent,
-  // },
   {
     path: 'minhaContaPage',
     component: MinhaContaPageComponent,
