@@ -1,1 +1,43 @@
-<p>cadastro works!</p>
+
+<div class="content">
+  <div class="form-cliente">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div style="display: flex; flex-direction: column;">
+        <h2>Já sou Cliente</h2>
+        <mat-form-field appearance="fill">
+          <mat-label>E-mail, Cpf</mat-label>
+          <input matInput formControlName="login" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input type="password" matInput formControlName="senha" />
+        </mat-form-field>
+        <a style="margin-bottom: 10px" routerLink="#">Esqueci minha senha?</a>
+        <button
+          [disabled]="!formulario.valid"
+          type="submit"
+          mat-flat-button
+          color="primary"
+        >
+          Acessar Conta
+        </button>
+      </div>
+    </form>
+  </div>
+  <br />
+  <mat-divider
+    [vertical]="true"
+    style="margin-left: 30px; margin-top: 30px; background-color: blue"
+  ></mat-divider>
+  <div class="form-cadastro">
+    <h2>Criar Conta</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Informe seu e-mail</mat-label>
+      <input type="email" matInput />
+    </mat-form-field>
+    <button (click)="cadastro()" mat-flat-button color="primary">
+      Prosseguir
+    </button>
+  </div>
+</div>
+
