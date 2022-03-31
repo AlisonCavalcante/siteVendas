@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/cadastro']);
     }else if(tela == 'minhaContaPage'){
       console.log("entrando aqqui")
-      this.router.navigate(['/minhaContaPage']);
+      this.router.navigate(['/minhaconta']);
     }
   }
 }

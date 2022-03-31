@@ -1,4 +1,3 @@
-import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
@@ -51,12 +50,12 @@ const routes: Routes = [
     component: MoveisPageComponent,
   },
   {
-    path: 'minhaContaPage',
-    component: MinhaContaPageComponent,
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroModule),
   },
   {
-    path:'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroModule),
+    path: 'minhaconta',
+    loadChildren: () => import('./minha-conta/minhaConta.module').then(m => m.MinhaContaModule),
   }
 ];
 

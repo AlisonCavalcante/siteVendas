@@ -6,7 +6,7 @@ import { MinhaContaEnderecosComponent } from './minha-conta-enderecos/minha-cont
 
 const minhaContaRoutes: Routes = [
   {
-    path: 'minhaconta',
+    path: '',
     component: MinhaContaComponent,
     children: [
       { path: ':id', component: MinhaContaDadosComponent},
