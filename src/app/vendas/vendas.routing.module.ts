@@ -8,7 +8,7 @@ import { MoveisPageComponent } from './moveis-page/moveis-page.component';
 import { MaterialEscolarPageComponent } from './material-escolar-page/material-escolar-page.component';
 
 const cadastroRoutes: Routes = [
-  {path: 'cosmetico', component: CosmeticosPageComponent},
+  {path: '', component: CosmeticosPageComponent},
   {path: 'eletronicos', component: EletronicosPageComponent},
   {path: 'eletrodomesticos', component: EletrodomesticosPageComponent},
   {path: 'moveisPage', component: MoveisPageComponent},
