@@ -21,6 +21,9 @@ export class ProdutoService {
   buscarProdutos(): Observable<Produtos[]> {
     return this.http.get<Produtos[]>(Constantes.URLBASE);
   }
+  buscarProdutoId(id: number): Observable<Produtos>{
+    return this.http.get<Produtos>(Constantes.URLBASE+`${'?id='}${id}`);
+  }
   buscarProdutoTipo(tipo: string): Observable<Produtos[]> {
     const url = Constantes.URLBASE+`/${'?tipo='}${tipo}`;
     return this.http.get<Produtos[]>(url);
