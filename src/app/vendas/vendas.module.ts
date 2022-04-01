@@ -11,6 +11,7 @@ import { CosmeticosPageComponent } from './cosmeticos-page/cosmeticos-page.compo
 import { VendasRoutingModule } from './vendas.routing.module';
 import { EletronicosPageComponent } from './eletronicos-page/eletronicos-page.component';
 import { EletrodomesticosPageComponent } from './eletrodomesticos-page/eletrodomesticos-page.component';
+import { MoveisPageComponent } from './moveis-page/moveis-page.component';
 
 
 
@@ -18,7 +19,8 @@ import { EletrodomesticosPageComponent } from './eletrodomesticos-page/eletrodom
   declarations: [
     CosmeticosPageComponent,
     EletronicosPageComponent,
-    EletrodomesticosPageComponent
+    EletrodomesticosPageComponent,
+    MoveisPageComponent
   ],
   imports: [
     CommonModule,

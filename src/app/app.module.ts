@@ -42,7 +42,6 @@ import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-ende
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
-import { MoveisPageComponent } from './views/moveis-page/moveis-page.component';
 import { VendasModule } from './vendas/vendas.module';
 
 @NgModule({
@@ -60,7 +59,6 @@ import { VendasModule } from './vendas/vendas.module';
     FiltrosComponent,
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
-    MoveisPageComponent,
     MinhaContaPageComponent,
   ],
   imports: [
