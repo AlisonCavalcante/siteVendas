@@ -1,4 +1,3 @@
-import { MinhaContaPageComponent } from './views/minha-conta-page/minha-conta-page.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -54,7 +53,6 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     DialogAlterarEnderecoComponent,
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
-    MinhaContaPageComponent,
   ],
   imports: [
     BrowserModule,
