@@ -28,6 +28,6 @@ export class EletrodomesticosPageComponent implements OnInit {
     });
   }
   detalheProduto() {
-     this.route.navigate(['/detalheProduto']);
+     this.route.navigate(['/vendas/detalheProduto']);
   }
 }

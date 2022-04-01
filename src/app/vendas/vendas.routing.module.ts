@@ -6,13 +6,15 @@ import { EletronicosPageComponent } from './eletronicos-page/eletronicos-page.co
 import { EletrodomesticosPageComponent } from './eletrodomesticos-page/eletrodomesticos-page.component';
 import { MoveisPageComponent } from './moveis-page/moveis-page.component';
 import { MaterialEscolarPageComponent } from './material-escolar-page/material-escolar-page.component';
+import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
 
 const cadastroRoutes: Routes = [
   {path: '', component: CosmeticosPageComponent},
   {path: 'eletronicos', component: EletronicosPageComponent},
   {path: 'eletrodomesticos', component: EletrodomesticosPageComponent},
   {path: 'moveisPage', component: MoveisPageComponent},
-  {path: 'materialEscolar', component: MaterialEscolarPageComponent}
+  {path: 'materialEscolar', component: MaterialEscolarPageComponent},
+  {path: 'detalheProduto', component: DetalheProdutoComponent}
 ];
 
 @NgModule({

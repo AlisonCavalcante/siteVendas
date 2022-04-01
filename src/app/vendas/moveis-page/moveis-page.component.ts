@@ -42,7 +42,7 @@ export class MoveisPageComponent implements OnInit {
   };
 
   detalheProduto() {
-    this.router.navigate(['/detalheProduto']);
+    this.router.navigate(['/vendas/detalheProduto']);
   }
   openSnackBar(mensagem: string, acao: string) {
     this._snackBar.open(mensagem, acao, {

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,7 +25,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatExpansionModule } from '@angular/material/expansion';
+
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -38,7 +37,6 @@ import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.compo
 
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
-import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +50,6 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     CestaComprasComponent,
     DialogAlterarEnderecoComponent,
     FormNovoEnderecoComponent,
-    DetalheProdutoComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,8 +74,6 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     MatDialogModule,
     MatChipsModule,
     MatCheckboxModule,
-    MatExpansionModule,
-    CarouselModule,
     ReactiveFormsModule,
   ],
   providers: [],

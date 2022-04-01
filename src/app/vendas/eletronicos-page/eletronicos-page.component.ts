@@ -52,7 +52,7 @@ export class EletronicosPageComponent implements OnInit {
 
 
   detalheProduto(){
-    this.route.navigate(["/detalheProduto"]);
+    this.route.navigate(["/vendas/detalheProduto"]);
   }
 
   openSnackBar(mensagem: string, acao: string) {

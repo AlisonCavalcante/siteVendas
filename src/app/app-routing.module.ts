@@ -1,4 +1,3 @@
-import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
@@ -20,10 +19,6 @@ const routes: Routes = [
   {
     path: 'novoEndereco',
     component: FormNovoEnderecoComponent,
-  },
-  {
-    path: 'detalheProduto',
-    component: DetalheProdutoComponent,
   },
   {
     path: 'cadastro',
