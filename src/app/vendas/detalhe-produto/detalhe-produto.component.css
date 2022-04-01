@@ -11,6 +11,9 @@
 .cardDetalhes-compra{
   margin: 20px 0px 20px 20px;
 }
+.card--localEntrega{
+  margin-top: 5%;
+}
 a{
   text-decoration: none;
 }

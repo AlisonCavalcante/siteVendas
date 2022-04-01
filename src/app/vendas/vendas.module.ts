@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 import { CosmeticosPageComponent } from './cosmeticos-page/cosmeticos-page.component';
 import { VendasRoutingModule } from './vendas.routing.module';
@@ -43,7 +44,8 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
     MatIconModule,
     MatExpansionModule,
     SharedModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ]
 })
 export class VendasModule { }
