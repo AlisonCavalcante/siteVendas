@@ -1,7 +1,7 @@
 
 <div class="content">
   <div class="form-cliente">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formulario1" (ngSubmit)="onSubmit()">
       <div style="display: flex; flex-direction: column;">
         <h2>Já sou Cliente</h2>
         <mat-form-field appearance="fill">
@@ -14,7 +14,7 @@
         </mat-form-field>
         <a style="margin-bottom: 10px" routerLink="#">Esqueci minha senha?</a>
         <button
-          [disabled]="!formulario.valid"
+          [disabled]="!formulario1.valid"
           type="submit"
           mat-flat-button
           color="primary"
@@ -31,13 +31,16 @@
   ></mat-divider>
   <div class="form-cadastro">
     <h2>Criar Conta</h2>
-    <mat-form-field appearance="fill">
-      <mat-label>Informe seu e-mail</mat-label>
-      <input type="email" matInput />
-    </mat-form-field>
-    <button (click)="cadastro()" mat-flat-button color="primary">
-      Prosseguir
-    </button>
+    <form [formGroup]="formulario2">
+      <mat-form-field appearance="fill">
+        <mat-label>Informe seu e-mail</mat-label>
+        <input formControlName="email" type="email" matInput />
+      </mat-form-field>
+      <button  [disabled]="!formulario2.valid" (click)="cadastro()" mat-flat-button color="primary">
+        Prosseguir
+      </button>
+    </form>
+
   </div>
 </div>
 

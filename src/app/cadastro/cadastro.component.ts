@@ -9,15 +9,19 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  formulario!: FormGroup;
+  formulario1!: FormGroup;
+  formulario2!: FormGroup;
 
   constructor(private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.formulario = this.formBuilder.group({
+    this.formulario1 = this.formBuilder.group({
       login: [null, Validators.required],
       senha: [null, Validators.required]
     });
+    this.formulario2 = this.formBuilder.group({
+      email: [null, Validators.required]
+    })
   }
   cadastro(){
     this.route.navigate(["cadastro/criarContaPage"])
