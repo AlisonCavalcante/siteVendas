@@ -6,6 +6,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { SharedModule } from './../shared/shared.module';
 
 import { CosmeticosPageComponent } from './cosmeticos-page/cosmeticos-page.component';
 import { VendasRoutingModule } from './vendas.routing.module';
@@ -31,7 +32,8 @@ import { MaterialEscolarPageComponent } from './material-escolar-page/material-e
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
-    VendasRoutingModule
+    VendasRoutingModule,
+    SharedModule
   ]
 })
 export class VendasModule { }

@@ -8,6 +8,7 @@ import { FiltrosComponent } from './filtros/filtros.component';
 
 
 
+
 @NgModule({
   declarations: [
     FiltrosComponent
@@ -16,6 +17,9 @@ import { FiltrosComponent } from './filtros/filtros.component';
     CommonModule,
     MatCardModule,
     MatCheckboxModule
+  ],
+  exports: [
+    FiltrosComponent
   ]
 })
 export class SharedModule { }
