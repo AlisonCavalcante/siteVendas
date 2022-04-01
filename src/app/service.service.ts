@@ -1,3 +1,4 @@
+import { Constantes } from './utils/constantes';
 import { Endereco } from './components/endereco.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { Produtos } from './components/produtos.model';
   providedIn: 'root',
 })
 export class ProdutoService {
-  urlBase: string = 'http://localhost:3001/produtos';
+
   sidenav_opened = true;
 
   constructor(private http: HttpClient) {}
@@ -18,16 +19,16 @@ export class ProdutoService {
   }
 
   buscarProdutos(): Observable<Produtos[]> {
-    return this.http.get<Produtos[]>(this.urlBase);
+    return this.http.get<Produtos[]>(Constantes.URLBASE);
   }
   buscarProdutoTipo(tipo: string): Observable<Produtos[]> {
-    const url = `${this.urlBase}/${'?tipo='}${tipo}`;
+    const url = Constantes.URLBASE+`/${'?tipo='}${tipo}`;
     return this.http.get<Produtos[]>(url);
   }
 
   consultarCep(cep: string): Observable<Endereco> {
     cep = cep.replace(/\D/g, '');
     var validaCep = /^[0-9]{8}$/;
-    return this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`);
+    return this.http.get<Endereco>(Constantes.URLCEP+`${cep}/json/`);
   }
 }
