@@ -36,7 +36,7 @@ import { ContentComponent } from './views/content/content.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
-import { EletrodomesticosPageComponent } from './views/eletrodomesticos-page/eletrodomesticos-page.component';
+
 import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
@@ -55,7 +55,6 @@ import { VendasModule } from './vendas/vendas.module';
     SideNavComponent,
     HomeComponent,
     CestaComprasComponent,
-    EletrodomesticosPageComponent,
     MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
     FiltrosComponent,

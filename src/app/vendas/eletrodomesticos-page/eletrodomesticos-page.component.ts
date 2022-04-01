@@ -1,4 +1,3 @@
-import { DetalheProdutoComponent } from './../detalhe-produto/detalhe-produto.component';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
@@ -29,6 +28,6 @@ export class EletrodomesticosPageComponent implements OnInit {
     });
   }
   detalheProduto() {
-    this.route.navigate(['/detalheProduto']);
+     this.route.navigate(['/detalheProduto']);
   }
 }

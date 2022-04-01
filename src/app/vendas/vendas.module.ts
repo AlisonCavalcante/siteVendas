@@ -10,13 +10,15 @@ import {MatCardModule} from '@angular/material/card';
 import { CosmeticosPageComponent } from './cosmeticos-page/cosmeticos-page.component';
 import { VendasRoutingModule } from './vendas.routing.module';
 import { EletronicosPageComponent } from './eletronicos-page/eletronicos-page.component';
+import { EletrodomesticosPageComponent } from './eletrodomesticos-page/eletrodomesticos-page.component';
 
 
 
 @NgModule({
   declarations: [
     CosmeticosPageComponent,
-    EletronicosPageComponent
+    EletronicosPageComponent,
+    EletrodomesticosPageComponent
   ],
   imports: [
     CommonModule,

@@ -45,7 +45,7 @@ export class CosmeticosPageComponent implements OnInit {
   }
 
   detalheProduto(){
-    // this.route.navigate(["/detalheProduto"]);
+     this.route.navigate(["/detalheProduto"]);
   }
 
   openSnackBar(mensagem: string, acao: string) {
