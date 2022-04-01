@@ -12,7 +12,7 @@ export class DetalheProdutoComponent implements OnInit {
 
   panelOpenState = false;
   id!: number;
-  produto!: Produtos;
+  produto: Produtos[] = [];
 
   constructor(private route: Router, private activeRouter: ActivatedRoute, private produtoService: ProdutoService) { }
 
@@ -21,8 +21,9 @@ export class DetalheProdutoComponent implements OnInit {
     this.getProduto();
   }
   getProduto(){
-    this.produtoService.buscarProdutoId(this.id).subscribe(res =>{
-      console.log(res)
+    this.produtoService.buscarProdutoId(this.id).subscribe(res => {
+      this.produto = res;
+      console.log(this.produto)
     })
   }
   comprar(){
