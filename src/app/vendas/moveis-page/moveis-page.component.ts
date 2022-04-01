@@ -41,8 +41,8 @@ export class MoveisPageComponent implements OnInit {
     nav: true,
   };
 
-  detalheProduto() {
-    this.router.navigate(['/vendas/detalheProduto']);
+  detalheProduto(id: number) {
+    this.router.navigate(['/vendas/detalheProduto', id]);
   }
   openSnackBar(mensagem: string, acao: string) {
     this._snackBar.open(mensagem, acao, {

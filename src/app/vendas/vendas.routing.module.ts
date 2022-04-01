@@ -14,7 +14,7 @@ const cadastroRoutes: Routes = [
   {path: 'eletrodomesticos', component: EletrodomesticosPageComponent},
   {path: 'moveisPage', component: MoveisPageComponent},
   {path: 'materialEscolar', component: MaterialEscolarPageComponent},
-  {path: 'detalheProduto', component: DetalheProdutoComponent}
+  {path: 'detalheProduto/:id', component: DetalheProdutoComponent}
 ];
 
 @NgModule({

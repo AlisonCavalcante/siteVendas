@@ -27,7 +27,7 @@ export class EletrodomesticosPageComponent implements OnInit {
       console.log(this.produtos);
     });
   }
-  detalheProduto() {
-     this.route.navigate(['/vendas/detalheProduto']);
+  detalheProduto(id: number) {
+     this.route.navigate(['/vendas/detalheProduto', id]);
   }
 }

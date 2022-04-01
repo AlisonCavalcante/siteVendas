@@ -51,8 +51,8 @@ export class EletronicosPageComponent implements OnInit {
 
 
 
-  detalheProduto(){
-    this.route.navigate(["/vendas/detalheProduto"]);
+  detalheProduto(id: number){
+    this.route.navigate(['/vendas/detalheProduto', id]);
   }
 
   openSnackBar(mensagem: string, acao: string) {
