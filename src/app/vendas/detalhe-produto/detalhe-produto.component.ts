@@ -1,4 +1,6 @@
-import { Router } from '@angular/router';
+import { Produtos } from 'src/app/components/produtos.model';
+import { ProdutoService } from 'src/app/service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalhe-produto.component.css']
 })
 export class DetalheProdutoComponent implements OnInit {
-  panelOpenState = false;
 
-  constructor(private route: Router) { }
+  panelOpenState = false;
+  id!: number;
+  produto!: Produtos;
+
+  constructor(private route: Router, private activeRouter: ActivatedRoute, private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
+    this.id = this.activeRouter.snapshot.params['id'];
+    this.getProduto();
   }
-
+  getProduto(){
+    this.produtoService.buscarProdutoId(this.id).subscribe(res =>{
+      console.log(res)
+    })
+  }
   comprar(){
     this.route.navigate(["/cesta"]);
   }
