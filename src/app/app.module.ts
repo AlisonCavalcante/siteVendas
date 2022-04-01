@@ -37,7 +37,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
-import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
+
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
@@ -54,7 +54,6 @@ import { VendasModule } from './vendas/vendas.module';
     SideNavComponent,
     HomeComponent,
     CestaComprasComponent,
-    MaterialEscolarPageComponent,
     DialogAlterarEnderecoComponent,
     FiltrosComponent,
     FormNovoEnderecoComponent,

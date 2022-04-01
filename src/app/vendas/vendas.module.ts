@@ -12,6 +12,7 @@ import { VendasRoutingModule } from './vendas.routing.module';
 import { EletronicosPageComponent } from './eletronicos-page/eletronicos-page.component';
 import { EletrodomesticosPageComponent } from './eletrodomesticos-page/eletrodomesticos-page.component';
 import { MoveisPageComponent } from './moveis-page/moveis-page.component';
+import { MaterialEscolarPageComponent } from './material-escolar-page/material-escolar-page.component';
 
 
 
@@ -20,7 +21,8 @@ import { MoveisPageComponent } from './moveis-page/moveis-page.component';
     CosmeticosPageComponent,
     EletronicosPageComponent,
     EletrodomesticosPageComponent,
-    MoveisPageComponent
+    MoveisPageComponent,
+    MaterialEscolarPageComponent
   ],
   imports: [
     CommonModule,

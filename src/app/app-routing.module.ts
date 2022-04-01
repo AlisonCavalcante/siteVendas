@@ -1,6 +1,5 @@
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
-import { MaterialEscolarPageComponent } from './views/material-escolar-page/material-escolar-page.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
@@ -13,10 +12,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'materialEscolar',
-    component: MaterialEscolarPageComponent,
   },
   {
     path: 'cesta',
