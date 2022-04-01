@@ -42,7 +42,7 @@ import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-ende
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
-import { VendasModule } from './vendas/vendas.module';
+
 
 @NgModule({
   declarations: [
@@ -86,7 +86,6 @@ import { VendasModule } from './vendas/vendas.module';
     MatExpansionModule,
     CarouselModule,
     ReactiveFormsModule,
-    VendasModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
