@@ -22,7 +22,7 @@ import { MaterialEscolarPageComponent } from './material-escolar-page/material-e
     EletronicosPageComponent,
     EletrodomesticosPageComponent,
     MoveisPageComponent,
-    MaterialEscolarPageComponent
+    MaterialEscolarPageComponent,
   ],
   imports: [
     CommonModule,

@@ -37,12 +37,9 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
-
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
-import { FiltrosComponent } from './components/filtros/filtros.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto.component';
-
 
 @NgModule({
   declarations: [
@@ -55,7 +52,6 @@ import { DetalheProdutoComponent } from './views/detalhe-produto/detalhe-produto
     HomeComponent,
     CestaComprasComponent,
     DialogAlterarEnderecoComponent,
-    FiltrosComponent,
     FormNovoEnderecoComponent,
     DetalheProdutoComponent,
     MinhaContaPageComponent,
