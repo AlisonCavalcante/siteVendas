@@ -5,4 +5,5 @@ export interface Produtos{
   descricao: string;
   cor: string;
   img: string;
+  tamanho: string;
 }
