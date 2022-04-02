@@ -15,7 +15,7 @@ export class CestaComprasComponent implements OnInit {
 
   meses: string[] = ["01", "02","03","04","05","06","07","08","09","10","11","12"]
   formularioPagamento!: FormGroup;
-  produto!: Produtos[];
+  produto: Produtos[] = [];
 
   constructor(public dialog: MatDialog, private formBuilder: FormBuilder, private router: Router, private dataService: DataService) {
 
@@ -38,8 +38,11 @@ export class CestaComprasComponent implements OnInit {
       codigoSeguranca: [null, Validators.required],
     });
 
-    console.log(this.dataService.getProduto());
-
+    this.produto = this.dataService.getProduto();
+    console.log(this.produto);
   }
   onSubmit(){}
+  removerProduto(){
+    this.dataService.setProduto([]);
+  }
 }
