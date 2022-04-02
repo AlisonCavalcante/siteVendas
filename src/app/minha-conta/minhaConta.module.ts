@@ -12,6 +12,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MinhaContaDadosComponent,
     MinhaContaEnderecosComponent,
     NovoEnderecoDialogComponent,
-
+    MeusPedidosComponent
   ],
   imports: [
     CommonModule,

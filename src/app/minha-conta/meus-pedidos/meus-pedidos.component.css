@@ -1,0 +1,26 @@
+pedidos-realizados{
+  width: auto;
+  margin-top: 20px;
+}
+.card-pedidos{
+  width: auto;
+  margin-right: 40px;
+}
+.conteudo-card{
+  display: flex;
+  flex-direction: row;
+}
+.detalhes-entrega{
+  display: flex;
+  flex-direction: column;
+}
+.resumo-compra{
+  display: flex;
+  flex-direction: column;
+}
+.button-detalhes{
+  border: 1px solid #1e90ff;;
+}
+.detalhes-entrega > button{
+  margin-bottom: 10px;
+}
