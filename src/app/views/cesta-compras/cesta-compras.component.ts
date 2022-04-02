@@ -1,7 +1,7 @@
 import { DataService } from './../../data.service';
 import { Produtos } from './../../components/produtos.model';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { DialogAlterarEnderecoComponent } from './../../components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,12 +15,15 @@ export class CestaComprasComponent implements OnInit {
 
   meses: string[] = ["01", "02","03","04","05","06","07","08","09","10","11","12"]
   formularioPagamento!: FormGroup;
+  formularioTipoFrete!: FormGroup;
+  fretes = ['Normal', 'Rapidão']
   produto: Produtos[] = [];
 
   constructor(public dialog: MatDialog, private formBuilder: FormBuilder, private router: Router, private dataService: DataService) {
 
-    let result = this.router.getCurrentNavigation();
-    console.log(result?.extras.state);
+    // Obtendo objeto via rota
+    // let result = this.router.getCurrentNavigation();
+    // console.log(result?.extras.state);
 
   }
 
@@ -38,8 +41,22 @@ export class CestaComprasComponent implements OnInit {
       codigoSeguranca: [null, Validators.required],
     });
 
+    this.formularioTipoFrete = this.formBuilder.group({
+      frete: [null]
+    })
+
+    console.log(this.formularioTipoFrete.get('frete'))
     this.produto = this.dataService.getProduto();
-    console.log(this.produto);
+    // console.log(this.produto);
+  }
+
+  buildFrete(){
+     const values = this.fretes.map(v => new FormControl(false));
+     return this.formBuilder.array(values);
+    // return this.formBuilder.array([
+    //   new FormControl(false),
+    //   new FormControl(false)
+    // ])
   }
   onSubmit(){}
   removerProduto(){

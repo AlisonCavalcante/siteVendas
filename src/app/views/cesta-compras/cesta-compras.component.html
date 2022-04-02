@@ -2,29 +2,38 @@
   <mat-tab label="Minha Cesta">
     <!--Card de Detalhe da Cesta de Produtos-->
     <div class="content-tab">
-      <mat-card  class="card-cesta mat-elevation-z4">
+      <mat-card class="card-cesta mat-elevation-z4">
         <div class="card-content">
           <mat-card-content class="produto-img">
-            <img *ngIf="produto[0].img" [src]="produto[0].img" alt="Image do Produto" />
+            <img
+              *ngIf="produto[0].img"
+              [src]="produto[0].img"
+              alt="Image do Produto"
+            />
           </mat-card-content>
           <mat-card-content class="descricao-produto">
-            <p> {{produto[0].nome}}</p>
+            <p>{{ produto[0].nome }}</p>
             <mat-divider></mat-divider>
             <p>Descrição: {{ produto[0].descricao }}</p>
-            <p *ngIf="produto[0].cor
-            ">Cor: {{ produto[0].cor }}</p>
-            <p *ngIf="produto[0].tamanho"> Tamanho: {{produto[0].tamanho}}</p>
+            <p *ngIf="produto[0].cor">Cor: {{ produto[0].cor }}</p>
+            <p *ngIf="produto[0].tamanho">Tamanho: {{ produto[0].tamanho }}</p>
             <input style="width: 50px" placeholder="Qtd" type="number" />
-            <a routerLink="" style="margin-left: 5px" (click)="removerProduto()">remover</a>
+            <a routerLink="" style="margin-left: 5px" (click)="removerProduto()"
+              >remover</a
+            >
           </mat-card-content>
           <mat-card-content class="tipo-frete">
             <p style="font-weight: bold">Escolha seu frete</p>
-            <mat-radio-group>
-              <mat-radio-button value="auto">Normal:</mat-radio-button>
-              <mat-radio-button style="margin-left: 10px" value="always"
-                >Expressa:</mat-radio-button
-              >
-            </mat-radio-group>
+            <div [formGroup]="formularioTipoFrete">
+              <mat-radio-group formControlName="frete">
+                <mat-radio-button *ngFor="let item of fretes" [value]="item">{{
+                  item
+                }}</mat-radio-button>
+                <!-- <mat-radio-button style="margin-left: 10px" value="always"
+                  >Expresso:</mat-radio-button
+                > -->
+              </mat-radio-group>
+            </div>
           </mat-card-content>
         </div>
       </mat-card>
