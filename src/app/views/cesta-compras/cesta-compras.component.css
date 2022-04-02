@@ -11,6 +11,12 @@
   margin-right: 10%;
   margin-bottom: 5%;
 }
+.produto-img img{
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 10px;
+}
 .tipo-frete {
   margin: 30px;
 }

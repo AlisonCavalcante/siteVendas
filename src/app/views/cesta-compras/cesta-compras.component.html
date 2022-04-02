@@ -2,16 +2,20 @@
   <mat-tab label="Minha Cesta">
     <!--Card de Detalhe da Cesta de Produtos-->
     <div class="content-tab">
-      <mat-card class="card-cesta mat-elevation-z4">
+      <mat-card  class="card-cesta mat-elevation-z4">
         <div class="card-content">
+          <mat-card-content class="produto-img">
+            <img *ngIf="produto[0].img" [src]="produto[0].img" alt="Image do Produto" />
+          </mat-card-content>
           <mat-card-content class="descricao-produto">
-            <p>Carrinho de Compras</p>
+            <p> {{produto[0].nome}}</p>
             <mat-divider></mat-divider>
-            <p>Descrição:</p>
-            <p>Cor:</p>
-            <p>Tamanho:</p>
+            <p>Descrição: {{ produto[0].descricao }}</p>
+            <p *ngIf="produto[0].cor
+            ">Cor: {{ produto[0].cor }}</p>
+            <p *ngIf="produto[0].tamanho"> Tamanho: {{produto[0].tamanho}}</p>
             <input style="width: 50px" placeholder="Qtd" type="number" />
-            <a routerLink="" style="margin-left: 5px">remover</a>
+            <a routerLink="" style="margin-left: 5px" (click)="removerProduto()">remover</a>
           </mat-card-content>
           <mat-card-content class="tipo-frete">
             <p style="font-weight: bold">Escolha seu frete</p>
@@ -91,7 +95,11 @@
         </mat-form-field>
         <label>Data de Validade</label>
         <div>
-          <mat-form-field style="margin-right: 10px;" class="mes-field" appearance="fill">
+          <mat-form-field
+            style="margin-right: 10px"
+            class="mes-field"
+            appearance="fill"
+          >
             <mat-label>Mês</mat-label>
             <mat-select>
               <mat-option value="one" *ngFor="let mes of meses">{{

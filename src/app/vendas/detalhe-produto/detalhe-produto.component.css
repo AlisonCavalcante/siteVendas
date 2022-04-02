@@ -1,14 +1,24 @@
 .content{
   display: flex;
+  flex-wrap: wrap;
   margin-left: 10%;
 }
 .detalhesProduto{
   display: flex;
+  width: 500px;
   flex-direction: row;
   margin-top: 20px;
+  margin-right: 20px;
 }
-.cardDetalhes-compra{
-  margin: 20px 0px 20px 20px;
+.detalhesProduto mat-card-content{
+  display: flex;
+}
+.detalhesProduto p{
+  font-weight: bold;
+}
+.card--Detalhes__compra{
+  margin: 20px 0px 20px;
+  width: 500px;
 }
 .card--localEntrega{
   margin-top: 5%;
@@ -25,6 +35,6 @@ img{
   width: 200px;
   border-radius: 5px;
 }
-.mat-accordion{
-
+.painel--expansion{
+  margin: 50px;
 }
