@@ -1,3 +1,4 @@
+import { DataService } from './../../data.service';
 import { Endereco } from 'src/app/components/endereco.model';
 import { Produtos } from 'src/app/components/produtos.model';
 import { ProdutoService } from 'src/app/service.service';
@@ -17,7 +18,7 @@ export class DetalheProdutoComponent implements OnInit {
   enderecoEntrega!: Endereco;
   produto: Produtos[] = [];
 
-  constructor(private route: Router, private activeRouter: ActivatedRoute, private produtoService: ProdutoService) { }
+  constructor(private route: Router, private activeRouter: ActivatedRoute, private produtoService: ProdutoService, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.id = this.activeRouter.snapshot.params['id'];
@@ -35,8 +36,14 @@ export class DetalheProdutoComponent implements OnInit {
      console.log(this.enderecoEntrega)
    })
   }
-  comprar(){
-    this.route.navigate(["/cesta"]);
+  comprar(produto: Produtos[]){
+    
+    // this.route.navigateByUrl('/cesta', {
+    //   state: this.produto
+    // })
+    this.dataService.setProduto(produto);
+    this.route.navigate(['/cesta']);
   }
+
 
 }

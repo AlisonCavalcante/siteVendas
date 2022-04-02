@@ -17,6 +17,10 @@ const routes: Routes = [
     component: CestaComprasComponent,
   },
   {
+    path: 'cesta/:id',
+    component: CestaComprasComponent,
+  },
+  {
     path: 'novoEndereco',
     component: FormNovoEnderecoComponent,
   },
