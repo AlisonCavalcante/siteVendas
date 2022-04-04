@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class DetalheProdutoComponent implements OnInit {
 
   panelOpenState = false;
+  meuFavorito: boolean = true;
   id!: number;
   cep!: string;
   enderecoEntrega!: Endereco;
@@ -23,6 +24,9 @@ export class DetalheProdutoComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activeRouter.snapshot.params['id'];
     this.getProduto();
+  }
+  favoritar(){
+    this.meuFavorito = !this.meuFavorito;
   }
   getProduto(){
     this.produtoService.buscarProdutoId(this.id).subscribe(res => {
@@ -37,7 +41,7 @@ export class DetalheProdutoComponent implements OnInit {
    })
   }
   comprar(produto: Produtos[]){
-    
+
     // this.route.navigateByUrl('/cesta', {
     //   state: this.produto
     // })

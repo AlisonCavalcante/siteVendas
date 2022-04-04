@@ -4,8 +4,9 @@
   >
     <mat-card-content>
       <div style="display: flex; flex-direction: column">
-        <button mat-flat-button>
-          <mat-icon>favorite_border</mat-icon>
+        <button (click)="favoritar()" mat-flat-button>
+          <mat-icon *ngIf="!meuFavorito">favorite_border</mat-icon>
+          <mat-icon *ngIf="meuFavorito">favorite</mat-icon>
           <a>favoritar</a>
         </button>
         <img class="card-detalhesProduto__img" [src]="produto[0].img" />
