@@ -1,10 +1,13 @@
-
+.titulo {
+  text-align: center;
+  margin-top: 20px;
+}
 .conteudo {
   display: flex;
   justify-content: center;
   margin-bottom: 10%;
 }
-form{
+form {
   margin: 10px 0px 10px 0px;
   border: 1px solid grey;
   border-radius: 4px;

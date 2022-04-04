@@ -4,14 +4,14 @@
     <div class="content-tab">
       <mat-card class="card-cesta mat-elevation-z4">
         <div class="card-content">
-          <mat-card-content class="produto-img">
+          <mat-card-content class="card-cesta__img">
             <img
               *ngIf="produto[0].img"
               [src]="produto[0].img"
               alt="Image do Produto"
             />
           </mat-card-content>
-          <mat-card-content class="descricao-produto">
+          <mat-card-content class="card-cesta__descricao-produto">
             <p>{{ produto[0].nome }}</p>
             <mat-divider></mat-divider>
             <p>Descrição: {{ produto[0].descricao }}</p>
@@ -22,7 +22,7 @@
               >remover</a
             >
           </mat-card-content>
-          <mat-card-content class="tipo-frete">
+          <mat-card-content class="card-cesta__tipoFrete">
             <p style="font-weight: bold">Escolha seu frete</p>
             <div [formGroup]="formularioTipoFrete">
               <mat-radio-group formControlName="frete">
@@ -50,7 +50,7 @@
           </p>
           <button
             (click)="openDialog()"
-            class="button-alterarEndereco"
+            class="card-endereco__button"
             mat-flat-button
           >
             Alterar Endereço
@@ -106,7 +106,7 @@
         <div>
           <mat-form-field
             style="margin-right: 10px"
-            class="mes-field"
+            class="form-pagamento__mes-field"
             appearance="fill"
           >
             <mat-label>Mês</mat-label>
@@ -116,7 +116,7 @@
               }}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="mes-field" appearance="fill">
+          <mat-form-field class="form-pagamento__mes-field" appearance="fill">
             <mat-label>Ano</mat-label>
             <mat-select>
               <mat-option value="one" *ngFor="let mes of meses">{{
@@ -125,11 +125,11 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <mat-form-field class="codigoSeguranca-field" appearance="fill">
+        <mat-form-field class="form-pagamento__codigoSegurancaField" appearance="fill">
           <mat-label>Código de Segurança</mat-label>
           <input matInput formControlName="codigoSeguranca" />
         </mat-form-field>
-        <mat-form-field class="opcoesPagemento-field" appearance="fill">
+        <mat-form-field class="form-pagamento__opcoesPagementoField" appearance="fill">
           <mat-label>Opções de Pagamento</mat-label>
           <mat-select>
             <mat-option value="one"></mat-option>
@@ -138,7 +138,7 @@
         <button
           type="submit"
           [disabled]="!formularioPagamento.valid"
-          class="confimar-cartao"
+          class="form-pagamento__button"
           mat-flat-button
           color="primary"
         >

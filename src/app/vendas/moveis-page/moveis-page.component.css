@@ -9,9 +9,8 @@
   width: 80%;
   margin-top: 20px;
 }
-img {
-  height: 500px;
-  width: 200px;
+.card {
+  margin-left: 50px;
 }
 .card-promo {
   display: flex;
@@ -19,29 +18,27 @@ img {
   margin: 0 auto;
   justify-content: center;
 }
-.card {
-  margin-left: 50px;
-}
 mat-card {
   margin-left: 50px;
   height: 300px;
 }
-.img {
+.card-promo__img {
   height: 200px;
   width: 200px;
   border-radius: 30px;
   align-items: center;
 }
-.button-add {
+.button-content {
+  display: flex;
+  justify-content: center;
+}
+.button-content__add {
   background-color: white;
   color: #1e90ff;
   border-style: solid;
   justify-content: center;
 }
-.button-content {
-  display: flex;
-  justify-content: center;
-}
+
 .mat-card:hover {
   transform: scale(1.2);
 }

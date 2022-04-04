@@ -24,14 +24,14 @@
   <div class="card-promo">
     <mat-card (click)="detalheProduto(produto.id)" *ngFor="let produto of produtos" class="card mat-elevation-z4">
       <mat-card-content>
-        <img class="img" src="{{ produto.img }}" />
+        <img class="card-promo__img" src="{{ produto.img }}" />
         <p>{{ produto.descricao }}</p>
-        <p class="p-valor">R$: {{ produto.preco }}</p>
+        <p class="card-promo__p-valor">R$: {{ produto.preco }}</p>
         <div class="button-content">
           <button
             mat-flat-button
             (click)="openSnackBar('Produto Adicionado', 'X')"
-            class="button-add"
+            class="button-content__add"
             color="primary"
           >
             Adicionar ao Carrinho

@@ -29,25 +29,26 @@ mat-card {
   margin-left: 50px;
   height: 300px;
 }
-.img {
+.promo__img {
   height: 200px;
   width: 200px;
   border-radius: 10px;
   align-items: center;
 }
-.p-valor {
+.promo__produto-valor {
   font-weight: bold;
-}
-.button-add {
-  background-color: white;
-  color: #1e90ff;
-  border-style: solid;
-  justify-content: center;
 }
 .button-content {
   display: flex;
   justify-content: center;
 }
+.button-content__add {
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
+}
+
 .mat-card:hover {
   transform: scale(1.1);
 }

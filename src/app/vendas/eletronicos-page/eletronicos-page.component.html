@@ -37,9 +37,9 @@
   <div class="card-promo">
     <mat-card (click)="detalheProduto(produto.id)" *ngFor="let produto of produtos" class="card mat-elevation-z4">
       <mat-card-content>
-        <img class="img" src="{{produto.img}}" />
+        <img class="card-promo__img" src="{{produto.img}}" />
         <p>{{ produto.descricao }}</p>
-        <p class="p-valor">R$: {{ produto.preco }}</p>
+        <p class="card-promo__p-valor">R$: {{ produto.preco }}</p>
         <div class="button-content">
           <button
             mat-flat-button
@@ -57,24 +57,24 @@
     <div class="card-outros">
       <img
         routerLink="/materialEscolar"
-        class="img-outrosProdutos"
+        class="card-outros__img"
         src="https://images.unsplash.com/photo-1503236712874-d64b828dc314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
       />
 
       <img
         routerLink="/eletrodomesticos"
-        class="img-outrosProdutos"
+        class="card-outros__img"
         src="https://images.unsplash.com/photo-1602872030378-f30ea2947b03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1926&q=80"
       />
 
       <img
-        class="img-outrosProdutos"
+        class="card-outros__img"
         src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
       />
 
       <img
         routerLink="/cosmetico"
-        class="img-outrosProdutos"
+        class="card-outros__img"
         src="https://images.unsplash.com/photo-1594966642034-bbf0029a7488?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
       />
     </div>

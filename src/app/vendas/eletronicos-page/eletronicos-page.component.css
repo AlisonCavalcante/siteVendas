@@ -40,13 +40,13 @@ mat-card {
   margin-left: 50px;
   height: 300px;
 }
-.img {
+.card-promo__img {
   height: 200px;
   width: 200px;
   border-radius: 30px;
   align-items: center;
 }
-.img-outrosProdutos {
+.card-outros__img {
   height: 200px;
   width: 200px;
   align-items: center;

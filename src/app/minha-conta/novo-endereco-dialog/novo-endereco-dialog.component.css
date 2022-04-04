@@ -8,11 +8,11 @@ input {
   margin-bottom: 20px;
 }
 
-.input-duplo{
+.form__inputDuplo{
   display: flex;
   flex-direction: row;
   width: 100px;
 }
-.input-duplo > input{
+.form__inputDuplo > input{
   margin-right: 10px;
 }

@@ -15,6 +15,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 
 
+
+
+
+
 @NgModule({
   declarations:[
     MinhaContaComponent,

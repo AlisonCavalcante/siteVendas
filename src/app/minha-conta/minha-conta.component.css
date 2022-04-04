@@ -10,7 +10,7 @@
   width: 200px;
   height: 300px;
 }
-.lista-filtros{
+.menu-lateral__listaFiltros{
   display: block;
   list-style-type: none;
   text-align: start;
