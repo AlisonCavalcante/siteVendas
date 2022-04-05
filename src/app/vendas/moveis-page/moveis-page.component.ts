@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs';
 import { ProdutoService } from './../../service.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import {
   MatSnackBar,
@@ -13,18 +14,21 @@ import { Produtos } from 'src/app/components/produtos.model';
   templateUrl: './moveis-page.component.html',
   styleUrls: ['./moveis-page.component.css'],
 })
-export class MoveisPageComponent implements OnInit {
+export class MoveisPageComponent implements OnInit, OnDestroy {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!:  Produtos[];
+  sub!: Subscription;
   constructor(private produtoService: ProdutoService,private router: Router, private _snackBar: MatSnackBar) {
+
+  }
+
+  ngOnInit(): void {
     this.produtoService.buscarProdutoTipo("Eletronico").subscribe(produto=>{
       this.produtos = produto;
     })
   }
-
-  ngOnInit(): void {}
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -40,6 +44,10 @@ export class MoveisPageComponent implements OnInit {
     },
     nav: true,
   };
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
   detalheProduto(id: number) {
     this.router.navigate(['/vendas/detalheProduto', id]);

@@ -1,7 +1,8 @@
+import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Produtos } from './../../components/produtos.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -14,7 +15,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './eletronicos-page.component.html',
   styleUrls: ['./eletronicos-page.component.css'],
 })
-export class EletronicosPageComponent implements OnInit {
+export class EletronicosPageComponent implements OnInit, OnDestroy {
 
   selectedValue: string = '';
   categorias: any[] = [{ tipo: 'Eletrônico' }, { tipo: 'Eletrodomésticos' }];
@@ -22,6 +23,7 @@ export class EletronicosPageComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos!:  Produtos[];
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
+  sub!: Subscription;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -49,6 +51,9 @@ export class EletronicosPageComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
 
   detalheProduto(id: number){
