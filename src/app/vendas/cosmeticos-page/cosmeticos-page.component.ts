@@ -8,7 +8,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cosmeticos-page',
@@ -19,7 +19,7 @@ export class CosmeticosPageComponent implements OnInit, OnDestroy {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  produtos!: Produtos[];
+  produtos$!: Observable <Produtos[]>;
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
   customOptions: OwlOptions = {
     loop: true,
@@ -41,14 +41,15 @@ export class CosmeticosPageComponent implements OnInit, OnDestroy {
   constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
-    this.sub = this.produtoService.buscarProdutoTipo("Cosmético").subscribe(produto=>{
-      this.produtos = produto;
-    })
-    console.log(this.produtos)
+
+    // abordagem com pipe async
+    this.produtos$ = this.produtoService.buscarProdutoTipo("Cosmético");
+
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    // Abordagem de unsubscribe manual através de Subscription
+    // this.sub.unsubscribe();
   }
 
   detalheProduto(id: number){

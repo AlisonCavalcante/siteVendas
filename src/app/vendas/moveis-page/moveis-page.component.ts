@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { ProdutoService } from './../../service.service';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -18,16 +18,14 @@ export class MoveisPageComponent implements OnInit, OnDestroy {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  produtos!:  Produtos[];
+  produtos$!: Observable <Produtos[]>;
   sub!: Subscription;
   constructor(private produtoService: ProdutoService,private router: Router, private _snackBar: MatSnackBar) {
 
   }
 
   ngOnInit(): void {
-    this.produtoService.buscarProdutoTipo("Eletronico").subscribe(produto=>{
-      this.produtos = produto;
-    })
+   this.produtos$ = this.produtoService.buscarProdutoTipo("Eletronico");
   }
   customOptions: OwlOptions = {
     loop: true,
@@ -46,7 +44,7 @@ export class MoveisPageComponent implements OnInit, OnDestroy {
   };
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    // this.sub.unsubscribe();
   }
 
   detalheProduto(id: number) {

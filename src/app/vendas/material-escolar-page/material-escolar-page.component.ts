@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from './../../service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -16,7 +16,7 @@ import {
 })
 export class MaterialEscolarPageComponent implements OnInit, OnDestroy {
 
-  produtos!: Produtos[];
+  produtos$!: Observable <Produtos[]>;
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
@@ -24,13 +24,11 @@ export class MaterialEscolarPageComponent implements OnInit, OnDestroy {
   constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
-    this.produtoService.buscarProdutoTipo("Cosmético").subscribe(produto=>{
-      this.produtos = produto;
-    })
+   this.produtos$ = this.produtoService.buscarProdutoTipo("Cosmético");
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    // this.sub.unsubscribe();
   }
 
   detalheProduto(id: number){

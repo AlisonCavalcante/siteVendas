@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { DataService } from './../../data.service';
 import { Endereco } from 'src/app/components/endereco.model';
 import { Produtos } from 'src/app/components/produtos.model';
@@ -17,7 +18,7 @@ export class DetalheProdutoComponent implements OnInit {
   id!: number;
   cep!: string;
   enderecoEntrega!: Endereco;
-  produto: Produtos[] = [];
+  produtos$!: Observable <Produtos[]>;
 
   constructor(private route: Router, private activeRouter: ActivatedRoute, private produtoService: ProdutoService, private dataService: DataService) { }
 
@@ -29,10 +30,8 @@ export class DetalheProdutoComponent implements OnInit {
     this.meuFavorito = !this.meuFavorito;
   }
   getProduto(){
-    this.produtoService.buscarProdutoId(this.id).subscribe(res => {
-      this.produto = res;
-      console.log(this.produto)
-    })
+   this.produtos$ = this.produtoService.buscarProdutoId(this.id);
+   console.log(this.produtos$);
   }
   buscarCep(){
    this.produtoService.consultarCep(this.cep).subscribe(res => {

@@ -15,7 +15,7 @@
       <h2 style="margin-left: 30px">Novos Produtos</h2>
     </div>
     <div class="promo">
-      <mat-card (click)="detalheProduto(produto.id)" *ngFor="let produto of produtos" class="card mat-elevation-z2">
+      <mat-card (click)="detalheProduto(produto.id)" *ngFor="let produto of produtos$ | async" class="card mat-elevation-z2">
         <mat-card-content>
           <img class="promo__img" src="{{ produto.img }}" />
           <p>{{ produto.descricao }}</p>

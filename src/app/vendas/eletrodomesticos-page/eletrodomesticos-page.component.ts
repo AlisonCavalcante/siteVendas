@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -10,7 +10,8 @@ import { Produtos } from 'src/app/components/produtos.model';
   styleUrls: ['./eletrodomesticos-page.component.css'],
 })
 export class EletrodomesticosPageComponent implements OnInit, OnDestroy {
-  produtos!: Produtos[];
+
+  produtos$!: Observable <Produtos[]>;
   anos: string[] = [
     'Mais populares',
     'Mais Vendidos',
@@ -24,13 +25,11 @@ export class EletrodomesticosPageComponent implements OnInit, OnDestroy {
   constructor(private service: ProdutoService, private route: Router) {}
 
   ngOnInit(): void {
-    this.sub = this.service.buscarProdutoTipo('Eletronico').subscribe((produtos) => {
-      this.produtos = produtos;
-      console.log(this.produtos);
-    });
+    this.produtos$ = this.service.buscarProdutoTipo('Eletronico');
   }
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+     // Abordagem de unsubscribe manual através de Subscription
+    // this.sub.unsubscribe();
   }
   detalheProduto(id: number) {
      this.route.navigate(['/vendas/detalheProduto', id]);

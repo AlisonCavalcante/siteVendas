@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Produtos } from './../../components/produtos.model';
@@ -21,7 +21,7 @@ export class EletronicosPageComponent implements OnInit, OnDestroy {
   categorias: any[] = [{ tipo: 'Eletrônico' }, { tipo: 'Eletrodomésticos' }];
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  produtos!:  Produtos[];
+  produtos$!: Observable <Produtos[]>;
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
   sub!: Subscription;
   customOptions: OwlOptions = {
@@ -45,14 +45,11 @@ export class EletronicosPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.service.buscarProdutoTipo("Eletronico").subscribe(produtos=>{
-    this.produtos = produtos;
-    console.log(produtos);
-    })
+    this.produtos$ = this.service.buscarProdutoTipo("Eletronico");
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    // this.sub.unsubscribe();
   }
 
 
