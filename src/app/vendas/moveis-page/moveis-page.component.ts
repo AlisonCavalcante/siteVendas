@@ -8,7 +8,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-import { Produtos } from 'src/app/components/produtos.model';
+import { Produtos } from 'src/app/models/produtos.model';
 @Component({
   selector: 'app-moveis-page',
   templateUrl: './moveis-page.component.html',

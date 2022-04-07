@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { DataService } from './../../data.service';
-import { Endereco } from 'src/app/components/endereco.model';
-import { Produtos } from 'src/app/components/produtos.model';
+import { Endereco } from 'src/app/models/endereco.model';
+import { Produtos } from 'src/app/models/produtos.model';
 import { ProdutoService } from 'src/app/service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';

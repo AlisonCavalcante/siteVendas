@@ -1,4 +1,4 @@
-import { Endereco } from './../../components/endereco.model';
+import { Endereco } from '../../models/endereco.model';
 import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

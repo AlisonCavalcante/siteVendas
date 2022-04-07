@@ -1,9 +1,9 @@
 import { Constantes } from './utils/constantes';
-import { Endereco } from './components/endereco.model';
+import { Endereco } from './models/endereco.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Produtos } from './components/produtos.model';
+import { Produtos } from './models/produtos.model';
 
 @Injectable({
   providedIn: 'root',

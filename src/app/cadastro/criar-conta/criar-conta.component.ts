@@ -1,7 +1,7 @@
 import { ProdutoService } from 'src/app/service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Endereco } from 'src/app/components/endereco.model';
+import { Endereco } from 'src/app/models/endereco.model';
 
 @Component({
   selector: 'criar-conta',

@@ -2,7 +2,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Produtos } from 'src/app/components/produtos.model';
+import { Produtos } from 'src/app/models/produtos.model';
 
 @Component({
   selector: 'app-eletrodomesticos-page',

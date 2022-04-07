@@ -2,7 +2,7 @@ import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from './../../service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Produtos } from 'src/app/components/produtos.model';
+import { Produtos } from 'src/app/models/produtos.model';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,

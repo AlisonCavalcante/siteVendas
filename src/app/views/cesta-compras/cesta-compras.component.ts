@@ -1,5 +1,5 @@
 import { DataService } from './../../data.service';
-import { Produtos } from './../../components/produtos.model';
+import { Produtos } from '../../models/produtos.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { DialogAlterarEnderecoComponent } from './../../components/dialog-alterar-endereco/dialog-alterar-endereco.component';

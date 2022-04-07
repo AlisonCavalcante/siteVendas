@@ -1,7 +1,7 @@
 import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
-import { Produtos } from './../../components/produtos.model';
+import { Produtos } from '../../models/produtos.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   MatSnackBar,
