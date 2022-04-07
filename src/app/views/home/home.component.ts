@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Produtos } from './../../components/produtos.model';
 import { ProdutoService } from 'src/app/service.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,17 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  produto!: Produtos[];
+  produtos$!: Observable<Produtos[]>;
   constructor(private service: ProdutoService) { }
 
   ngOnInit(): void {
+    this.buscarprodutoTipo();
   }
   buscarprodutoTipo(){
-    this.service.buscarProdutoTipo("Eletronico").subscribe(produto=>{
-      this.produto = produto;
-      console.log(this.produto);
-      }
-    )
+   this.produtos$ = this.service.buscarProdutoTipo("Eletronico");
+   console.log(this.produtos$)
   }
 
 }
