@@ -16,11 +16,11 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario1 = this.formBuilder.group({
-      login: [null, Validators.required],
-      senha: [null, Validators.required]
+      login: [null, [Validators.email,Validators.required]],
+      senha: [null, [Validators.required, Validators.minLength(6)]]
     });
     this.formulario2 = this.formBuilder.group({
-      email: [null, Validators.required]
+      email: [null, [Validators.email,Validators.required]]
     })
   }
   cadastro(){
