@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/data.service';
 import { Observable } from 'rxjs';
 import { Produtos } from '../../models/produtos.model';
 import { ProdutoService } from 'src/app/service.service';
@@ -11,14 +12,20 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   produtos$!: Observable<Produtos[]>;
-  constructor(private service: ProdutoService) { }
+  constructor(private service: ProdutoService, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.buscarprodutoTipo();
+    this.getUser();
   }
   buscarprodutoTipo(){
    this.produtos$ = this.service.buscarProdutoTipo("Eletronico");
    console.log(this.produtos$)
+  }
+  getUser(){
+    this.dataService.getUsuario().subscribe(res =>{
+      console.log(res);
+    })
   }
 
 }

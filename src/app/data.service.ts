@@ -1,3 +1,7 @@
+import { Constantes } from './utils/constantes';
+import { HttpClient } from '@angular/common/http';
+import { User } from './models/users.model';
+import { Observable } from 'rxjs';
 import { Produtos } from './models/produtos.model';
 import { Injectable } from '@angular/core';
 
@@ -7,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   private produto!: Produtos[];
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   setProduto(produto: Produtos[]){
     this.produto = produto;
@@ -15,5 +19,9 @@ export class DataService {
 
   getProduto(){
     return this.produto;
+  }
+
+  getUsuario(): Observable<User>{
+    return this.http.get<User>(Constantes.GETUSER);
   }
 }
