@@ -24,4 +24,9 @@ export class DataService {
   getUsuario(): Observable<User>{
     return this.http.get<User>(Constantes.GETUSER);
   }
+
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(Constantes.GETUSER, user);
+  }
+
 }
