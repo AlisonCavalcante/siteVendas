@@ -21,8 +21,8 @@ export class DataService {
     return this.produto;
   }
 
-  getUsuario(): Observable<User>{
-    return this.http.get<User>(Constantes.GETUSER);
+  getUsuario(user: User): Observable<User>{
+    return this.http.get<User>(Constantes.GETUSER+`${'?cpf='}${user.cpf}`);
   }
 
   createUser(user: User): Observable<User> {

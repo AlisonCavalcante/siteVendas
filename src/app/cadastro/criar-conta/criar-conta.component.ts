@@ -1,3 +1,4 @@
+import { User } from './../../models/users.model';
 import { Subscription } from 'rxjs';
 import { DataService } from './../../data.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -47,10 +48,18 @@ export class CriarContaComponent implements OnInit, OnDestroy {
   }
 
   cadastrar(){
-   this.sub = this.userService.createUser(this.formulario.value).subscribe(value =>{
-     alert('Usuário Cadastrado com Sucesso');
-     this.router.navigate(['/']);
+    this.userService.getUsuario(this.formulario.value).subscribe((value: User )=>{
+      if(value.cpf != 0){
+        alert('Usuáio já existe, cadastrar novamente.')
+        this.resetarCampos();
+      }else{
+        this.sub = this.userService.createUser(this.formulario.value).subscribe(value =>{
+          alert('Usuário Cadastrado com Sucesso');
+          this.router.navigate(['/']);
+         })
+      }
     })
+
   }
 
   resetarCampos(){

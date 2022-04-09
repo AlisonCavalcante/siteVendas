@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
    console.log(this.produtos$)
   }
   getUser(){
-    this.dataService.getUsuario().subscribe(res =>{
-      console.log(res);
-    })
+    // this.dataService.getUsuario().subscribe(res =>{
+    //   console.log(res);
+    // })
   }
 
 }
