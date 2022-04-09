@@ -1,20 +1,20 @@
 <h1>Cadastre-se</h1>
 <div class="conteudo">
-  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
     <div class="content">
       <div>
         <label>Nome</label>
         <input type="text" formControlName="nome" />
       </div>
       <div>
-        <label>Sobrenome</label>
-        <input type="text" formControlName="sobrenome" />
+        <label>E-mail</label>
+        <input type="text" formControlName="email" />
       </div>
       <div>
         <label>Cpf</label>
         <input type="text" formControlName="cpf" />
       </div>
-      <div>
+      <!-- <div>
         <mat-form-field class="mes-field" appearance="fill">
           <mat-label>Dia</mat-label>
           <mat-select>
@@ -39,29 +39,29 @@
             }}</mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
-      <div>
+      </div> -->
+      <!-- <div>
         <label>Cep</label>
         <input type="text" formControlName="cep" (blur)="obterCep()" />
-      </div>
-      <div>
-        <div>
+      </div> -->
+        <!-- <div>
           <label>Cidade</label>
           <input type="text" formControlName="cidade" />
         </div>
         <div>
           <label>Nome da Rua</label>
           <input type="text" formControlName="rua" />
-        </div>
-        <div>
+        </div> -->
+         <!-- <div>
           <label>Estado</label>
           <input type="text" formControlName="uf" />
-        </div>
+        </div> -->
         <div>
           <label>Senha</label>
           <input type="password" formControlName="senha" />
         </div>
-        <button
+        <div>
+          <button
           type="submit"
           [disabled]="!formulario.valid"
           style="margin-right: 5px"
@@ -73,7 +73,7 @@
         <button (click)="resetarCampos()" color="warn" mat-flat-button>
           Cancelar
         </button>
-      </div>
+        </div>
     </div>
   </form>
 </div>
