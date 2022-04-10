@@ -29,8 +29,17 @@ export class CriarContaComponent implements OnInit, OnDestroy {
       // cep: [null, Validators.required],
       // cidade: [null, Validators.required],
       // uf: [null, Validators.required],
-      // rua: [null, Validators.required],
-      senha: [null, [Validators.minLength(6),Validators.required]]
+
+      senha: [null, [Validators.minLength(6),Validators.required]],
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        rua: [null, Validators.required],
+        numeroResidencia: [null, Validators.required],
+        complemento: [null, Validators.required],
+        bairro: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required],
+      })
     })
   }
   ngOnDestroy(): void {
@@ -48,19 +57,20 @@ export class CriarContaComponent implements OnInit, OnDestroy {
   }
 
   cadastrar(){
-   this.sub = this.userService.getUsuario(this.formulario.value).subscribe(value  =>{
+    console.log(this.formulario.value)
+  //  this.sub = this.userService.getUsuario(this.formulario.value).subscribe(value  =>{
 
-      if(value.length != 0){
-        alert('Usuáio já existe, cadastrar novamente.')
-        this.resetarCampos();
-      }else{
-        console.log("usuário novo")
-         this.userService.createUser(this.formulario.value).subscribe(value =>{
-          alert('Usuário Cadastrado com Sucesso');
-          this.router.navigate(['/']);
-         })
-      }
-    })
+  //     if(value.length != 0){
+  //       alert('Usuáio já existe, cadastrar novamente.')
+  //       this.resetarCampos();
+  //     }else{
+  //       console.log("usuário novo")
+  //        this.userService.createUser(this.formulario.value).subscribe(value =>{
+  //         alert('Usuário Cadastrado com Sucesso');
+  //         this.router.navigate(['/']);
+  //        })
+  //     }
+  //   })
 
   }
 
