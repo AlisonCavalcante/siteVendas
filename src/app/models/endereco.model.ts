@@ -1,9 +1,13 @@
 export interface Endereco{
   bairro: string,
-  cep: number,
+  cep: string,
   complemento: string,
-  rua: string,
-  numeroResidencia: number,
-  cidade: string,
-  estado: string;
+  numeroResidencia: number
+  ddd: string,
+  gia: string,
+  ibge: string,
+  localidade: string,
+  logradouro: string,
+  siafi: string,
+  uf: string;
 }

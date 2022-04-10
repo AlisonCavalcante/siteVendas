@@ -8,7 +8,7 @@
       </div>
       <div>
         <label>E-mail</label>
-        <input type="text" formControlName="email" />
+        <input type="text" placeholder="algumacoisa@gmail.com" formControlName="email" />
       </div>
       <div>
         <label>Cpf</label>
@@ -16,9 +16,9 @@
       </div>
       <div formGroupName="endereco">
         <label>Cep</label>
-        <input type="number" formControlName="cep" />
+        <input type="text" (blur)="obterCep()" formControlName="cep" />
         <label>Rua</label>
-        <input type="text" formControlName="rua" />
+        <input type="text" formControlName="logradouro" />
         <label>Número da Residência</label>
         <input type="number" formControlName="numeroResidencia" />
         <label>Complemento</label>
@@ -26,9 +26,9 @@
         <label>Bairro</label>
         <input type="text" formControlName="bairro" />
         <label>Cidade</label>
-        <input type="text" formControlName="cidade" />
+        <input type="text" formControlName="localidade" />
         <label>Estado</label>
-        <input type="text" formControlName="estado" />
+        <input type="text" formControlName="uf" />
       </div>
       <!-- <div>
         <mat-form-field class="mes-field" appearance="fill">
