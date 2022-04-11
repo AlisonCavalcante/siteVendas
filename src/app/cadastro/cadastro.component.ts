@@ -1,3 +1,5 @@
+import { User } from './../models/users.model';
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -9,14 +11,15 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
+  usuario!: User[];
   formulario1!: FormGroup;
   formulario2!: FormGroup;
 
-  constructor(private route: Router, private formBuilder: FormBuilder) { }
+  constructor(private userService: DataService, private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.formulario1 = this.formBuilder.group({
-      login: [null, [Validators.email,Validators.required]],
+      cpf: [null, [Validators.required]],
       senha: [null, [Validators.required, Validators.minLength(6)]]
     });
     this.formulario2 = this.formBuilder.group({
@@ -27,7 +30,14 @@ export class CadastroComponent implements OnInit {
     this.route.navigate(["cadastro/criarContaPage"])
   }
   onSubmit(){
-
+    console.log(this.formulario1.value);
+    this.userService.getUsuario(this.formulario1.value).subscribe((res: User [] )=> {
+      this.usuario = res;
+     if(this.usuario[0].senha === this.formulario1.get('senha')?.value) {
+       alert('Usuário logado');
+     }else
+     alert('Dados incorretos');
+    })
   }
 
 }
