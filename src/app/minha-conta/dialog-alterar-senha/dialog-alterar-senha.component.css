@@ -1,0 +1,12 @@
+.form-email{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.form-email__button{
+  background-color: #1e90ff;
+}
+.form-email__icon{
+  color: grey;
+  cursor: pointer;
+}

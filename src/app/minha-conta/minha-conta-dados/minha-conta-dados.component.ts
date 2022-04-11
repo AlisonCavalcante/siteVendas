@@ -1,3 +1,4 @@
+import { DialogAlterarSenhaComponent } from './../dialog-alterar-senha/dialog-alterar-senha.component';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from './../../models/users.model';
 import { DataService } from 'src/app/data.service';
@@ -20,7 +21,10 @@ export class MinhaContaDadosComponent implements OnInit {
   this.user = this.userService.getUser();
   console.log(this.user)
   }
-  openDialogEmail(){
-    this.dialog.open(DialogAlterarEmailComponent);
+  openDialog(dialog: string){
+    if(dialog === 'email'){
+      this.dialog.open(DialogAlterarEmailComponent);
+    }else if(dialog === 'senha')
+    this.dialog.open(DialogAlterarSenhaComponent);
   }
 }
