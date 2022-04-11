@@ -1,1 +1,39 @@
-<p>minha-conta-dados works!</p>
+<h2 style="margin-top: 20px">Seus Dados</h2>
+<mat-card class="card-dados">
+  <mat-card-content class="card-dados__content" >
+    <form class="card-dados__form">
+      <h2>Dados Pessoais</h2>
+      <mat-form-field appearance="outline">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Data de Nascimento</mat-label>
+        <input matInput/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Cpf</mat-label>
+        <input disabled="disabled" matInput/>
+      </mat-form-field>
+      <mat-label>Sexo</mat-label>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button style="margin: 10px;" value="1">Masculino</mat-radio-button>
+        <mat-radio-button value="2">Femino</mat-radio-button>
+      </mat-radio-group>
+    </form>
+    <form class="card-dados__form">
+      <h2>Dados de Acesso</h2>
+      <mat-form-field  appearance="outline">
+        <mat-label>{{user.email}}</mat-label>
+        <input disabled="disabled" matInput/>
+      </mat-form-field>
+      <div>
+        <button class="card-dados__button-form" mat-raised-button color="warn">ALTERAR E-MAIL</button>
+        <button class="card-dados__button-form" mat-raised-button color="warn">ALTERAR SENHA</button>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-footer class="card-dados__footer">
+    <button mat-raised-button color="warn">SALVAR INFORMAÇÕES</button>
+  </mat-card-footer>
+</mat-card>
