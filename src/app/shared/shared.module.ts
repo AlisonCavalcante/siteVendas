@@ -11,7 +11,7 @@ import { FiltrosComponent } from './filtros/filtros.component';
 
 @NgModule({
   declarations: [
-    FiltrosComponent
+    FiltrosComponent,
   ],
   imports: [
     CommonModule,

@@ -21,17 +21,19 @@
         <mat-radio-button value="2">Femino</mat-radio-button>
       </mat-radio-group>
     </form>
-    <form class="card-dados__form">
-      <h2>Dados de Acesso</h2>
-      <mat-form-field  appearance="outline">
-        <mat-label>{{user.email}}</mat-label>
-        <input disabled="disabled" matInput/>
-      </mat-form-field>
+    <div>
+      <form class="card-dados__form">
+        <h2>Dados de Acesso</h2>
+        <mat-form-field  appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input disabled="disabled" matInput/>
+        </mat-form-field>
+      </form>
       <div>
-        <button class="card-dados__button-form" mat-raised-button color="warn">ALTERAR E-MAIL</button>
+        <button class="card-dados__button-form" (click)="openDialogEmail()" mat-raised-button color="warn">ALTERAR E-MAIL</button>
         <button class="card-dados__button-form" mat-raised-button color="warn">ALTERAR SENHA</button>
       </div>
-    </form>
+    </div>
   </mat-card-content>
   <mat-card-footer class="card-dados__footer">
     <button mat-raised-button color="warn">SALVAR INFORMAÇÕES</button>
