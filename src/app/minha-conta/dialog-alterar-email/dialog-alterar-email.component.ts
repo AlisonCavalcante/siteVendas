@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAlterarEmailComponent implements OnInit {
 
+  data = {
+    email: '',
+    email_confirm: '',
+  };
+
   constructor() { }
 
   ngOnInit(): void {
