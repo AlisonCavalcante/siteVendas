@@ -6,16 +6,16 @@ import { MinhaContaComponent } from './minha-conta.component';
 import { MinhaContaDadosComponent } from './minha-conta-dados/minha-conta-dados.component';
 import { MinhaContaEnderecosComponent } from './minha-conta-enderecos/minha-conta-enderecos.component';
 import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-endereco-dialog.component';
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
-
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -34,7 +34,10 @@ import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
     MatDividerModule,
     MatButtonModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule
   ],
   exports: [
     MinhaContaDadosComponent

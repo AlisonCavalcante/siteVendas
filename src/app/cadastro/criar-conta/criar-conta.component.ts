@@ -81,6 +81,7 @@ export class CriarContaComponent implements OnInit, OnDestroy {
           this.userService
             .createUser(this.formulario.value)
             .subscribe((value) => {
+              this.userService.setUser(this.formulario.value);
               alert('Usuário Cadastrado com Sucesso');
               this.router.navigate(['/']);
             });

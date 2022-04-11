@@ -1,0 +1,24 @@
+.card-dados{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 30%;
+}
+.card-dados__content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-dados__form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.card-dados__button-form{
+  background-color: #1e90ff;
+  margin: 10px;
+}
+.card-dados__footer{
+  text-align: center;
+  margin: 10px;
+}
