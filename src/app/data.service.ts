@@ -1,7 +1,7 @@
 import { Constantes } from './utils/constantes';
 import { HttpClient } from '@angular/common/http';
 import { User } from './models/users.model';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Produtos } from './models/produtos.model';
 import { Injectable } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   private produto!: Produtos[];
-  private usuario!: User;
+  private usuario!: User[];
   constructor(private http: HttpClient) { }
 
   setProduto(produto: Produtos[]){
@@ -22,22 +22,28 @@ export class DataService {
     return this.produto;
   }
 
-  setUser(user: User){
+  setUser(user: User[]){
     console.log(user);
     this.usuario = user;
   }
 
-  getUser(): User{
+  //mudar o nome
+  getUser(): User[]{
     return this.usuario;
   }
 
 
   getUsuario(user: User): Observable<User[]>{
-    return this.http.get<User[]>(Constantes.GETUSER+`${'?cpf='}${user.cpf}`);
+    return this.http.get<User[]>(Constantes.URLUSER+`${'?cpf='}${user.cpf}`);
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(Constantes.GETUSER, user);
+    return this.http.post<User>(Constantes.URLUSER, user);
+  }
+
+  updateUser(user: User): Observable<User>{
+    console.log(user);
+    return this.http.put<User>(Constantes.URLUSER+`/${user.id}`, user).pipe(take(1));
   }
 
 }
