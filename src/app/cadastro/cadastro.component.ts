@@ -35,9 +35,14 @@ export class CadastroComponent implements OnInit {
       this.usuario = res;
      if(this.usuario[0].senha === this.formulario1.get('senha')?.value) {
        alert('Usuário logado');
+       this.route.navigate(['/'])
      }else
      alert('Dados incorretos');
+     this.resetarCampos();
     })
+  }
+  resetarCampos() {
+    this.formulario1.reset();
   }
 
 }
