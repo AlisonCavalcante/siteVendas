@@ -73,7 +73,7 @@ export class CriarContaComponent implements OnInit, OnDestroy {
     this.sub = this.userService
       .getUsuario(this.formulario.value)
       .subscribe((value) => {
-        if (value.length != 0) {
+        if (value) {
           alert('Usuáio já existe, cadastrar novamente.');
           this.resetarCampos();
         } else {

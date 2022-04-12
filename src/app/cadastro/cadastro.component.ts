@@ -31,11 +31,12 @@ export class CadastroComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.formulario1.value);
-    this.userService.getUsuario(this.formulario1.value).subscribe((res: User [] )=> {
+    this.userService.getUsuario(this.formulario1.value).subscribe((res)=> {
       this.usuario = res;
      if(this.usuario[0].senha === this.formulario1.get('senha')?.value) {
        alert('Usuário logado');
        this.route.navigate(['/'])
+       this.userService.setUser(this.usuario);
      }else
      alert('Dados incorretos');
      this.resetarCampos();

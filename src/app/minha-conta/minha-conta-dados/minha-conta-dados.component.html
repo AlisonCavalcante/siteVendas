@@ -1,11 +1,11 @@
 <h2 style="margin-top: 20px">Seus Dados</h2>
-<mat-card class="card-dados">
+<mat-card *ngIf="user" class="card-dados">
   <mat-card-content class="card-dados__content" >
-    <form class="card-dados__form">
+    <form  [formGroup]="formulario" class="card-dados__form">
       <h2>Dados Pessoais</h2>
       <mat-form-field appearance="outline">
         <mat-label>Nome Completo</mat-label>
-        <input matInput/>
+        <input formControlName="nome" matInput/>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Data de Nascimento</mat-label>
@@ -36,6 +36,6 @@
     </div>
   </mat-card-content>
   <mat-card-footer class="card-dados__footer">
-    <button mat-raised-button color="warn">SALVAR INFORMAÇÕES</button>
+    <button (click)="submit()" mat-raised-button color="warn">SALVAR INFORMAÇÕES</button>
   </mat-card-footer>
 </mat-card>
