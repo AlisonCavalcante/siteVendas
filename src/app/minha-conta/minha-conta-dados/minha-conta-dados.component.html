@@ -1,7 +1,7 @@
 <h2 style="margin-top: 20px">Seus Dados</h2>
 <mat-card *ngIf="user" class="card-dados">
   <mat-card-content class="card-dados__content" >
-    <form  [formGroup]="formulario" class="card-dados__form">
+    <form  [formGroup]="formularioDadosPessoais" class="card-dados__form">
       <h2>Dados Pessoais</h2>
       <mat-form-field appearance="outline">
         <mat-label>Nome Completo</mat-label>
@@ -13,7 +13,7 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Cpf</mat-label>
-        <input disabled="disabled" matInput/>
+        <input formControlName="cpf" readonly matInput/>
       </mat-form-field>
       <mat-label>Sexo</mat-label>
       <mat-radio-group aria-label="Select an option">
@@ -22,11 +22,11 @@
       </mat-radio-group>
     </form>
     <div>
-      <form class="card-dados__form">
+      <form [formGroup]="formularioDadosAcesso" class="card-dados__form">
         <h2>Dados de Acesso</h2>
         <mat-form-field  appearance="outline">
           <mat-label>E-mail</mat-label>
-          <input disabled="disabled" matInput/>
+          <input formControlName="email" readonly matInput/>
         </mat-form-field>
       </form>
       <div>
