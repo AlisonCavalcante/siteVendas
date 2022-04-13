@@ -1,7 +1,7 @@
 <form [formGroup]="formulario" class="form-endereco">
   <mat-form-field appearance="outline">
     <mat-label>CEP</mat-label>
-    <input formControlName="cep" matInput />
+    <input (blur)="consultarCep()" formControlName="cep" matInput />
   </mat-form-field>
   <a href="https://buscacepinter.correios.com.br/app/localidade_logradouro/index.php" target="_blank" >Não sei meu cep</a>
   <mat-form-field appearance="outline">

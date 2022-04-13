@@ -1,3 +1,5 @@
+import { Endereco } from './../../models/endereco.model';
+import { ProdutoService } from './../../service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,8 +14,9 @@ export class DialogEnderecoComponent implements OnInit {
 
   formulario!: FormGroup;
   user!: User[];
+  enderecos!: Endereco;
 
-  constructor(private userService: DataService, private formBuilder: FormBuilder) { }
+  constructor(private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -31,5 +34,27 @@ export class DialogEnderecoComponent implements OnInit {
     })
 
   }
+
+  consultarCep() {
+    let cep = this.formulario.get('cep')?.value;
+    if (cep != null && cep !== '') {
+        this.rersetaDadosForm();
+        this.service.consultarCep(cep).subscribe(endereco => {
+          this.enderecos = endereco;
+          this.popularDadosForm(this.enderecos);
+        });
+    }
+  }
+  rersetaDadosForm(){
+    this.formulario.reset();
+  }
+  popularDadosForm(endereco: Endereco) {
+    console.log(endereco.uf)
+    this.formulario.patchValue({
+      cep: endereco.cep,
+      localidade: endereco.localidade,
+      uf: endereco.uf,
+    });
+   }
 
 }
