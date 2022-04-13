@@ -1,0 +1,39 @@
+<form [formGroup]="formulario" class="form-endereco">
+  <mat-form-field appearance="outline">
+    <mat-label>CEP</mat-label>
+    <input formControlName="cep" matInput />
+  </mat-form-field>
+  <a href="https://buscacepinter.correios.com.br/app/localidade_logradouro/index.php" target="_blank" >Não sei meu cep</a>
+  <mat-form-field appearance="outline">
+    <mat-label>Endereço</mat-label>
+    <input formControlName="logradouro" matInput />
+  </mat-form-field>
+  <div>
+    <mat-form-field style="margin-right: 10px;" appearance="outline">
+      <mat-label>Número</mat-label>
+      <input formControlName="numero" type="number" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Complemento (Opcional)</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Bairro</mat-label>
+    <input formControlName="bairro" matInput />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Estado</mat-label>
+    <input formControlName="uf" readonly matInput />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Cidade</mat-label>
+    <input formControlName="localidade" readonly matInput />
+  </mat-form-field>
+  <div class="form-endereco__button-content" style="text-align: center;">
+    <button class="form-endereco__button" mat-raised-button>
+      SALVAR INFORMAÇÕES
+    </button>
+    <a>Cancelar</a>
+  </div>
+</form>

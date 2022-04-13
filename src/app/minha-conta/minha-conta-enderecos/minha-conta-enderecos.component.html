@@ -1,31 +1,16 @@
 <h1>Endereços</h1>
 <section class="conteudo">
   <div>
-    <mat-card class="card mat-elevation-z2">
+    <mat-card *ngFor="let usuario of user" class="card mat-elevation-z2">
       <mat-card-content>
         <h3>Principal</h3>
-        <p>Avenida Av Clara Ótilia de Souza Ferraz, 500</p>
-        <p>Quadra 12 - Petrolândia - PE</p>
-        <p>CEP: 56460-000</p>
+        <p> {{usuario.endereco.logradouro}}, {{usuario.endereco.numeroResidencia}}</p>
+        <p> {{usuario.endereco.bairro}} - {{usuario.endereco.localidade}} - {{usuario.endereco.uf}}</p>
+        <p>CEP: {{usuario.endereco.cep}}</p>
         <div style="margin-bottom: 30px"><mat-divider></mat-divider></div>
         <div class="card__buttons">
-          <a  routerLink="/novoEndereco"><mat-icon>edit</mat-icon>Alterar</a>
+          <a (click)="openDialog()"><mat-icon>edit</mat-icon>Alterar</a>
           <a  routerLink="/novoEndereco"><mat-icon>delete</mat-icon>Excluir</a>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div>
-    <mat-card class="card mat-elevation-z2">
-      <mat-card-content>
-        <h3>Secundário</h3>
-        <p>Avenida Barreiras, 485</p>
-        <p>Q - 08 - Petrolândia - PE</p>
-        <p>CEP: 56460-000</p>
-        <div style="margin-bottom: 30px"><mat-divider></mat-divider></div>
-        <div class="card__buttons">
-          <a routerLink="/novoEndereco"><mat-icon>edit</mat-icon>Alterar</a>
-          <a routerLink="/novoEndereco"><mat-icon>delete</mat-icon>Excluir</a>
         </div>
       </mat-card-content>
     </mat-card>

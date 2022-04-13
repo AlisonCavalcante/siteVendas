@@ -1,0 +1,15 @@
+.form-endereco{
+  display: flex;
+  flex-direction: column;
+}
+.form-endereco__button-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-endereco__button{
+  background-color: #1e90ff;
+  color: white;
+  width: 50%;
+  margin: 10px;
+}
