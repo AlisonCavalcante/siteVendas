@@ -3,6 +3,7 @@ import { DataService } from './../data.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthserviceService } from './services/authservice.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -17,6 +18,7 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private userService: DataService,
+    private authService: AuthserviceService,
     private route: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -42,6 +44,7 @@ export class CadastroComponent implements OnInit {
             alert('Usuário logado');
             this.route.navigate(['/']);
             this.userService.setUser(this.usuario);
+            this.authService.login(this.usuario);
           } else{
             alert('Senha incorreta');
             this.resetarCampos();

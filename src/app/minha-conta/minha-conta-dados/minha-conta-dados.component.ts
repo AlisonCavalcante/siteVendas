@@ -1,3 +1,5 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
+import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogAlterarSenhaComponent } from '../dialog-alterar-senha/dialog-alterar-senha.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,20 +18,24 @@ export class MinhaContaDadosComponent implements OnInit {
   user!: User[];
   formularioDadosPessoais!: FormGroup;
   formularioDadosAcesso!: FormGroup;
+  isLoggedIn$!: Observable<boolean>;
 
-  constructor(private dialog: MatDialog,private userService: DataService, private formBuilder: FormBuilder) { }
+  constructor(private dialog: MatDialog, private authService: AuthserviceService,private userService: DataService, private formBuilder: FormBuilder) {
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
+  }
 
   ngOnInit(): void {
 
+  console.log(this.isLoggedIn$);
   this.user = this.userService.getUser();
   console.log(this.user)
-
+  console.log(localStorage.getItem('User'));
   this.formularioDadosPessoais = this.formBuilder.group({
-    nome: [this.user[0].nome, Validators.required],
-    cpf: [this.user[0].cpf, Validators.required]
+    nome: [null, Validators.required],
+    cpf: [null, Validators.required]
   })
   this.formularioDadosAcesso = this.formBuilder.group({
-    email: [this.user[0].email, Validators.required]
+    email: [null, Validators.required]
   })
 
 
