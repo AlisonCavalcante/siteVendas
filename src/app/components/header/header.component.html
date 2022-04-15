@@ -20,9 +20,13 @@
       <mat-icon  style="color: white;">supervisor_account</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="navegar('minhaContaPage')">
+      <button *ngIf="isLoggedIn" mat-menu-item (click)="navegar('minhaContaPage')">
         <mat-icon>supervisor_account</mat-icon>
         <span>Minha Conta</span>
+      </button>
+      <button *ngIf="!isLoggedIn" mat-menu-item (click)="navegar('login')">
+        <mat-icon>supervisor_account</mat-icon>
+        <span>Fazer Login</span>
       </button>
       <button mat-menu-item (click)="navegar('cesta')">
         <mat-icon>shopping_basket</mat-icon>

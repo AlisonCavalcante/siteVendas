@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
@@ -9,7 +9,9 @@ import { DataService } from 'src/app/data.service';
 })
 export class HeaderComponent implements OnInit {
 
+
   qtdProdutosCesta: number = 5;
+  @Input() isLoggedIn: boolean | null = null;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -24,6 +26,8 @@ export class HeaderComponent implements OnInit {
     }else if(tela == 'minhaContaPage'){
       console.log("entrando aqqui")
       this.router.navigate(['/minhaconta']);
+    }else if('login'){
+      this.router.navigate(['/cadastro']);
     }
   }
 }

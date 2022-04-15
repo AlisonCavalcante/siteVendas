@@ -1,3 +1,5 @@
+import { AuthserviceService } from './cadastro/services/authservice.service';
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'site-vendas';
+  isLoggedIn$!: Observable<boolean>;
+
+  constructor(private authService: AuthserviceService){
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
+  }
 }
