@@ -1,166 +1,191 @@
-<mat-tab-group animationDuration="2000ms">
-  <mat-tab label="Minha Cesta">
-    <!--Card de Detalhe da Cesta de Produtos-->
-    <div class="content-tab">
-      <mat-card class="card-cesta mat-elevation-z4">
-        <div class="card-content">
-          <mat-card-content class="card-cesta__img">
-            <img
-              *ngIf="produto[0].img"
-              [src]="produto[0].img"
-              alt="Image do Produto"
-            />
-          </mat-card-content>
-          <mat-card-content class="card-cesta__descricao-produto">
-            <p>{{ produto[0].nome }}</p>
-            <mat-divider></mat-divider>
-            <p>Descrição: {{ produto[0].descricao }}</p>
-            <p *ngIf="produto[0].cor">Cor: {{ produto[0].cor }}</p>
-            <p *ngIf="produto[0].tamanho">Tamanho: {{ produto[0].tamanho }}</p>
-            <input style="width: 50px" placeholder="Qtd" type="number" />
-            <a routerLink="" style="margin-left: 5px" (click)="removerProduto()"
-              >remover</a
-            >
-          </mat-card-content>
-          <mat-card-content class="card-cesta__tipoFrete">
-            <p style="font-weight: bold">Escolha seu frete</p>
-            <div [formGroup]="formularioTipoFrete">
-              <mat-radio-group formControlName="frete">
-                <mat-radio-button *ngFor="let item of fretes" [value]="item">{{
-                  item
-                }}</mat-radio-button>
-                <!-- <mat-radio-button style="margin-left: 10px" value="always"
+<section *ngIf="produto.length != 0 && produto != undefined">
+  <mat-tab-group animationDuration="2000ms">
+    <mat-tab label="Minha Cesta">
+      <!--Card de Detalhe da Cesta de Produtos-->
+      <div class="content-tab">
+        <mat-card class="card-cesta mat-elevation-z4">
+          <div class="card-content">
+            <mat-card-content class="card-cesta__img">
+              <img
+                *ngIf="produto[0].img"
+                [src]="produto[0].img"
+                alt="Image do Produto"
+              />
+            </mat-card-content>
+            <mat-card-content class="card-cesta__descricao-produto">
+              <p>{{ produto[0].nome }}</p>
+              <mat-divider></mat-divider>
+              <p>Descrição: {{ produto[0].descricao }}</p>
+              <p *ngIf="produto[0].cor">Cor: {{ produto[0].cor }}</p>
+              <p *ngIf="produto[0].tamanho">
+                Tamanho: {{ produto[0].tamanho }}
+              </p>
+              <input style="width: 50px" placeholder="Qtd" type="number" />
+              <a
+                routerLink=""
+                style="margin-left: 5px"
+                (click)="removerProduto()"
+                >remover</a
+              >
+            </mat-card-content>
+            <mat-card-content class="card-cesta__tipoFrete">
+              <p style="font-weight: bold">Escolha seu frete</p>
+              <div [formGroup]="formularioTipoFrete">
+                <mat-radio-group formControlName="frete">
+                  <mat-radio-button
+                    *ngFor="let item of fretes"
+                    [value]="item"
+                    >{{ item }}</mat-radio-button
+                  >
+                  <!-- <mat-radio-button style="margin-left: 10px" value="always"
                   >Expresso:</mat-radio-button
                 > -->
-              </mat-radio-group>
-            </div>
+                </mat-radio-group>
+              </div>
+            </mat-card-content>
+          </div>
+        </mat-card>
+        <!--Card de Endereço de Entrega-->
+        <mat-card class="card-endereco mat-elevation-z4">
+          <mat-card-content>
+            <h3 style="font-weight: bold">Endereço de Entrega</h3>
+            <p>Bairro:</p>
+            <p>Cidade:</p>
+            <p>Cep:</p>
+            <mat-divider></mat-divider>
+            <p style="margin-top: 20px">
+              Quer receber seus produtos em outro endereço?
+            </p>
+            <button class="card-endereco__button" mat-flat-button>
+              Alterar Endereço
+            </button>
           </mat-card-content>
-        </div>
-      </mat-card>
-      <!--Card de Endereço de Entrega-->
-      <mat-card class="card-endereco mat-elevation-z4">
-        <mat-card-content>
-          <h3 style="font-weight: bold">Endereço de Entrega</h3>
-          <p>Bairro:</p>
-          <p>Cidade:</p>
-          <p>Cep:</p>
-          <mat-divider></mat-divider>
-          <p style="margin-top: 20px">
-            Quer receber seus produtos em outro endereço?
-          </p>
-          <button
-
-            class="card-endereco__button"
-            mat-flat-button
-          >
-            Alterar Endereço
-          </button>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <!--Card Itens do Pedido-->
-    <div class="cardItens-content">
-      <mat-card class="card-itensPedido mat-elevation-z4">
-        <mat-card-content class="content-itensPedidos">
-          <p>Itens do Pedido</p>
-          <p>Quantidade</p>
-          <p>Preço</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="cardItens-content">
-      <mat-card class="card-itensPedido mat-elevation-z4">
-        <mat-card-content class="content-itensPedidos">
-          <p>Frete</p>
-          <p>R$:</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="cardItens-content">
-      <mat-card class="card-itensPedido mat-elevation-z4">
-        <mat-card-content class="content-itensPedidos">
-          <p>Total</p>
-          <p>R$:</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </mat-tab>
-  <mat-tab label="Pagamento">
-    <h2 style="text-align: center">Pague com o cartão de Crédito</h2>
-    <mat-divider></mat-divider>
-    <div>
-      <form
-        [formGroup]="formularioPagamento"
-        (ngSubmit)="onSubmit()"
-        class="form-pagamento"
-      >
-        <mat-form-field appearance="fill">
-          <mat-label>Número do Cartão</mat-label>
-          <input matInput formControlName="numeroCartao" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Nome do Titular(como está gravado no cartão)</mat-label>
-          <input matInput formControlName="nomeTitular" />
-        </mat-form-field>
-        <label>Data de Validade</label>
-        <div>
+        </mat-card>
+      </div>
+      <!--Card Itens do Pedido-->
+      <div class="cardItens-content">
+        <mat-card class="card-itensPedido mat-elevation-z4">
+          <mat-card-content class="content-itensPedidos">
+            <p>Itens do Pedido</p>
+            <p>Quantidade</p>
+            <p>Preço</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="cardItens-content">
+        <mat-card class="card-itensPedido mat-elevation-z4">
+          <mat-card-content class="content-itensPedidos">
+            <p>Frete</p>
+            <p>R$:</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="cardItens-content">
+        <mat-card class="card-itensPedido mat-elevation-z4">
+          <mat-card-content class="content-itensPedidos">
+            <p>Total</p>
+            <p>R$:</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Pagamento">
+      <h2 style="text-align: center">Pague com o cartão de Crédito</h2>
+      <mat-divider></mat-divider>
+      <div>
+        <form
+          [formGroup]="formularioPagamento"
+          (ngSubmit)="onSubmit()"
+          class="form-pagamento"
+        >
+          <mat-form-field appearance="fill">
+            <mat-label>Número do Cartão</mat-label>
+            <input matInput formControlName="numeroCartao" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Nome do Titular(como está gravado no cartão)</mat-label>
+            <input matInput formControlName="nomeTitular" />
+          </mat-form-field>
+          <label>Data de Validade</label>
+          <div>
+            <mat-form-field
+              style="margin-right: 10px"
+              class="form-pagamento__mes-field"
+              appearance="fill"
+            >
+              <mat-label>Mês</mat-label>
+              <mat-select>
+                <mat-option value="one" *ngFor="let mes of meses">{{
+                  mes
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-pagamento__mes-field" appearance="fill">
+              <mat-label>Ano</mat-label>
+              <mat-select>
+                <mat-option value="one" *ngFor="let mes of meses">{{
+                  mes
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
           <mat-form-field
-            style="margin-right: 10px"
-            class="form-pagamento__mes-field"
+            class="form-pagamento__codigoSegurancaField"
             appearance="fill"
           >
-            <mat-label>Mês</mat-label>
+            <mat-label>Código de Segurança</mat-label>
+            <input matInput formControlName="codigoSeguranca" />
+          </mat-form-field>
+          <mat-form-field
+            class="form-pagamento__opcoesPagementoField"
+            appearance="fill"
+          >
+            <mat-label>Opções de Pagamento</mat-label>
             <mat-select>
-              <mat-option value="one" *ngFor="let mes of meses">{{
-                mes
-              }}</mat-option>
+              <mat-option value="one"></mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="form-pagamento__mes-field" appearance="fill">
-            <mat-label>Ano</mat-label>
-            <mat-select>
-              <mat-option value="one" *ngFor="let mes of meses">{{
-                mes
-              }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <mat-form-field class="form-pagamento__codigoSegurancaField" appearance="fill">
-          <mat-label>Código de Segurança</mat-label>
-          <input matInput formControlName="codigoSeguranca" />
-        </mat-form-field>
-        <mat-form-field class="form-pagamento__opcoesPagementoField" appearance="fill">
-          <mat-label>Opções de Pagamento</mat-label>
-          <mat-select>
-            <mat-option value="one"></mat-option>
-          </mat-select>
-        </mat-form-field>
-        <button
-          type="submit"
-          [disabled]="!formularioPagamento.valid"
-          class="form-pagamento__button"
-          mat-flat-button
-          color="primary"
-        >
-          Comprar com Cartão <br />
-          de Crédito
+          <button
+            type="submit"
+            [disabled]="!formularioPagamento.valid"
+            class="form-pagamento__button"
+            mat-flat-button
+            color="primary"
+          >
+            Comprar com Cartão <br />
+            de Crédito
+          </button>
+        </form>
+      </div>
+      <mat-divider style="margin-top: 10px"></mat-divider>
+      <h2 style="text-align: center">Pague com Boleto Bancário</h2>
+      <p style="text-align: center; font-size: 20px">R$: Total</p>
+      <p style="margin-left: 20px">
+        Você poderá visualizar ou imprimir após a finalização do pedido. A data
+        de vencimento é de 2 dias corridos após a conclusão do pedido. Após esta
+        data, ele perderá a validade.
+      </p>
+      <div class="button-boleto">
+        <button mat-flat-button color="primary">
+          Concluir Pedido com Boleto<br />
+          Bancário
         </button>
-      </form>
-    </div>
-    <mat-divider style="margin-top: 10px"></mat-divider>
-    <h2 style="text-align: center">Pague com Boleto Bancário</h2>
-    <p style="text-align: center; font-size: 20px">R$: Total</p>
-    <p style="margin-left: 20px">
-      Você poderá visualizar ou imprimir após a finalização do pedido. A data de
-      vencimento é de 2 dias corridos após a conclusão do pedido. Após esta
-      data, ele perderá a validade.
-    </p>
-    <div class="button-boleto">
-      <button mat-flat-button color="primary">
-        Concluir Pedido com Boleto<br />
-        Bancário
+      </div>
+    </mat-tab>
+    <mat-tab label="Confirmação">Content 3</mat-tab>
+  </mat-tab-group>
+</section>
+<ng-container *ngIf="produto ==  undefined">
+  <div class="content-carrinho-vazio">
+   <div>
+    <mat-icon style="font-size: 50px;">shopping_cart</mat-icon>
+   </div>
+    <p>Seu carrinho está vazio</p>
+    <p>Adicione produtos clicando no botão “Comprar” na página de produto.</p>
+    <div>
+      <button mat-flat-button routerLink="/" class="button-voltar" color="primary">
+        VOLTAR PARA A PÁGINA INICIAL
       </button>
     </div>
-  </mat-tab>
-  <mat-tab label="Confirmação">Content 3</mat-tab>
-</mat-tab-group>
+  </div>
+</ng-container>

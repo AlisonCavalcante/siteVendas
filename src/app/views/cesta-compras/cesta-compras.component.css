@@ -82,3 +82,21 @@
   justify-content: flex-end;
   margin-right: 5%;
 }
+.content-carrinho-vazio{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+.content-carrinho-vazio p{
+  font-size: 20px;
+  margin: 20px;
+}
+.button-voltar{
+  background-color: white;
+  color: #1e90ff;
+  border-style: solid;
+  justify-content: center;
+  margin-top: 10px;
+}

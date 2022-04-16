@@ -18,7 +18,7 @@ export class CestaComprasComponent implements OnInit {
   formularioTipoFrete!: FormGroup;
   fretes = ['Normal', 'Rapidão']
   produto: Produtos[] = [];
-
+  teste = false;
   constructor(public dialog: MatDialog, private formBuilder: FormBuilder, private router: Router, private dataService: DataService) {
 
     // Obtendo objeto via rota
@@ -47,7 +47,8 @@ export class CestaComprasComponent implements OnInit {
 
     console.log(this.formularioTipoFrete.get('frete'))
     this.produto = this.dataService.getProduto();
-    // console.log(this.produto);
+    console.log(this.produto);
+
   }
 
   buildFrete(){
