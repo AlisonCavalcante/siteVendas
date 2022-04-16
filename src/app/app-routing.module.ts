@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/auth/auth.guard';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { HomeComponent } from './views/home/home.component';
 import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
@@ -15,10 +16,12 @@ const routes: Routes = [
   {
     path: 'cesta',
     component: CestaComprasComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'cesta/:id',
     component: CestaComprasComponent,
+
   },
   {
     path: 'novoEndereco',
