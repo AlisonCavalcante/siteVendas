@@ -2,7 +2,7 @@ import { Endereco } from './../../models/endereco.model';
 import { ProdutoService } from './../../service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/users.model';
 
 @Component({
@@ -15,14 +15,16 @@ export class DialogEnderecoComponent implements OnInit {
   formulario!: FormGroup;
   user!: User[];
   enderecos!: Endereco;
+  @Input('flag') public flag!: boolean;
 
-  constructor(private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) { }
+  constructor(private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) {
+
+  }
 
   ngOnInit(): void {
 
+    console.log(this.flag)
     this.user = this.userService.getCurrentUser();
-    console.log(this.user[0].endereco.cep)
-
 
     this.formulario = this.formBuilder.group({
       cep: [this.user[0].endereco.cep, Validators.required],
@@ -59,11 +61,16 @@ export class DialogEnderecoComponent implements OnInit {
    }
 
    onSubmit(){
-    this.user[0].endereco = this.formulario.value;
-    this.userService.updateUser(this.user).subscribe(res =>{
-      console.log(res);
-      this.userService.updateCurrentUSer(this.user);
-    })
+    if(this.flag){
+      this.user[0].endereco = this.formulario.value;
+      this.userService.updateUser(this.user).subscribe(res =>{
+        console.log(res);
+        this.userService.updateCurrentUSer(this.user);
+      })
+    }else{
+      console.log('Salvar novo endereço')
+    }
+
 
    }
 

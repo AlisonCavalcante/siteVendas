@@ -9,7 +9,7 @@
         <p>CEP: {{usuario.endereco.cep}}</p>
         <div style="margin-bottom: 30px"><mat-divider></mat-divider></div>
         <div class="card__buttons">
-          <a (click)="openDialog()"><mat-icon>edit</mat-icon>Alterar</a>
+          <a (click)="openDialog(true)"><mat-icon>edit</mat-icon>Alterar</a>
           <a  routerLink="/novoEndereco"><mat-icon>delete</mat-icon>Excluir</a>
         </div>
       </mat-card-content>
@@ -17,5 +17,5 @@
   </div>
 </section>
 <div style="text-align: center; margin-bottom: 10%;">
-  <button (click)="openDialog()" mat-flat-button color="primary">Adicionar Novo Endereço</button>
+  <button (click)="openDialog(false)" mat-flat-button color="primary">Adicionar Novo Endereço</button>
 </div>

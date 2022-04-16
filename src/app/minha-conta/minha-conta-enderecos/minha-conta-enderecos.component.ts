@@ -26,8 +26,9 @@ export class MinhaContaEnderecosComponent implements OnInit {
     console.log(this.user);
   }
 
-  openDialog() {
+  openDialog(tipo: boolean) {
     const dialogRef = this.dialog.open(DialogEnderecoComponent);
+    dialogRef.componentInstance.flag = tipo;
     dialogRef.afterClosed().subscribe(result => {
       window.location.reload();
       console.log(`Dialog result: ${result}`);
