@@ -22,13 +22,14 @@ export class MinhaContaEnderecosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.user = this.authService.getCurrentUser();
+    this.user = this.userService.getCurrentUser();
     console.log(this.user);
   }
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogEnderecoComponent);
     dialogRef.afterClosed().subscribe(result => {
+      window.location.reload();
       console.log(`Dialog result: ${result}`);
     });
   }

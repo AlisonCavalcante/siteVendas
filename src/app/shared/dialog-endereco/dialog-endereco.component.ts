@@ -20,7 +20,7 @@ export class DialogEnderecoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.user = this.userService.getUser();
+    this.user = this.userService.getCurrentUser();
     console.log(this.user[0].endereco.cep)
 
 
@@ -31,6 +31,7 @@ export class DialogEnderecoComponent implements OnInit {
       bairro: [this.user[0].endereco.bairro, Validators.required],
       uf: [this.user[0].endereco.uf, Validators.required],
       localidade: [this.user[0].endereco.localidade, Validators.required],
+      complemento: ["",],
     })
 
   }
@@ -55,6 +56,15 @@ export class DialogEnderecoComponent implements OnInit {
       localidade: endereco.localidade,
       uf: endereco.uf,
     });
+   }
+
+   onSubmit(){
+    this.user[0].endereco = this.formulario.value;
+    this.userService.updateUser(this.user).subscribe(res =>{
+      console.log(res);
+      this.userService.updateCurrentUSer(this.user);
+    })
+
    }
 
 }

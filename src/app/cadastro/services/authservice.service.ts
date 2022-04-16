@@ -33,11 +33,5 @@ export class AuthserviceService {
     }
   }
 
-  getCurrentUser(): User[] {
-    let currentUser = localStorage.getItem('User');
-    if (currentUser) {
-      this.usuario = JSON.parse(currentUser);
-    }
-    return this.usuario;
-  }
+
 }

@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/data.service';
 import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,6 +21,7 @@ export class MinhaContaDadosComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
+    private userService: DataService,
     private authService: AuthserviceService,
     private formBuilder: FormBuilder
   ) {
@@ -27,7 +29,7 @@ export class MinhaContaDadosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = this.authService.getCurrentUser();
+    this.user = this.userService.getCurrentUser();
 
     this.formularioDadosPessoais = this.formBuilder.group({
       nome: [this.user[0].nome, Validators.required],

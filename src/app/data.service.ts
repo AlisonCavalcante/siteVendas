@@ -31,7 +31,17 @@ export class DataService {
   getUser(): User[]{
     return this.usuario;
   }
-
+  getCurrentUser(): User[] {
+    let currentUser = localStorage.getItem('User');
+    if (currentUser) {
+      this.usuario = JSON.parse(currentUser);
+    }
+    return this.usuario;
+  }
+  updateCurrentUSer(user: User[]): void{
+    localStorage.clear();
+    localStorage.setItem('User', JSON.stringify(user))
+  }
 
   getUsuario(user: User): Observable<User[]>{
     return this.http.get<User[]>(Constantes.URLUSER+`${'?cpf='}${user.cpf}`);
@@ -41,9 +51,13 @@ export class DataService {
     return this.http.post<User>(Constantes.URLUSER, user);
   }
 
-  updateUser(user: User): Observable<User>{
+  updateUser(user: User[]): Observable<User[]>{
     console.log(user);
-    return this.http.put<User>(Constantes.URLUSER+`/${user.id}`, user).pipe(take(1));
+    return this.http.put<User[]>(Constantes.URLUSER+`/${user[0].id}`, user[0]).pipe(take(1));
+  }
+
+  deleteEndereco() {
+
   }
 
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="formulario" class="form-endereco">
+<form [formGroup]="formulario" (submit)="onSubmit()" class="form-endereco">
   <mat-form-field appearance="outline">
     <mat-label>CEP</mat-label>
     <input (blur)="consultarCep()" formControlName="cep" matInput />
@@ -15,7 +15,7 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Complemento (Opcional)</mat-label>
-      <input matInput />
+      <input formControlName="complemento" matInput />
     </mat-form-field>
   </div>
   <mat-form-field appearance="outline">
@@ -31,7 +31,7 @@
     <input formControlName="localidade" readonly matInput />
   </mat-form-field>
   <div class="form-endereco__button-content" style="text-align: center;">
-    <button class="form-endereco__button" mat-raised-button>
+    <button type="submit" [disabled]="!formulario.valid" class="form-endereco__button" mat-raised-button>
       SALVAR INFORMAÇÕES
     </button>
     <a>Cancelar</a>
