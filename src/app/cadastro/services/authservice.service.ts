@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/users.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +11,7 @@ export class AuthserviceService {
   private usuario!: User[];
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   login(user: User[]) {
     localStorage.setItem('User', JSON.stringify(user));
@@ -20,6 +21,7 @@ export class AuthserviceService {
   logout(): void {
     localStorage.clear();
     this.updateLoggedIn();
+    this.router.navigate(['/cadastro'])
   }
 
   updateLoggedIn(): void {

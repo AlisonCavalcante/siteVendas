@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   qtdProdutosCesta: number = 5;
   @Input() isLoggedIn: boolean | null = null;
+  @Output() private logout = new EventEmitter();
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -29,5 +30,9 @@ export class HeaderComponent implements OnInit {
     }else if('login'){
       this.router.navigate(['/cadastro']);
     }
+  }
+
+  onlogout(): void{
+    this.logout.emit();
   }
 }
