@@ -1,6 +1,6 @@
 <h1>Endereços</h1>
 <section class="conteudo">
-  <div>
+  <div *ngIf="isLoggedIn$ | async">
     <mat-card *ngFor="let usuario of user" class="card mat-elevation-z2">
       <mat-card-content>
         <h3>Principal</h3>
