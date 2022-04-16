@@ -3,32 +3,39 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthserviceService {
-
   private loggedIn = new BehaviorSubject<boolean>(false);
-
+  private usuario!: User[];
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  constructor() { }
+  constructor() {}
 
-  login(user: User[]){
+  login(user: User[]) {
     localStorage.setItem('User', JSON.stringify(user));
     this.updateLoggedIn();
   }
 
-  logout(): void{
+  logout(): void {
     localStorage.clear();
     this.updateLoggedIn();
   }
 
-  updateLoggedIn(): void{
+  updateLoggedIn(): void {
     const user = localStorage.getItem('User');
-    if(user){
+    if (user) {
       this.loggedIn.next(true);
-    }else{
+    } else {
       this.loggedIn.next(false);
     }
+  }
+
+  getCurrentUser(): User[] {
+    let currentUser = localStorage.getItem('User');
+    if (currentUser) {
+      this.usuario = JSON.parse(currentUser);
+    }
+    return this.usuario;
   }
 }
