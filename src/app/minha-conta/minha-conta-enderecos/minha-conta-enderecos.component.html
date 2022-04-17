@@ -1,15 +1,15 @@
 <h1>Endereços</h1>
-<section class="conteudo">
-  <div *ngIf="isLoggedIn$ | async">
-    <mat-card *ngFor="let usuario of user" class="card mat-elevation-z2">
+<section>
+  <div class="conteudo" *ngIf="isLoggedIn$ | async">
+    <mat-card *ngFor="let endereco of user[0].endereco;  let i= index" class="card mat-elevation-z2">
       <mat-card-content>
         <h3>Principal</h3>
-        <p> {{usuario.endereco.logradouro}}, {{usuario.endereco.numeroResidencia}}</p>
-        <p> {{usuario.endereco.bairro}} - {{usuario.endereco.localidade}} - {{usuario.endereco.uf}}</p>
-        <p>CEP: {{usuario.endereco.cep}}</p>
+         <p> {{endereco.logradouro}}, {{endereco.numeroResidencia}}</p>
+        <p> {{ endereco.bairro}} - {{ endereco.localidade}} - {{endereco.uf}}</p>
+        <p>CEP: {{endereco.cep}}</p>
         <div style="margin-bottom: 30px"><mat-divider></mat-divider></div>
         <div class="card__buttons">
-          <a (click)="openDialog(true)"><mat-icon>edit</mat-icon>Alterar</a>
+          <a (click)="openDialog(true, i)"><mat-icon>edit</mat-icon>Alterar</a>
           <a  routerLink="/novoEndereco"><mat-icon>delete</mat-icon>Excluir</a>
         </div>
       </mat-card-content>
@@ -17,5 +17,5 @@
   </div>
 </section>
 <div style="text-align: center; margin-bottom: 10%;">
-  <button (click)="openDialog(false)" mat-flat-button color="primary">Adicionar Novo Endereço</button>
+  <button (click)="openDialog(false, 3)" mat-flat-button color="primary">Adicionar Novo Endereço</button>
 </div>

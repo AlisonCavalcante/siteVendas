@@ -6,5 +6,5 @@ export interface User{
   nome: string,
   email: string,
   senha: string,
-  endereco: Endereco
+  endereco: Endereco []
 }

@@ -26,9 +26,10 @@ export class MinhaContaEnderecosComponent implements OnInit {
     console.log(this.user);
   }
 
-  openDialog(tipo: boolean) {
+  openDialog(tipo: boolean, index: number) {
     const dialogRef = this.dialog.open(DialogEnderecoComponent);
     dialogRef.componentInstance.flag = tipo;
+    dialogRef.componentInstance.indexEndereco = index;
     dialogRef.afterClosed().subscribe(result => {
       window.location.reload();
       console.log(`Dialog result: ${result}`);

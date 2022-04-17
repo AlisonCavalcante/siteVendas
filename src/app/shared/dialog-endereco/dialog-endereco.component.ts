@@ -16,6 +16,7 @@ export class DialogEnderecoComponent implements OnInit {
   user!: User[];
   enderecos!: Endereco;
   @Input('flag') public flag!: boolean;
+  @Input('indexEndereco') public indexEndereco!: number;
 
   constructor(private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) {
 
@@ -24,17 +25,30 @@ export class DialogEnderecoComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.flag)
+    console.log(this.indexEndereco)
     this.user = this.userService.getCurrentUser();
 
-    this.formulario = this.formBuilder.group({
-      cep: [this.user[0].endereco.cep, Validators.required],
-      logradouro: [this.user[0].endereco.logradouro, Validators.required],
-      numero: [this.user[0].endereco.numeroResidencia, Validators.required],
-      bairro: [this.user[0].endereco.bairro, Validators.required],
-      uf: [this.user[0].endereco.uf, Validators.required],
-      localidade: [this.user[0].endereco.localidade, Validators.required],
-      complemento: ["",],
-    })
+    if(!this.flag){
+      this.formulario = this.formBuilder.group({
+        cep: [null, Validators.required],
+        logradouro: [null, Validators.required],
+        numero: [null, Validators.required],
+        bairro: [null, Validators.required],
+        uf: [null, Validators.required],
+        localidade: [null, Validators.required],
+        complemento: ["",],
+      })
+    }else{
+      this.formulario = this.formBuilder.group({
+        cep: [this.user[0].endereco[this.indexEndereco].cep, Validators.required],
+        logradouro: [this.user[0].endereco[this.indexEndereco].logradouro, Validators.required],
+        numero: [this.user[0].endereco[this.indexEndereco].numeroResidencia, Validators.required],
+        bairro: [this.user[0].endereco[this.indexEndereco].bairro, Validators.required],
+        uf: [this.user[0].endereco[this.indexEndereco].uf, Validators.required],
+        localidade: [this.user[0].endereco[this.indexEndereco].localidade, Validators.required],
+        complemento: ["",],
+      })
+    }
 
   }
 
@@ -62,13 +76,17 @@ export class DialogEnderecoComponent implements OnInit {
 
    onSubmit(){
     if(this.flag){
-      this.user[0].endereco = this.formulario.value;
+      this.user[0].endereco[this.indexEndereco] = this.formulario.value;
       this.userService.updateUser(this.user).subscribe(res =>{
         console.log(res);
         this.userService.updateCurrentUSer(this.user);
       })
     }else{
-      console.log('Salvar novo endereço')
+      this.user[0].endereco.push(this.formulario.value);
+      this.userService.updateUser(this.user).subscribe(res =>{
+        console.log(res);
+        this.userService.updateCurrentUSer(this.user);
+      })
     }
 
 
