@@ -10,7 +10,7 @@
         <div style="margin-bottom: 30px"><mat-divider></mat-divider></div>
         <div class="card__buttons">
           <a (click)="openDialog(true, i)"><mat-icon>edit</mat-icon>Alterar</a>
-          <a  routerLink="/novoEndereco"><mat-icon>delete</mat-icon>Excluir</a>
+          <a  (click)="deleteEndereco(i)"><mat-icon>delete</mat-icon>Excluir</a>
         </div>
       </mat-card-content>
     </mat-card>

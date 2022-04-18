@@ -56,8 +56,11 @@ export class DataService {
     return this.http.put<User[]>(Constantes.URLUSER+`/${user[0].id}`, user[0]).pipe(take(1));
   }
 
-  deleteEndereco() {
-
+  deleteEndereco(user: User[], index: number): Observable<User[]> {
+    user[0].endereco.splice(index, 1);
+    localStorage.clear();
+    localStorage.setItem('User', JSON.stringify(user));
+   return this.http.put<User[]>(Constantes.URLUSER+`/${user[0].id}`, user[0]).pipe(take(1));
   }
 
 }
