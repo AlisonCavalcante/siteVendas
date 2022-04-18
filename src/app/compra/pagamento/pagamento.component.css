@@ -1,0 +1,82 @@
+.container-pagamento {
+  width: 1306px;
+  margin: 40px auto;
+  display: flex;
+}
+.pagamento {
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  position: relative;
+}
+.pagamento__titulo,
+.resumoPedido__titulo {
+  padding: 8px 20px;
+  background: #5a2d82;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.pagamento__subtitulo,
+.pagamento-cartao__titulo,
+.pagamento-boleto__titulo {
+  margin: 20px 0;
+  padding: 0 0 20px;
+  border: none;
+  border-bottom: 1px solid #5a2d82;
+  color: #5a2d82;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.resumoPedido {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  position: relative;
+}
+.pagamento-envio {
+  display: flex;
+  flex-direction: column;
+}
+.pagamento-envio__container {
+  display: flex;
+}
+.pagamento-envio__detalheProduto {
+  display: flex;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+}
+.pagamento-carto__form {
+  display: flex;
+  flex-direction: column;
+}
+.pagamento-cartao__concluir-button,
+.pagamento-boleto__concluir-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.pagamento-carto__field {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+
+.pagamento-carto__field-cvc {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  position: relative;
+}
+.pagamento-boleto__descricao {
+  font-size: 13px;
+  margin-top: 0;
+}
