@@ -20,8 +20,8 @@ export class HeaderComponent implements OnInit {
     console.log('testando');
   }
   navegar(tela: string) {
-    if (tela == 'cesta') {
-      this.router.navigate(['/cesta']);
+    if (tela == 'compra') {
+      this.router.navigate(['/compra']);
     } else if (tela == 'cadastro') {
       this.router.navigate(['/cadastro']);
     }else if(tela == 'minhaContaPage'){

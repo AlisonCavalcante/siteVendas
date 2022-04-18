@@ -33,7 +33,6 @@ import { HeaderMenuComponent } from './components/header-menu/header-menu.compon
 import { ContentComponent } from './views/content/content.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
 import { DialogAlterarEnderecoComponent } from './components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
@@ -47,7 +46,6 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
     ContentComponent,
     SideNavComponent,
     HomeComponent,
-    CestaComprasComponent,
     DialogAlterarEnderecoComponent,
     FormNovoEnderecoComponent,
   ],

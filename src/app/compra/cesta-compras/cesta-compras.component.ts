@@ -1,8 +1,8 @@
-import { DataService } from './../../data.service';
+import { DataService } from '../../data.service';
 import { Produtos } from '../../models/produtos.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
-import { DialogAlterarEnderecoComponent } from './../../components/dialog-alterar-endereco/dialog-alterar-endereco.component';
+import { DialogAlterarEnderecoComponent } from '../../components/dialog-alterar-endereco/dialog-alterar-endereco.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 

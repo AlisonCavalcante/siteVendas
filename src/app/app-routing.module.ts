@@ -1,12 +1,8 @@
-import { AuthGuard } from './shared/auth/auth.guard';
 import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-endereco.component';
 import { HomeComponent } from './views/home/home.component';
-import { CestaComprasComponent } from './views/cesta-compras/cesta-compras.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
 
 const routes: Routes = [
   {
@@ -14,31 +10,29 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'cesta',
-    component: CestaComprasComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'cesta/:id',
-    component: CestaComprasComponent,
-
-  },
-  {
     path: 'novoEndereco',
     component: FormNovoEnderecoComponent,
   },
   {
+    path: 'compra',
+    loadChildren: () =>
+      import('./compra/compra.module').then((c) => c.CompraModule),
+  },
+  {
     path: 'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroModule),
+    loadChildren: () =>
+      import('./cadastro/cadastro.module').then((m) => m.CadastroModule),
   },
   {
     path: 'minhaconta',
-    loadChildren: () => import('./minha-conta/minhaConta.module').then(m => m.MinhaContaModule),
+    loadChildren: () =>
+      import('./minha-conta/minhaConta.module').then((m) => m.MinhaContaModule),
   },
   {
     path: 'vendas',
-    loadChildren: () => import('./vendas/vendas.module').then(m => m.VendasModule),
-  }
+    loadChildren: () =>
+      import('./vendas/vendas.module').then((m) => m.VendasModule),
+  },
 ];
 
 @NgModule({
