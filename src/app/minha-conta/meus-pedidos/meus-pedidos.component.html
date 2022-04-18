@@ -1,7 +1,7 @@
 <div class="pedidos-realizados">
-  <h2><span>Pedidos</span></h2>
-  <mat-card class="card-pedidos mat-elevation-z6">
-    <mat-card-content class="conteudo-card">
+  <h2 style="margin-top: 20px;"><span>Pedidos</span></h2>
+  <mat-card *ngFor="let pedido of user[0].pedidos" class="card-pedidos mat-elevation-z6">
+    <mat-card-content *ngFor="let item of pedido.produtos" class="conteudo-card">
       <div>
         <img />
         <p>Descrição</p>

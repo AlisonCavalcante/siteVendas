@@ -2,9 +2,16 @@ pedidos-realizados{
   width: auto;
   margin-top: 20px;
 }
+.content-pedidos{
+  display: flex;
+}
+.conten-resumoCompra{
+  margin: 40px;
+}
 .card-pedidos{
   width: auto;
-  margin-right: 40px;
+  margin: 40px;
+
 }
 .conteudo-card{
   display: flex;

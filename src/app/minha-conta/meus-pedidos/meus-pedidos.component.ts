@@ -1,4 +1,6 @@
+import { DataService } from 'src/app/data.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/users.model';
 
 @Component({
   selector: 'app-meus-pedidos',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeusPedidosComponent implements OnInit {
 
-  constructor() { }
+  user!: User[];
+  constructor(private userService: DataService) { }
 
   ngOnInit(): void {
+   this.user = this.userService.getCurrentUser();
   }
 
 }

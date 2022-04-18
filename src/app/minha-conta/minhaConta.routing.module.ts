@@ -12,9 +12,9 @@ const minhaContaRoutes: Routes = [
     path: '',
     component: MinhaContaComponent,
     children: [
-      { path: ':id', component: MinhaContaDadosComponent, canActivate: [AuthGuard]},
-      { path: ':id/enderecos', component: MinhaContaEnderecosComponent, canActivate: [AuthGuard]},
-      { path: ':id/meusPedidos', component: MeusPedidosComponent},
+      { path: 'meusDados', component: MinhaContaDadosComponent, canActivate: [AuthGuard]},
+      { path: 'enderecos', component: MinhaContaEnderecosComponent, canActivate: [AuthGuard]},
+      { path: 'meusPedidos', component: MeusPedidosComponent},
     ]
   },
 ];
