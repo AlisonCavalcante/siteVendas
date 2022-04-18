@@ -1,15 +1,15 @@
-<form class="form-email">
+<form [formGroup]="formEmail" class="form-email">
   <mat-form-field appearance="outline">
     <mat-label>E-mail</mat-label>
-    <input  disabled="disabled" matInput/>
+    <input formControlName="emailAtual" readonly="" matInput/>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Novo E-mail</mat-label>
-    <input name="email" [(ngModel)] ="data.email" matInput/>
+    <input formControlName="emailNovo" name="email" [(ngModel)] ="data.email" matInput/>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Confirmar Novo E-mail</mat-label>
-    <input name="email_confirm" [(ngModel)] ="data.email_confirm"  matInput/>
+    <input formControlName="emailNovoConfirm" name="email_confirm" [(ngModel)] ="data.email_confirm"  matInput/>
   </mat-form-field>
   <span *ngIf="data.email != data.email_confirm" style="color: red; text-align: center; margin: 10px; font-size: 20px;" class="error"> Os e-mails devem ser iguais!!! </span>
   <button class="form-email__button" mat-raised-button color="warn">ALTERAR E-MAIL

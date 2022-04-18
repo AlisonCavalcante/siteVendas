@@ -1,17 +1,17 @@
-<form class="form-email">
+<form [formGroup]="formSenha" class="form-email">
   <mat-form-field appearance="outline">
     <mat-label>Senha Atual</mat-label>
     <mat-icon class="form-email__icon" matSuffix>visibility</mat-icon>
-    <input maxlength="8" type="password" matInput/>
+    <input formControlName="senhaAtual" maxlength="8" type="password" matInput/>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Nova Senha</mat-label>
-    <input type="password" maxlength="8" name="password" [(ngModel)] ="data.password" matInput/>
+    <input formControlName="senhaNova" type="password" maxlength="8" name="password" [(ngModel)] ="data.password" matInput/>
     <mat-icon class="form-email__icon" matSuffix>visibility</mat-icon>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Confirmar Nova Senha</mat-label>
-    <input type="password" maxlength="8" name="password_confirm"  [(ngModel)] ="data.password_confirm"  matInput/>
+    <input formControlName="senhaNovaConfirm" type="password" maxlength="8" name="password_confirm"  [(ngModel)] ="data.password_confirm"  matInput/>
     <mat-icon class="form-email__icon" (click)="exibirSenha()" [ngClass]="{'visibility': !mostrarSenha, 'visibility_off': mostrarSenha}" matSuffix>visibility</mat-icon>
   </mat-form-field>
   <span *ngIf="data.password != data.password_confirm" style="color: red; text-align: center; margin: 10px; font-size: 20px;" class="error"> As senhas devem ser iguais!!! </span>
