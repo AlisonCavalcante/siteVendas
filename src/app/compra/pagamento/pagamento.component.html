@@ -1,1 +1,98 @@
-<p>pagamento works!</p>
+<div class="container-pagamento">
+  <div class="pagamento">
+    <h2 class="pagamento__titulo">Pagamento</h2>
+    <h3 class="pagamento__subtitulo">QUAL TIPO DE ENTREGA VOCÊ DESEJA?</h3>
+    <mat-card>
+      <mat-card-content class="pagamento-envio">
+        <div>Titulo</div>
+        <div class="pagamento-envio__container">
+          <div class="pagamento-envio__detalheProduto">
+            <img src="" alt="" />
+            <ul>
+              <li>Descrição:</li>
+              <li>Preço:</li>
+              <li>Cor</li>
+            </ul>
+          </div>
+          <div>Escolha seu Frete</div>
+          <ul>
+            <li>Normal</li>
+            <li>Expresso</li>
+          </ul>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div class="pagamento-cartao">
+      <h3 class="pagamento-cartao__titulo">PAGUE COM CARTÃO DE CRÉDITO</h3>
+      <form class="pagamento-carto__form">
+        <mat-form-field class="pagamento-carto__field" appearance="outline">
+          <mat-label>Número do Cartão</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="pagamento-carto__field" appearance="outline">
+          <mat-label>Nome do titular (como está gravado no Cartão)</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <div>
+          <mat-form-field
+            style="margin-right: 10px"
+            class="form-pagamento__mes-field"
+            appearance="fill"
+          >
+            <mat-label>Mês</mat-label>
+            <mat-select>
+              <mat-option value="one" *ngFor="let mes of meses">{{
+                mes
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-pagamento__mes-field" appearance="fill">
+            <mat-label>Ano</mat-label>
+            <mat-select>
+              <mat-option value="one" *ngFor="let ano of anos">{{
+                ano
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field class="pagamento-carto__field-cvc" appearance="outline">
+          <mat-label>Código de Segurança</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field
+          class="form-pagamento__opcoesPagementoField"
+          appearance="fill"
+          class="pagamento-carto__field"
+        >
+          <mat-label>Opções de Pagamento</mat-label>
+          <mat-select>
+            <mat-option value="one"></mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="pagamento-cartao__concluir-button">
+          <button mat-flat-button color="warn">
+            CONCLUIR PEDIDO COM CARTÃO <br />
+            DE CRÉDITO
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="pagamento-boleto">
+      <h3 class="pagamento-boleto__titulo">PAGUE COM BOLETO BANCÁRIO</h3>
+      <p class="pagamento-boleto__descricao">
+        Você poderá visualizar ou imprimir após a finalização do pedido. A data
+        de vencimento é de 2 dias corridos após a conclusão do pedido. Após esta
+        data, ele perderá a validade.
+      </p>
+      <div class="pagamento-boleto__concluir-button">
+        <button mat-flat-button color="warn">
+          CONCLUIR PEDIDO COM CARTÃO <br />
+          BOLETO
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="resumoPedido">
+    <h2 class="resumoPedido__titulo">RESUMO DO PEDIDO</h2>
+  </div>
+</div>
