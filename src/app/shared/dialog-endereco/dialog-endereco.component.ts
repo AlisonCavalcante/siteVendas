@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Endereco } from './../../models/endereco.model';
 import { ProdutoService } from './../../service.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -18,7 +19,7 @@ export class DialogEnderecoComponent implements OnInit {
   @Input('flag') public flag!: boolean;
   @Input('indexEndereco') public indexEndereco!: number;
 
-  constructor(private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) {
+  constructor(public dialogRef: MatDialog ,private userService: DataService,private service: ProdutoService ,private formBuilder: FormBuilder) {
 
   }
 
@@ -80,6 +81,7 @@ export class DialogEnderecoComponent implements OnInit {
       this.userService.updateUser(this.user).subscribe(res =>{
         console.log(res);
         this.userService.updateCurrentUSer(this.user);
+        this.dialogRef.closeAll();
       })
     }else{
       this.user[0].endereco.push(this.formulario.value);
@@ -88,8 +90,10 @@ export class DialogEnderecoComponent implements OnInit {
         this.userService.updateCurrentUSer(this.user);
       })
     }
+   }
 
-
+   cancel(): void{
+     this.dialogRef.closeAll();
    }
 
 }

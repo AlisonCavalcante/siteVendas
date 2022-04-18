@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +13,7 @@ export class DialogAlterarSenhaComponent implements OnInit {
     password: '',
     password_confirm: '',
   };
-  constructor() { }
+  constructor(public dialogRef: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +22,7 @@ export class DialogAlterarSenhaComponent implements OnInit {
     console.log(this.mostrarSenha)
   }
 
+  cancel(): void{
+    this.dialogRef.closeAll();
+  }
 }

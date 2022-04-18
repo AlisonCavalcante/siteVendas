@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,9 +13,12 @@ export class DialogAlterarEmailComponent implements OnInit {
     email_confirm: '',
   };
 
-  constructor() { }
+  constructor(public dialoRef: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  cancel(): void{
+    this.dialoRef.closeAll();
+  }
 }
