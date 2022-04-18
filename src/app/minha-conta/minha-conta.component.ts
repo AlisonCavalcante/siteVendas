@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../cadastro/services/authservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinhaContaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthserviceService) { }
 
   ngOnInit(): void {
+  }
+
+  onLogout(){
+    this.authService.logout();
   }
 
 }
