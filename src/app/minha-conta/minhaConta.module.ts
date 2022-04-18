@@ -8,6 +8,8 @@ import { MinhaContaEnderecosComponent } from './minha-conta-enderecos/minha-cont
 import { NovoEnderecoDialogComponent } from './novo-endereco-dialog/novo-endereco-dialog.component';
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 import { DialogAlterarEmailComponent } from './dialog-alterar-email/dialog-alterar-email.component';
+import { DialogAlterarSenhaComponent } from './dialog-alterar-senha/dialog-alterar-senha.component';
+import { DetalhePedidoComponent } from './detalhe-pedido/detalhe-pedido.component';
 
 
 
@@ -21,7 +23,6 @@ import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-import { DialogAlterarSenhaComponent } from './dialog-alterar-senha/dialog-alterar-senha.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { DialogAlterarSenhaComponent } from './dialog-alterar-senha/dialog-alter
     NovoEnderecoDialogComponent,
     MeusPedidosComponent,
     DialogAlterarEmailComponent,
-    DialogAlterarSenhaComponent
+    DialogAlterarSenhaComponent,
+    DetalhePedidoComponent
   ],
   imports: [
     CommonModule,

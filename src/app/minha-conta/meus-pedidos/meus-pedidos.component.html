@@ -3,12 +3,11 @@
   <mat-card *ngFor="let pedido of user[0].pedidos" class="card-pedidos mat-elevation-z6">
     <mat-card-content *ngFor="let item of pedido.produtos" class="conteudo-card">
       <div>
-        <img />
-        <p>Descrição</p>
-        <p>Cor:</p>
-        <p>Tamanho</p>
+        <img class="card-pedidos__imagem" [src]="item.img" />
+        <p>Descrição: {{item.descricao}}</p>
+        <p>Cor: {{item.cor}}</p>
         <p>Quantidade:</p>
-        <p>Valor Unitária:</p>
+        <p>Valor Unitária: {{item.preco}}</p>
       </div>
       <mat-divider
         [vertical]="true"
@@ -39,10 +38,11 @@
         <p>Data do pedido</p>
         <p>Valor total:</p>
         <p>Previsão de entrega:</p>
-        <button class="card-pedidos__button" mat-flat-button>
+        <button routerLink="meusPedidos"  class="card-pedidos__button" mat-flat-button>
           Ver detalhes
         </button>
-      </div>
+      </div>z
     </mat-card-content>
   </mat-card>
 </div>
+
