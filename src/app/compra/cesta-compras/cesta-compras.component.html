@@ -59,6 +59,9 @@
             <button class="card-endereco__button" mat-flat-button>
               Alterar Endereço
             </button>
+            <button (click)="pagamento()" class="card-endereco__button" mat-flat-button>
+              Continuar
+            </button>
           </mat-card-content>
         </mat-card>
       </div>
@@ -175,7 +178,7 @@
     <mat-tab label="Confirmação">Content 3</mat-tab>
   </mat-tab-group>
 </section>
-<ng-container *ngIf="produto ==  undefined">
+<ng-container *ngIf="produto ==  undefined || produto.length == 0">
   <div class="content-carrinho-vazio">
    <div>
     <mat-icon style="font-size: 50px;">shopping_cart</mat-icon>

@@ -45,7 +45,7 @@ export class DetalheProdutoComponent implements OnInit {
     //   state: this.produto
     // })
     this.dataService.setProduto(produto);
-    this.route.navigate(['/cesta']);
+    this.route.navigate(['/compra']);
   }
 
 

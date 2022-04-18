@@ -53,6 +53,7 @@
 .card-endereco__button {
   background-color: transparent;
   border: 2px solid black;
+  margin: 10px;
 }
 
 .form-pagamento {

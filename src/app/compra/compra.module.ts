@@ -9,15 +9,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { CadastroRoutingModule } from './compra-routing.module';
+import { MatButtonModule } from '@angular/material/button';
 
 
 import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 
 
 @NgModule({
   declarations: [
     CestaComprasComponent,
+    PagamentoComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { CestaComprasComponent } from './cesta-compras/cesta-compras.component';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    CadastroRoutingModule
+    CadastroRoutingModule,
+    MatButtonModule
   ]
 })
 export class CompraModule { }

@@ -48,6 +48,7 @@ import { FormNovoEnderecoComponent } from './views/form-novo-endereco/form-novo-
     HomeComponent,
     DialogAlterarEnderecoComponent,
     FormNovoEnderecoComponent,
+
   ],
   imports: [
     BrowserModule,
