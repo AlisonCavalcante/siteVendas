@@ -7,7 +7,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-  background: linear-gradient(#7E2424, #E3BDE5);
+  background: #5a2d82;
+  /* background: linear-gradient(#7E2424, #E3BDE5); */
   border-width: 1px;
   border-style: solid;
   border-color: white;

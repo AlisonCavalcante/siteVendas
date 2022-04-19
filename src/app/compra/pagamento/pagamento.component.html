@@ -94,5 +94,51 @@
   </div>
   <div class="resumoPedido">
     <h2 class="resumoPedido__titulo">RESUMO DO PEDIDO</h2>
+    <mat-card class="endereco-entrega">
+      <mat-card-content>
+        <div style="padding: 10px;font-size: 18px;"><strong>ENDEREÇO DE ENTREGA</strong></div>
+        <p class="endereco-entrega__infos">
+          <span>Rua</span>
+          <span><strong>Bairro:</strong> </span>
+          <span><strong>Cidade:</strong></span>
+          <span><strong>CEP:</strong></span>
+        </p>
+        <div class="endereco-entrega__notificacoes">
+          <p>Quer receber seus produtos em outro endereço?</p>
+        </div>
+        <div>
+          <button class="endereco-entrega__button" mat-flat-button>
+            Alterar Endereço
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="itens-pedido">
+      <mat-card-content class="itens-pedido__content">
+        <h3><strong>Itens do Pedido</strong></h3>
+        <h3><strong>Qtde</strong></h3>
+        <h3><strong>Preço</strong></h3>
+      </mat-card-content>
+    </mat-card>
+    <div class="itens-pedido-descricao">
+      <div>
+        <p>Camisa Polo Basicamente Lisa Masculina</p>
+        <p><strong>Vendido e Enviado por Netshoes</strong></p>
+      </div>
+      <div><span>1</span></div>
+      <div><span>R$ 59,99</span></div>
+    </div>
+    <mat-card class="frete-pedido">
+      <mat-card-content class="frete-pedido__content">
+        <div>Frete</div>
+        <div>R$ 8,90</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="total-pedido">
+      <mat-card-content class="total-pedido__content">
+        <div>Total</div>
+        <div>R$ 68,90</div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

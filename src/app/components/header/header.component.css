@@ -6,7 +6,8 @@
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  background: linear-gradient(#E65758, #771D32);
+  background: #5a2d82
+  /* background: linear-gradient(#E65758, #771D32); */
 }
 a{
   margin-left: 30px;

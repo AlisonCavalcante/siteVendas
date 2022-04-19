@@ -80,3 +80,59 @@ ul {
   font-size: 13px;
   margin-top: 0;
 }
+.endereco-entrega {
+  background: #ececec;
+}
+.endereco-entrega__infos span {
+  display: flex;
+  padding: 10px;
+}
+.endereco-entrega__notificacoes {
+  padding: 20px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #8c8c8c;
+  border-top: 1px solid #d8d8d8;
+}
+.endereco-entrega__button {
+  background-color: transparent;
+  border: 2px solid black;
+  margin: 10px;
+}
+.itens-pedido {
+  margin: 20px 0 0;
+  padding: 20px;
+  border: none;
+  background: #ececec;
+}
+.itens-pedido__content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.itens-pedido__content h3{
+ margin: 0px;
+}
+.itens-pedido-descricao{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+.frete-pedido{
+  background: #ececec;
+}
+.frete-pedido__content{
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.total-pedido{
+  background: #ddd;
+  margin-top: 15px;
+}
+.total-pedido__content{
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+}
