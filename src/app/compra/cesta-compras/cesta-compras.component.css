@@ -1,3 +1,16 @@
+.carrinho-content {
+  width: 1306px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.carrinho {
+  display: flex;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  position: relative;
+}
 .content-tab {
   display: flex;
 }
@@ -13,9 +26,18 @@
 }
 .card-cesta {
   background-color: white;
-  margin-left: 20%;
   margin-top: 20px;
   border: 2px solid silver;
+  max-height: 400px;
+}
+.carrinho-title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: inherit;
+  color: #5a2d82;
+  font-size: 24px;
+  font-weight: bold;
+  display: none;
 }
 .card-cesta__img img {
   height: 200px;
@@ -30,74 +52,99 @@
 .card-cesta__descricao-produto p {
   font-weight: bold;
 }
-.card-endereco {
-  background-color: white;
-  background-color: #d3d3d3;
-  margin-left: 20%;
+.resumo-compra {
+  margin-left: 5%;
+  width: 500px;
+}
+.summary {
+  width: 100%;
+  background: #f5f5f5;
   margin-top: 20px;
   margin-right: 10%;
   border: 2px solid silver;
 }
-
-.card-itensPedido {
+.summary__items {
+  padding: 10px 0;
+  list-style: none;
+}
+.summary__items li {
+  border-bottom: 2px solid #ebebeb;
+  padding: 20px 0;
   display: flex;
-  background-color: #d3d3d3;
+  justify-content: space-between;
+  text-align: left;
+  color: #666;
+  font-weight: 600;
+  font-size: 18px;
 }
-.content-itensPedidos p {
-  display: inline-block;
-  font-weight: bold;
-  width: 250px;
-  margin-right: 0px;
-  padding: 0px;
-}
-.card-endereco__button {
-  background-color: transparent;
-  border: 2px solid black;
-  margin: 10px;
-}
-
-.form-pagamento {
+.summary__items--frete {
   display: flex;
   flex-direction: column;
-  margin: 20px 30% 0px 30%;
 }
-.form-pagamento__mes-field {
-  width: 100px;
+.summary__items--frete a {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  letter-spacing: -0.35px;
+  line-height: 18px;
+  color: #666;
 }
-.form-pagamento__codigoSegurancaField {
-  width: 200px;
-}
-.form-pagamento__opcoesPagementoField {
-  width: 250px;
-}
-.form-pagamento__button {
-  width: 150px;
-  text-align: center;
-  padding: 10px;
-  display: flex;
+.summary__items--cupom a{
+  color: #39acdf;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 200;
+  text-decoration: underline;
 }
 
-.button-boleto {
-  text-align: center;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 5%;
+.summary__items--cupom-aplicar {
+  background: white;
+  justify-content: center;
 }
-.content-carrinho-vazio{
+.summary__items--cupom-field{
+  display: flex;
+  padding-bottom: 0px;
+  margin: 10px;
+}
+.summary__items--cupom-button{
+  display: flex;
+  align-items: center;
+}
+.summary__items--cupom-button button{
+  border: 1px solid grey;
+}
+.content-carrinho-vazio {
   display: flex;
   flex-direction: column;
   text-align: center;
   margin-top: 10%;
   margin-bottom: 20%;
 }
-.content-carrinho-vazio p{
+.content-carrinho-vazio p {
   font-size: 20px;
   margin: 20px;
 }
-.button-voltar{
-  background-color: white;
+.sumary__button--continuar {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.sumary__button--escolher {
+  width: 100%;
+  background-color: transparent;
   color: #1e90ff;
   border-style: solid;
   justify-content: center;
-  margin-top: 10px;
+}
+.sumary__compra-segura {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  letter-spacing: -0.4px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 19px;
 }

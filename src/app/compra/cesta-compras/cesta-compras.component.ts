@@ -37,6 +37,8 @@ export class CestaComprasComponent implements OnInit {
   fretes = ['Normal', 'Rapidão'];
   produto: Produtos[] = [];
   teste = false;
+  aplicar: boolean = false;
+
   constructor(
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
@@ -73,7 +75,10 @@ export class CestaComprasComponent implements OnInit {
     }
     console.log(this.produto);
   }
-
+  aplicarCupom(){
+    this.aplicar = !this.aplicar
+    console.log(this.aplicar)
+  }
   buildFrete() {
     const values = this.fretes.map((v) => new FormControl(false));
     return this.formBuilder.array(values);
