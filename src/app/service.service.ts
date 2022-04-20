@@ -11,7 +11,7 @@ import { Produtos } from './models/produtos.model';
 export class ProdutoService {
 
   sidenav_opened = true;
-
+  produtos: Produtos [] = [];
   constructor(private http: HttpClient) {}
 
   acaoNav(valor: boolean): Boolean {
@@ -20,6 +20,13 @@ export class ProdutoService {
 
   buscarProdutos(): Observable<Produtos[]> {
     return this.http.get<Produtos[]>(Constantes.URLBASE);
+  }
+  getCarrinho(): Produtos[]{
+    let carrinho  = localStorage.getItem('Carrinho')
+    if(carrinho){
+      this.produtos = JSON.parse(carrinho);
+    }
+    return this.produtos;
   }
   buscarProdutoId(id: number): Observable<Produtos[]>{
     return this.http.get<Produtos[]>(Constantes.URLBASE+`${'?id='}${id}`);

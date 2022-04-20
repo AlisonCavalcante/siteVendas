@@ -1,58 +1,63 @@
 <section
   class="carrinho-content"
-  *ngIf="produto.length != 0 && produto != undefined"
+  *ngIf="produtos.length != 0 && produtos != undefined"
 >
   <div class="carrinho" label="Minha Cesta">
     <!--Card de Detalhe da Cesta de Produtos-->
     <div class="content-tab">
       <div>
-        <h1 class="carrinho__title">Meu Carrinho</h1>
-        <mat-card class="card-cesta mat-elevation-z4">
-          <div class="card-content">
-            <mat-card-content class="card-cesta__img">
-              <img
-                *ngIf="produto[0].img"
-                [src]="produto[0].img"
-                alt="Image do Produto"
-              />
-            </mat-card-content>
-            <mat-card-content class="card-cesta__descricao-produto">
-              <p>{{ produto[0].nome }}</p>
-              <mat-divider></mat-divider>
-              <p>Descrição: {{ produto[0].descricao }}</p>
-              <p *ngIf="produto[0].cor">Cor: {{ produto[0].cor }}</p>
-              <p *ngIf="produto[0].tamanho">
-                Tamanho: {{ produto[0].tamanho }}
-              </p>
-              <input style="width: 50px" placeholder="Qtd" type="number" />
-              <a
-                routerLink=""
-                style="margin-left: 5px"
-                (click)="removerProduto()"
-                >remover</a
-              >
-            </mat-card-content>
-            <mat-card-content class="card-cesta__tipoFrete">
-              <p style="font-weight: bold">Escolha seu frete</p>
-              <div [formGroup]="formularioTipoFrete">
-                <mat-radio-group formControlName="frete">
-                  <mat-radio-button
-                    *ngFor="let item of fretes"
-                    [value]="item"
-                    >{{ item }}</mat-radio-button
-                  >
-                  <!-- <mat-radio-button style="margin-left: 10px" value="always"
-                  >Expresso:</mat-radio-button
-                > -->
-                </mat-radio-group>
+        <h1 class="carrinho-title">Meu Carrinho</h1>
+        <mat-card class="carrinho__item-card" *ngFor="let produto of produtos">
+          <div>
+            <mat-card-content class="carrinho__item-content">
+              <div>
+                <img
+                  class="carrinho__item-img"
+                  [src]="produto.img"
+                  alt="Imagem do Produto"
+                />
               </div>
+              <div>
+                <h3>{{ produto.nome }}</h3>
+                <p class="carrinho__custom-text">
+                  Cor:
+                  <span class="carrinho__custom-label"> {{ produto.cor }}</span>
+                </p>
+                <p class="carrinho__custom-text">Tamanho:</p>
+                <p class="carrinho__custom-text">
+                  Descrição:
+                  <span class="carrinho__custom-label">{{
+                    produto.descricao
+                  }}</span>
+                </p>
+              </div>
+              <div>
+                <mat-icon>delete_outline</mat-icon>
+              </div>
+            </mat-card-content>
+            <mat-card-content>
+              <div style="display: flex; justify-content: space-between;padding-top: 10px;;border-top: 2px solid #eee;">
+                <div style="display: flex;">
+                  <p>Quantidade:</p>
+                  <mat-icon>remove_circle_outline</mat-icon>
+                  <input class="carrinho__qtd-item" type="number" matInput>
+                  <mat-icon>add_circle_outline</mat-icon>
+                </div>
+                <div>
+                  <p>{{ produto.preco }}</p>
+                </div>
+              </div>
+              <div>
+                <a class="carrinho__ver-mais">Ver mais produtos dessa loja</a>
+              </div>
+
             </mat-card-content>
           </div>
         </mat-card>
       </div>
       <!--Card de Endereço de Entrega-->
       <div class="resumo-compra">
-        <div><h1 class="carrinho__title">Resumo da Compra</h1></div>
+        <div><h1 class="carrinho-title">Resumo da Compra</h1></div>
         <mat-card class="summary mat-elevation-z4">
           <mat-card-content>
             <ul class="summary__items">
@@ -83,8 +88,10 @@
                       class="summary__items--cupom-field"
                       appearance="outline"
                     >
-                      <mat-label>Cupom de desconto</mat-label>
-                      <input matInput style="padding: 0px" />
+                      <div style="padding-bottom: 0px">
+                        <mat-label>Cupom de desconto</mat-label>
+                        <input matInput style="padding: 0px" />
+                      </div>
                     </mat-form-field>
                     <div class="summary__items--cupom-button">
                       <button mat-flat-button>Aplicar</button>
@@ -126,7 +133,7 @@
     </div>
   </div>
 </section>
-<ng-container *ngIf="produto == undefined || produto.length == 0">
+<ng-container *ngIf="produtos == undefined || produtos.length == 0">
   <div class="content-carrinho-vazio">
     <div>
       <mat-icon style="font-size: 50px">shopping_cart</mat-icon>

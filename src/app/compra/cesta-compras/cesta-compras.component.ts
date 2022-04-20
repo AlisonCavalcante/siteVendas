@@ -1,3 +1,4 @@
+import { ProdutoService } from 'src/app/service.service';
 import { DataService } from '../../data.service';
 import { Produtos } from '../../models/produtos.model';
 import { Router } from '@angular/router';
@@ -35,7 +36,7 @@ export class CestaComprasComponent implements OnInit {
   formularioPagamento!: FormGroup;
   formularioTipoFrete!: FormGroup;
   fretes = ['Normal', 'Rapidão'];
-  produto: Produtos[] = [];
+  produtos: Produtos[] = [];
   teste = false;
   aplicar: boolean = false;
 
@@ -43,7 +44,8 @@ export class CestaComprasComponent implements OnInit {
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private produtoService: ProdutoService,
   ) {
     // Obtendo objeto via rota
     // let result = this.router.getCurrentNavigation();
@@ -70,11 +72,19 @@ export class CestaComprasComponent implements OnInit {
 
     console.log(this.formularioTipoFrete.get('frete'));
 
-    if (this.dataService.getProduto()) {
-      this.produto = this.dataService.getProduto();
-    }
-    console.log(this.produto);
+    // if (this.dataService.getProduto()) {
+    //   this.produto = this.dataService.getProduto();
+    // }
+    // console.log(this.produto);
+
+   this.produtos = this.produtoService.getCarrinho();
+   console.log(this.produtos);
   }
+
+  getCarrinho(){
+
+  }
+
   aplicarCupom(){
     this.aplicar = !this.aplicar
     console.log(this.aplicar)

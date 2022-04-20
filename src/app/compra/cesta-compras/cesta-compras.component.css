@@ -17,19 +17,47 @@
 .card-content {
   display: flex;
 }
-.cardItens-content {
+.carrinho__item-card {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+  border: 1px solid #e9e9e9;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  background: #fff;
+}
+.carrinho__item-content {
+  display: flex;
+}
+.carrinho__custom-label {
+  color: #999;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.carrinho__custom-text {
+  font-weight: 600;
+  color: #666;
+}
+.carrinho__item-img {
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* .cardItens-content {
   display: flex;
   justify-content: end;
   margin-top: 5%;
   margin-right: 10%;
   margin-bottom: 5%;
-}
-.card-cesta {
+} */
+/* .card-cesta {
   background-color: white;
   margin-top: 20px;
   border: 2px solid silver;
   max-height: 400px;
-}
+} */
 .carrinho-title {
   margin: 0;
   margin-bottom: 20px;
@@ -37,21 +65,38 @@
   color: #5a2d82;
   font-size: 24px;
   font-weight: bold;
-  display: none;
 }
-.card-cesta__img img {
+.carrinho__qtd-item {
+  border-radius: 5px;
+  border: 1px solid #dfdfdf;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+.carrinho__ver-mais {
+  display: block;
+  position: relative;
+  text-decoration: underline;
+  margin-top: 15px;
+  color: #39acdf;
+  width: 190px;
+}
+/* .card-cesta__img img {
   height: 200px;
   width: 200px;
   border-radius: 5px;
   margin: 10px;
-}
-.card-cesta__tipoFrete {
+} */
+/* .card-cesta__tipoFrete {
   margin: 30px;
 }
 
 .card-cesta__descricao-produto p {
   font-weight: bold;
-}
+} */
 .resumo-compra {
   margin-left: 5%;
   width: 500px;
@@ -89,7 +134,7 @@
   line-height: 18px;
   color: #666;
 }
-.summary__items--cupom a{
+.summary__items--cupom a {
   color: #39acdf;
   cursor: pointer;
   font-size: 14px;
@@ -101,16 +146,19 @@
   background: white;
   justify-content: center;
 }
-.summary__items--cupom-field{
+.summary__items--cupom-field {
   display: flex;
   padding-bottom: 0px;
   margin: 10px;
 }
-.summary__items--cupom-button{
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+.summary__items--cupom-button {
   display: flex;
   align-items: center;
 }
-.summary__items--cupom-button button{
+.summary__items--cupom-button button {
   border: 1px solid grey;
 }
 .content-carrinho-vazio {
