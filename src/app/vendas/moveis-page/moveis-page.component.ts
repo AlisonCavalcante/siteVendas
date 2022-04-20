@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Subscription, Observable } from 'rxjs';
 import { ProdutoService } from './../../service.service';
 import { Router } from '@angular/router';
@@ -15,17 +16,20 @@ import { Produtos } from 'src/app/models/produtos.model';
   styleUrls: ['./moveis-page.component.css'],
 })
 export class MoveisPageComponent implements OnInit, OnDestroy {
-
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  produtos$!: Observable <Produtos[]>;
+  produtos$!: Observable<Produtos[]>;
   sub!: Subscription;
-  constructor(private produtoService: ProdutoService,private router: Router, private _snackBar: MatSnackBar) {
-
-  }
+  constructor(
+    private produtoService: ProdutoService,
+    private authService: AuthserviceService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
-   this.produtos$ = this.produtoService.buscarProdutoTipo("Eletronico");
+    this.authService.updateLoggedIn();
+    this.produtos$ = this.produtoService.buscarProdutoTipo('Eletronico');
   }
   customOptions: OwlOptions = {
     loop: true,

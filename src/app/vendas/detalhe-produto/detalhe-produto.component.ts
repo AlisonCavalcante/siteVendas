@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Observable } from 'rxjs';
 import { DataService } from './../../data.service';
 import { Endereco } from 'src/app/models/endereco.model';
@@ -24,10 +25,12 @@ export class DetalheProdutoComponent implements OnInit {
     private route: Router,
     private activeRouter: ActivatedRoute,
     private produtoService: ProdutoService,
-    private dataService: DataService
+    private dataService: DataService,
+    private authService: AuthserviceService
   ) {}
 
   ngOnInit(): void {
+    this.authService.updateLoggedIn();
     this.id = this.activeRouter.snapshot.params['id'];
     this.getProduto();
   }
@@ -52,13 +55,6 @@ export class DetalheProdutoComponent implements OnInit {
     this.route.navigate(['/compra']);
   }
   addCarrinho(produto: Produtos[]) {
-    let carrinho = localStorage.getItem('Carrinho');
-    if (carrinho) {
-      this.produto = JSON.parse(carrinho);
-      this.produto.push(produto[0]);
-      localStorage.setItem('Carrinho', JSON.stringify(this.produto));
-    } else {
-      localStorage.setItem('Carrinho', JSON.stringify(produto));
-    }
+   this.produtoService.addCarrinho(produto);
   }
 }

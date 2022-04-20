@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   qtdProdutosCesta!: number;
   subtotal: number = 0;
   @Input() isLoggedIn: boolean | null = null;
+  @Input() carrinho: Produtos[] | null = null;
   @Output() private logout = new EventEmitter();
   produtos!: Produtos[];
   constructor(private router: Router) {}
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
         this.subtotal += parseInt(i.preco);
       }
     }
-
+    console.log(this.carrinho);
   }
   teste(): void {
     console.log('testando');

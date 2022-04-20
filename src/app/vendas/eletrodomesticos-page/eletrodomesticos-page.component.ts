@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
@@ -22,9 +23,10 @@ export class EletrodomesticosPageComponent implements OnInit, OnDestroy {
   ];
   sub!: Subscription;
 
-  constructor(private service: ProdutoService, private route: Router) {}
+  constructor(private service: ProdutoService,private authService: AuthserviceService ,private route: Router) {}
 
   ngOnInit(): void {
+    this.authService.updateLoggedIn();
     this.produtos$ = this.service.buscarProdutoTipo('Eletronico');
   }
   ngOnDestroy(): void {

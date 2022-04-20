@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProdutoService } from './../../service.service';
@@ -21,9 +22,10 @@ export class MaterialEscolarPageComponent implements OnInit, OnDestroy {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
   sub!: Subscription;
-  constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
+  constructor(private route: Router, private authService: AuthserviceService ,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
+   this.authService.updateLoggedIn();
    this.produtos$ = this.produtoService.buscarProdutoTipo("Cosmético");
   }
 

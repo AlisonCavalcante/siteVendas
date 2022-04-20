@@ -1,3 +1,4 @@
+import { AuthserviceService } from './../../cadastro/services/authservice.service';
 import { Router } from '@angular/router';
 import { ProdutoService } from './../../service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -38,9 +39,11 @@ export class CosmeticosPageComponent implements OnInit, OnDestroy {
   }
   sub!: Subscription;
 
-  constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
+  constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService, private authService: AuthserviceService) { }
 
   ngOnInit(): void {
+
+    this.authService.updateLoggedIn();
 
     // abordagem com pipe async
     this.produtos$ = this.produtoService.buscarProdutoTipo("Cosmético");
