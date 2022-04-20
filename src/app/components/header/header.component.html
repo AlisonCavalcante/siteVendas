@@ -1,70 +1,84 @@
-<mat-toolbar  class="footer">
-    <button mat-icon-button>
-      <mat-icon style="color: white;">menu</mat-icon>
-    </button>
-    <input
-      class="input-pesquisar"
-      type="search"
-      matInput
-      placeholder="O que você está procurando?"
-    />
-    <button (click)="teste()">
-      <mat-icon class="icon-pesquisar"  style="color: white;">search</mat-icon>
-    </button>
+<mat-toolbar class="footer">
+  <button mat-icon-button>
+    <mat-icon style="color: white">menu</mat-icon>
+  </button>
+  <input
+    class="input-pesquisar"
+    type="search"
+    matInput
+    placeholder="O que você está procurando?"
+  />
+  <button (click)="teste()">
+    <mat-icon class="icon-pesquisar" style="color: white">search</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    style="color: white"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon style="color: white">supervisor_account</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
     <button
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      style="color: white;"
-      aria-label="Example icon-button with a menu"
+      *ngIf="isLoggedIn"
+      mat-menu-item
+      (click)="navegar('minhaContaPage')"
     >
-      <mat-icon  style="color: white;">supervisor_account</mat-icon>
+      <mat-icon>supervisor_account</mat-icon>
+      <span>Minha Conta</span>
     </button>
-    <mat-menu #menu="matMenu">
-      <button *ngIf="isLoggedIn" mat-menu-item (click)="navegar('minhaContaPage')">
-        <mat-icon>supervisor_account</mat-icon>
-        <span>Minha Conta</span>
-      </button>
-      <button *ngIf="!isLoggedIn" mat-menu-item (click)="navegar('login')">
-        <mat-icon>supervisor_account</mat-icon>
-        <span>Fazer Login</span>
-      </button>
-      <button mat-menu-item (click)="navegar('cesta')">
-        <mat-icon>shopping_basket</mat-icon>
-        <span>Pedidos</span>
-      </button>
-      <button (click)="onlogout()" *ngIf="isLoggedIn" mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Sair da Conta</span>
-      </button>
-    </mat-menu>
-    <button [matMenuTriggerFor]="menuCesta">
-      <mat-icon  style="color: white;" [matBadge]="qtdProdutosCesta" matBadgeColor="warn"
-        >local_grocery_store</mat-icon
+    <button *ngIf="!isLoggedIn" mat-menu-item (click)="navegar('login')">
+      <mat-icon>supervisor_account</mat-icon>
+      <span>Fazer Login</span>
+    </button>
+    <button mat-menu-item (click)="navegar('cesta')">
+      <mat-icon>shopping_basket</mat-icon>
+      <span>Pedidos</span>
+    </button>
+    <button (click)="onlogout()" *ngIf="isLoggedIn" mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Sair da Conta</span>
+    </button>
+  </mat-menu>
+  <button [matMenuTriggerFor]="menuCesta">
+    <mat-icon
+      style="color: white"
+      [matBadge]="qtdProdutosCesta"
+      matBadgeColor="warn"
+      >local_grocery_store</mat-icon
+    >
+  </button>
+  <mat-menu #menuCesta="matMenu">
+    <div class="card-content">
+      <!-- <p style="font-weight: bold; text-align: center;">Minha Cesta</p> -->
+      <mat-card
+        *ngFor="let produto of produtos"
+        class="card-descricao mat-elevation-z4"
       >
-    </button>
-    <mat-menu #menuCesta="matMenu">
-      <div class="card-content">
-        <p style="font-weight: bold; text-align: center;">Minha Cesta</p>
-      <mat-card class="card-descricao mat-elevation-z4">
         <mat-card-content class="card-Cesta">
-          <img
-            class="img"
-            src="https://images.unsplash.com/photo-1593982624332-9c7a6ac54341?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          />
-          <div style="display: flex; flex-direction: column; margin-left: 5px;">
-          <p style="font-weight: bold;">Descrição</p>
-          <p style="font-weight: bold;">Valor:</p>
-        </div>
-
+          <img class="img" [src]="produto.img" />
+          <div style="display: flex; flex-direction: column; margin-left: 5px">
+            <p style="font-weight: bold">Descrição: {{ produto.descricao }}</p>
+          </div>
+          <div>
+            <p style="font-weight: bold">Valor: {{ produto.preco }}</p>
+          </div>
         </mat-card-content>
       </mat-card>
       <mat-card class="card-buttonCesta mat-elevation-z4">
-        <mat-card-content style="text-align: end;">
-          <button (click)="navegar('compra')"  color="warn" mat-flat-button>Ver minha Cesta</button>
+        <mat-card-content style="display: flex; justify-content: space-between">
+          <div>Subtotal</div>
+          <div style="color: #13abe1; font-size: 17px">R$: {{ subtotal }}</div>
+        </mat-card-content>
+        <mat-card-content style="text-align: end">
+          <button (click)="navegar('compra')" color="warn" mat-flat-button>
+            Ver minha Cesta
+          </button>
         </mat-card-content>
       </mat-card>
     </div>
-    </mat-menu>
+  </mat-menu>
 
   <!-- <mat-toolbar-row class="toolbar-row-2">
     <span></span>
@@ -76,5 +90,4 @@
     <span></span>
     <a routerLink="/cosmetico"> Cosméticos</a>
   </mat-toolbar-row> -->
-
 </mat-toolbar>

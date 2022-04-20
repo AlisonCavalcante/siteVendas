@@ -76,6 +76,9 @@ export class CestaComprasComponent implements OnInit {
    this.produtos = this.produtoService.getCarrinho();
    console.log(this.produtos);
   }
+  delete(index: number){
+    this.produtos = this.produtoService.deleteProdutoCarrinho(index, this.produtos);
+  }
   increment(){
     this.qtd += 1;
     this.formulario.patchValue({

@@ -28,6 +28,12 @@ export class ProdutoService {
     }
     return this.produtos;
   }
+  deleteProdutoCarrinho(index: number, produtos: Produtos[]): Produtos[]{
+    this.produtos.splice(index,1);
+    localStorage.clear();
+    localStorage.setItem('Carrinho', JSON.stringify(produtos));
+    return produtos
+  }
   buscarProdutoId(id: number): Observable<Produtos[]>{
     return this.http.get<Produtos[]>(Constantes.URLBASE+`${'?id='}${id}`);
   }

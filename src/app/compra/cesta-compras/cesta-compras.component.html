@@ -7,7 +7,7 @@
     <div class="content-tab">
       <div>
         <h1 class="carrinho-title">Meu Carrinho</h1>
-        <mat-card class="carrinho__item-card" *ngFor="let produto of produtos">
+        <mat-card class="carrinho__item-card" *ngFor="let produto of produtos; let i = index">
           <div>
             <mat-card-content class="carrinho__item-content">
               <div>
@@ -32,7 +32,7 @@
                 </p>
               </div>
               <div>
-                <mat-icon>delete_outline</mat-icon>
+                <mat-icon style="cursor: pointer;" (click)="delete(i)">delete_outline</mat-icon>
               </div>
             </mat-card-content>
             <mat-card-content>

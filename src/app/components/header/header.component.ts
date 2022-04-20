@@ -1,3 +1,4 @@
+import { Produtos } from './../../models/produtos.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
@@ -10,12 +11,24 @@ import { DataService } from 'src/app/data.service';
 export class HeaderComponent implements OnInit {
 
 
-  qtdProdutosCesta: number = 5;
+  qtdProdutosCesta!: number;
+  subtotal: number = 0;
   @Input() isLoggedIn: boolean | null = null;
   @Output() private logout = new EventEmitter();
+  produtos!: Produtos[];
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let carrinho = localStorage.getItem('Carrinho');
+    if(carrinho){
+      this.produtos = JSON.parse(carrinho);
+      this.qtdProdutosCesta = this.produtos.length;
+      for(let i of this.produtos){
+        this.subtotal += parseInt(i.preco);
+      }
+    }
+
+  }
   teste(): void {
     console.log('testando');
   }
