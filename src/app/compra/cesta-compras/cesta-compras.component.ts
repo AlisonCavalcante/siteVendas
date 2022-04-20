@@ -33,13 +33,13 @@ export class CestaComprasComponent implements OnInit {
     '11',
     '12',
   ];
-  formularioPagamento!: FormGroup;
-  formularioTipoFrete!: FormGroup;
+
+  formulario!: FormGroup;
   fretes = ['Normal', 'Rapidão'];
   produtos: Produtos[] = [];
   teste = false;
   aplicar: boolean = false;
-
+  qtd: number = 1;
   constructor(
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
@@ -60,17 +60,13 @@ export class CestaComprasComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.formularioPagamento = this.formBuilder.group({
-      numeroCartao: [null, Validators.required],
-      nomeTitular: [null, Validators.required],
-      codigoSeguranca: [null, Validators.required],
+
+
+    this.formulario = this.formBuilder.group({
+      qtd: [this.qtd],
     });
 
-    this.formularioTipoFrete = this.formBuilder.group({
-      frete: [null],
-    });
-
-    console.log(this.formularioTipoFrete.get('frete'));
+    console.log(this.formulario.get('qtd'));
 
     // if (this.dataService.getProduto()) {
     //   this.produto = this.dataService.getProduto();
@@ -80,9 +76,20 @@ export class CestaComprasComponent implements OnInit {
    this.produtos = this.produtoService.getCarrinho();
    console.log(this.produtos);
   }
-
-  getCarrinho(){
-
+  increment(){
+    this.qtd += 1;
+    this.formulario.patchValue({
+      qtd: this.qtd
+    })
+    console.log(this.qtd);
+  }
+  decrement(){
+    if(this.qtd > 1)
+    this.qtd -= 1;
+    this.formulario.patchValue({
+      qtd: this.qtd
+    });
+    console.log(this.qtd);
   }
 
   aplicarCupom(){

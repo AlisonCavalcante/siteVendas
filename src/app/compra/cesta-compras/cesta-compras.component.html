@@ -36,21 +36,29 @@
               </div>
             </mat-card-content>
             <mat-card-content>
-              <div style="display: flex; justify-content: space-between;padding-top: 10px;;border-top: 2px solid #eee;">
-                <div style="display: flex;">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding-top: 10px;
+                  border-top: 2px solid #eee;
+                "
+              >
+                <div style="display: flex">
                   <p>Quantidade:</p>
-                  <mat-icon>remove_circle_outline</mat-icon>
-                  <input class="carrinho__qtd-item" type="number" matInput>
-                  <mat-icon>add_circle_outline</mat-icon>
+                  <form [formGroup]="formulario">
+                    <mat-icon (click)="decrement()">remove_circle_outline</mat-icon>
+                    <input formControlName="qtd" class="carrinho__qtd-item" type="number" matInput />
+                    <mat-icon (click)="increment()" >add_circle_outline</mat-icon>
+                  </form>
                 </div>
                 <div>
                   <p>{{ produto.preco }}</p>
                 </div>
               </div>
               <div>
-                <a class="carrinho__ver-mais">Ver mais produtos dessa loja</a>
+                <a routerLink="/" class="carrinho__ver-mais">Ver mais produtos dessa loja</a>
               </div>
-
             </mat-card-content>
           </div>
         </mat-card>
