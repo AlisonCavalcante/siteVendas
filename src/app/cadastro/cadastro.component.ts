@@ -39,22 +39,24 @@ export class CadastroComponent implements OnInit {
     console.log(this.formulario1.value);
     this.userService.getUsuario(this.formulario1.value).subscribe((res) => {
       this.usuario = res;
-        if(this.usuario.length != 0){
-          if (this.usuario[0].senha === this.formulario1.get('senha')?.value) {
-            alert('Usuário logado');
-            this.route.navigate(['/']);
-            this.userService.setUser(this.usuario);
-            this.authService.login(this.usuario);
-          } else{
-            alert('Senha incorreta');
-            this.resetarCampos();
-            this.cpfInput.nativeElement.focus();
-          }
-        }else{
-          alert('Cpf incorreto');
+      if (this.usuario.length != 0) {
+        let loginSucess = this.authService.login(
+          this.usuario,
+          this.formulario1.get('senha')?.value
+        );
+        if (loginSucess) {
+          alert('Usuário logado');
+          this.route.navigate(['/']);
+        } else {
+          alert('Senha incorreta');
           this.resetarCampos();
           this.cpfInput.nativeElement.focus();
         }
+      } else {
+        alert('Cpf incorreto');
+        this.resetarCampos();
+        this.cpfInput.nativeElement.focus();
+      }
     });
   }
   resetarCampos() {

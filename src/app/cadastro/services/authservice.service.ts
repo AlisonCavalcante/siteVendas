@@ -13,15 +13,24 @@ export class AuthserviceService {
 
   constructor(private router: Router) {}
 
-  login(user: User[]) {
-    localStorage.setItem('User', JSON.stringify(user));
-    this.updateLoggedIn();
+  login(user: User[], senhaVerificar: string): boolean {
+    if (user[0].senha === senhaVerificar) {
+      localStorage.setItem('User', JSON.stringify(user));
+      this.updateLoggedIn();
+      return true;
+    } else {
+      this.updateLoggedIn();
+      return false;
+    }
   }
-
+  validarSenha(senha1: string, senha2: String): boolean {
+    if (senha1 == senha2) return true;
+    else return false;
+  }
   logout(): void {
     localStorage.clear();
     this.updateLoggedIn();
-    this.router.navigate(['/cadastro'])
+    this.router.navigate(['/cadastro']);
   }
 
   updateLoggedIn(): void {
@@ -32,6 +41,4 @@ export class AuthserviceService {
       this.loggedIn.next(false);
     }
   }
-
-
 }

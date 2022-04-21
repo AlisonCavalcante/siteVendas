@@ -2,14 +2,16 @@ import { Constantes } from './utils/constantes';
 import { Endereco } from './models/endereco.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Produtos } from './models/produtos.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProdutoService {
-
+  produto: Produtos[] = [];
+  private carrinho = new BehaviorSubject<Produtos[]>(this.produto)
+  carrinho$ = this.carrinho.asObservable();
   sidenav_opened = true;
   produtos: Produtos [] = [];
   constructor(private http: HttpClient) {}
@@ -20,6 +22,22 @@ export class ProdutoService {
 
   buscarProdutos(): Observable<Produtos[]> {
     return this.http.get<Produtos[]>(Constantes.URLBASE);
+  }
+
+  addCarrinho(produto: Produtos[]){
+    let carrinho = localStorage.getItem('Carrinho');
+    if (carrinho) {
+      this.produto = JSON.parse(carrinho);
+      this.produto.push(produto[0]);
+      this.updateCarrinho(this.produto);
+      localStorage.setItem('Carrinho', JSON.stringify(this.produto));
+    } else {
+      this.updateCarrinho(this.produto);
+      localStorage.setItem('Carrinho', JSON.stringify(produto));
+    }
+  }
+  updateCarrinho(produto: Produtos[]){
+    this.carrinho.next(produto);
   }
   getCarrinho(): Produtos[]{
     let carrinho  = localStorage.getItem('Carrinho')
