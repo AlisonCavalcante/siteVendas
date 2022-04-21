@@ -13,9 +13,9 @@
     <mat-label>Confirmar Nova Senha</mat-label>
     <input formControlName="senhaNovaConfirm" type="password" maxlength="8" name="password_confirm"  [(ngModel)] ="data.password_confirm"  matInput/>
     <mat-icon class="form-email__icon" (click)="exibirSenha()" [ngClass]="{'visibility': !mostrarSenha, 'visibility_off': mostrarSenha}" matSuffix>visibility</mat-icon>
+    <mat-hint *ngIf="formSenha.get('senhaNovaConfirm')?.hasError('equalsto')"  style="color: red; font-size: 13px;">As senhas devem ser iguais!!! </mat-hint>
   </mat-form-field>
-  <span *ngIf="data.password != data.password_confirm" style="color: red; text-align: center; margin: 10px; font-size: 20px;" class="error"> As senhas devem ser iguais!!! </span>
-  <button class="form-email__button" mat-raised-button color="warn">ALTERAR SENHA
+  <button class="form-email__button" [disabled]="!formSenha.valid" mat-raised-button color="warn">ALTERAR SENHA
   </button>
   <a (click)="cancel()" style="text-align: center; cursor: pointer; ;margin: 10px;">Cancelar</a>
 </form>

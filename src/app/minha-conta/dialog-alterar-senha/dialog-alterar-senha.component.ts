@@ -1,7 +1,7 @@
+import { FormValidations } from './../../shared/form-validations';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-dialog-alterar-senha',
@@ -23,7 +23,7 @@ export class DialogAlterarSenhaComponent implements OnInit {
     this.formSenha = this.formBuilder.group({
       senhaAtual: [null, Validators.required],
       senhaNova: [null, Validators.required],
-      senhaNovaConfirm: [null, Validators.required],
+      senhaNovaConfirm: [null, [Validators.required, FormValidations.equalsto('senhaNova')]],
     })
   }
   exibirSenha(){

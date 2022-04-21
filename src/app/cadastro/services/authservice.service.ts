@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthserviceService {
   private loggedIn = new BehaviorSubject<boolean>(false);
-  private usuario!: User[];
   isLoggedIn$ = this.loggedIn.asObservable();
 
   constructor(private router: Router) {}
@@ -23,12 +22,9 @@ export class AuthserviceService {
       return false;
     }
   }
-  validarSenha(senha1: string, senha2: String): boolean {
-    if (senha1 == senha2) return true;
-    else return false;
-  }
+
   logout(): void {
-    localStorage.clear();
+    localStorage.removeItem('User');
     this.updateLoggedIn();
     this.router.navigate(['/cadastro']);
   }

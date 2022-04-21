@@ -10,9 +10,9 @@
   <mat-form-field appearance="outline">
     <mat-label>Confirmar Novo E-mail</mat-label>
     <input formControlName="emailNovoConfirm" name="email_confirm" [(ngModel)] ="data.email_confirm"  matInput/>
+    <mat-hint *ngIf="data.email != data.email_confirm"  style="color: red; font-size: 13px;">As senhas devem ser iguais!!! </mat-hint>
   </mat-form-field>
-  <span *ngIf="data.email != data.email_confirm" style="color: red; text-align: center; margin: 10px; font-size: 20px;" class="error"> Os e-mails devem ser iguais!!! </span>
-  <button class="form-email__button" mat-raised-button color="warn">ALTERAR E-MAIL
+  <button class="form-email__button" [disabled]="!formEmail.valid" mat-raised-button color="warn">ALTERAR E-MAIL
   </button>
   <a (click)="cancel()" style="text-align: center; cursor: pointer; ;margin: 10px;">Cancelar</a>
 </form>

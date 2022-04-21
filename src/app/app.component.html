@@ -1,6 +1,7 @@
 <app-header
 [isLoggedIn]="isLoggedIn$ | async"
 (logout)="onlogout()"
+[carrinho]="carrinho$ | async"
 >
 </app-header>
 <app-header-menu></app-header-menu>
