@@ -1,3 +1,4 @@
+import { FormValidations } from './../../shared/form-validations';
 import { DataService } from 'src/app/data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -27,7 +28,7 @@ export class DialogAlterarEmailComponent implements OnInit {
     this.formEmail = this.formBuilder.group({
       emailAtual: [this.user[0].email],
       emailNovo: [null, [Validators.required, Validators.email]],
-      emailNovoConfirm: [null, [Validators.required, Validators.email]]
+      emailNovoConfirm: [null, [Validators.required, Validators.email, FormValidations.equalsto('emailNovo')]]
     })
   }
 
