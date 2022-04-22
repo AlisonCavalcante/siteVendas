@@ -15,7 +15,7 @@
     <mat-icon class="form-email__icon" (click)="exibirSenha()" [ngClass]="{'visibility': !mostrarSenha, 'visibility_off': mostrarSenha}" matSuffix>visibility</mat-icon>
     <mat-hint *ngIf="formSenha.get('senhaNovaConfirm')?.hasError('equalsto')"  style="color: red; font-size: 13px;">As senhas devem ser iguais!!! </mat-hint>
   </mat-form-field>
-  <button class="form-email__button" [disabled]="!formSenha.valid" mat-raised-button color="warn">ALTERAR SENHA
+  <button (click)="alterarSenha()" class="form-email__button" [disabled]="!formSenha.valid" mat-raised-button color="warn">ALTERAR SENHA
   </button>
   <a (click)="cancel()" style="text-align: center; cursor: pointer; ;margin: 10px;">Cancelar</a>
 </form>
