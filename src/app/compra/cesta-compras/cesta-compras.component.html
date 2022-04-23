@@ -7,7 +7,7 @@
     <div class="content-tab">
       <div>
         <h1 class="carrinho-title">Meu Carrinho</h1>
-        <mat-card class="carrinho__item-card" *ngFor="let produto of produtos; let i = index">
+        <mat-card class="carrinho__item-card" *ngFor="let produto of produtos as p; let i = index">
           <div>
             <mat-card-content class="carrinho__item-content">
               <div>
@@ -47,13 +47,14 @@
                 <div style="display: flex">
                   <p>Quantidade:</p>
                   <form [formGroup]="formulario">
-                    <mat-icon (click)="decrement()">remove_circle_outline</mat-icon>
+                    <mat-icon (click)="decrement(i)">remove_circle_outline</mat-icon>
                     <input formControlName="qtd" class="carrinho__qtd-item" type="number" matInput />
-                    <mat-icon (click)="increment()" >add_circle_outline</mat-icon>
+                    <p>{{produto.quantidade}}</p>
+                    <mat-icon (click)="increment(i)" >add_circle_outline</mat-icon>
                   </form>
                 </div>
                 <div>
-                  <p>{{ produto.preco }}</p>
+                  <p>{{ produto.preco * produto.quantidade }}</p>
                 </div>
               </div>
               <div>
@@ -63,15 +64,15 @@
           </div>
         </mat-card>
       </div>
-      <!--Card de Endereço de Entrega-->
+      <!--Card de Resumo Compra-->
       <div class="resumo-compra">
         <div><h1 class="carrinho-title">Resumo da Compra</h1></div>
         <mat-card class="summary mat-elevation-z4">
           <mat-card-content>
             <ul class="summary__items">
               <li>
-                <div>Subtotal (2 itens)</div>
-                <div>R$ 79,73</div>
+                <div>Subtotal ({{quantidadeItens}} itens)</div>
+                <div>R$ {{subtotal}}</div>
               </li>
               <li>
                 <div class="summary__items--frete">

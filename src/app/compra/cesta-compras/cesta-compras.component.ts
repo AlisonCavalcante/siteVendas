@@ -39,7 +39,8 @@ export class CestaComprasComponent implements OnInit {
   produtos: Produtos[] = [];
   teste = false;
   aplicar: boolean = false;
-  qtd: number = 1;
+  subtotal: number = 0;
+  quantidadeItens: number = 0;
   constructor(
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
@@ -63,7 +64,7 @@ export class CestaComprasComponent implements OnInit {
 
 
     this.formulario = this.formBuilder.group({
-      qtd: [this.qtd],
+      qtd: [1],
     });
 
     console.log(this.formulario.get('qtd'));
@@ -75,24 +76,34 @@ export class CestaComprasComponent implements OnInit {
 
    this.produtos = this.produtoService.getCarrinho();
    console.log(this.produtos);
+   this.obterTotaisIniciais();
   }
+
+  obterTotaisIniciais(){
+    for(let i of this.produtos){
+      this.subtotal += (i.quantidade * i.preco);
+      this.quantidadeItens += i.quantidade;
+    }
+  }
+
   delete(index: number){
+    this.quantidadeItens -= this.produtos[index].quantidade;
+    this.subtotal -= (this.produtos[index].quantidade * this.produtos[index].preco);
     this.produtos = this.produtoService.deleteProdutoCarrinho(index, this.produtos);
   }
-  increment(){
-    this.qtd += 1;
-    this.formulario.patchValue({
-      qtd: this.qtd
-    })
-    console.log(this.qtd);
+  increment(index: number){
+    this.produtos[index].quantidade += 1;
+    console.log(this.produtos[index].quantidade);
+    this.subtotal += this.produtos[index].preco;
+    this.quantidadeItens += 1;
   }
-  decrement(){
-    if(this.qtd > 1)
-    this.qtd -= 1;
-    this.formulario.patchValue({
-      qtd: this.qtd
-    });
-    console.log(this.qtd);
+  decrement(index: number){
+    if(this.produtos[index].quantidade > 1){
+    this.produtos[index].quantidade -= 1;
+    this.subtotal -= this.produtos[index].preco;
+    this.quantidadeItens -= 1;
+    }
+    console.log(this.produtos[index].quantidade);
   }
 
   aplicarCupom(){

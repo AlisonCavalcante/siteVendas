@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
       this.produtos = JSON.parse(carrinho);
       this.qtdProdutosCesta = this.produtos.length;
       for(let i of this.produtos){
-        this.subtotal += parseInt(i.preco);
+        this.subtotal += i.preco;
       }
     }
     console.log(this.carrinho);
