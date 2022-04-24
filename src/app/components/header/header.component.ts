@@ -1,5 +1,5 @@
 import { Produtos } from './../../models/produtos.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
@@ -8,7 +8,7 @@ import { DataService } from 'src/app/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
 
 
   qtdProdutosCesta!: number;
@@ -20,6 +20,10 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
     let carrinho = localStorage.getItem('Carrinho');
     if(carrinho){
       this.produtos = JSON.parse(carrinho);
@@ -29,7 +33,9 @@ export class HeaderComponent implements OnInit {
       }
     }
     console.log(this.carrinho);
+    console.log(changes)
   }
+
   teste(): void {
     console.log('testando');
   }
