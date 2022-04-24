@@ -4,11 +4,6 @@ import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/service.service';
 import { Produtos } from '../../models/produtos.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -16,14 +11,18 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './eletronicos-page.component.html',
   styleUrls: ['./eletronicos-page.component.css'],
 })
-export class EletronicosPageComponent implements OnInit, OnDestroy {
-
+export class EletronicosPageComponent implements OnInit {
   selectedValue: string = '';
   categorias: any[] = [{ tipo: 'Eletrônico' }, { tipo: 'Eletrodomésticos' }];
-  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
-  produtos$!: Observable <Produtos[]>;
-  anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
+  produtos$!: Observable<Produtos[]>;
+  anos: string[] = [
+    'Mais populares',
+    'Mais Vendidos',
+    'Lançamentos',
+    'Ofertas',
+    'Maior preço',
+    'Menor Preço',
+  ];
   sub!: Subscription;
   customOptions: OwlOptions = {
     loop: true,
@@ -35,34 +34,24 @@ export class EletronicosPageComponent implements OnInit, OnDestroy {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
     },
-    nav: true
-  }
+    nav: true,
+  };
 
-  constructor(private _snackBar: MatSnackBar, private authService: AuthserviceService ,private service: ProdutoService, private route: Router) {
-
-  }
+  constructor(
+    private authService: AuthserviceService,
+    private service: ProdutoService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
     this.authService.updateLoggedIn();
-    this.produtos$ = this.service.buscarProdutoTipo("Eletronico");
+    this.produtos$ = this.service.buscarProdutoTipo('Eletronico');
   }
 
-  ngOnDestroy(): void {
-    // this.sub.unsubscribe();
-  }
-
-
-  detalheProduto(id: number){
+  detalheProduto(id: number) {
     this.route.navigate(['/vendas/detalheProduto', id]);
-  }
-
-  openSnackBar(mensagem: string, acao: string) {
-    this._snackBar.open(mensagem, acao, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
   }
 }

@@ -4,27 +4,19 @@ import { ProdutoService } from './../../service.service';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
 import { Produtos } from 'src/app/models/produtos.model';
 @Component({
   selector: 'app-moveis-page',
   templateUrl: './moveis-page.component.html',
   styleUrls: ['./moveis-page.component.css'],
 })
-export class MoveisPageComponent implements OnInit, OnDestroy {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
+export class MoveisPageComponent implements OnInit {
   produtos$!: Observable<Produtos[]>;
   sub!: Subscription;
   constructor(
     private produtoService: ProdutoService,
     private authService: AuthserviceService,
-    private router: Router,
-    private _snackBar: MatSnackBar
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -47,17 +39,7 @@ export class MoveisPageComponent implements OnInit, OnDestroy {
     nav: true,
   };
 
-  ngOnDestroy(): void {
-    // this.sub.unsubscribe();
-  }
-
   detalheProduto(id: number) {
     this.router.navigate(['/vendas/detalheProduto', id]);
-  }
-  openSnackBar(mensagem: string, acao: string) {
-    this._snackBar.open(mensagem, acao, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
   }
 }

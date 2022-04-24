@@ -3,11 +3,6 @@ import { Router } from '@angular/router';
 import { ProdutoService } from './../../service.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Produtos } from 'src/app/models/produtos.model';
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription, Observable } from 'rxjs';
 
@@ -18,8 +13,6 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class CosmeticosPageComponent implements OnInit, OnDestroy {
 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
   produtos$!: Observable <Produtos[]>;
   anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
   customOptions: OwlOptions = {
@@ -39,7 +32,7 @@ export class CosmeticosPageComponent implements OnInit, OnDestroy {
   }
   sub!: Subscription;
 
-  constructor(private route: Router,private _snackBar: MatSnackBar,private produtoService: ProdutoService, private authService: AuthserviceService) { }
+  constructor(private route: Router, private produtoService: ProdutoService, private authService: AuthserviceService) { }
 
   ngOnInit(): void {
 
@@ -59,11 +52,6 @@ export class CosmeticosPageComponent implements OnInit, OnDestroy {
      this.route.navigate(['/vendas/detalheProduto', id]);
   }
 
-  openSnackBar(mensagem: string, acao: string) {
-    this._snackBar.open(mensagem, acao, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
-  }
+
 
 }

@@ -13,35 +13,34 @@ import {
 @Component({
   selector: 'app-material-escolar-page',
   templateUrl: './material-escolar-page.component.html',
-  styleUrls: ['./material-escolar-page.component.css']
+  styleUrls: ['./material-escolar-page.component.css'],
 })
-export class MaterialEscolarPageComponent implements OnInit, OnDestroy {
-
-  produtos$!: Observable <Produtos[]>;
+export class MaterialEscolarPageComponent implements OnInit {
+  produtos$!: Observable<Produtos[]>;
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  anos: string[] = ["Mais populares", "Mais Vendidos","Lançamentos","Ofertas","Maior preço","Menor Preço"];
+  anos: string[] = [
+    'Mais populares',
+    'Mais Vendidos',
+    'Lançamentos',
+    'Ofertas',
+    'Maior preço',
+    'Menor Preço',
+  ];
   sub!: Subscription;
-  constructor(private route: Router, private authService: AuthserviceService ,private _snackBar: MatSnackBar,private produtoService: ProdutoService) { }
+  constructor(
+    private route: Router,
+    private authService: AuthserviceService,
+    private _snackBar: MatSnackBar,
+    private produtoService: ProdutoService
+  ) {}
 
   ngOnInit(): void {
-   this.authService.updateLoggedIn();
-   this.produtos$ = this.produtoService.buscarProdutoTipo("Cosmético");
+    this.authService.updateLoggedIn();
+    this.produtos$ = this.produtoService.buscarProdutoTipo('Cosmético');
   }
 
-  ngOnDestroy(): void {
-    // this.sub.unsubscribe();
-  }
-
-  detalheProduto(id: number){
+  detalheProduto(id: number) {
     this.route.navigate(['/vendas/detalheProduto', id]);
   }
-
-  openSnackBar(mensagem: string, acao: string) {
-    this._snackBar.open(mensagem, acao, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
-  }
-
 }
