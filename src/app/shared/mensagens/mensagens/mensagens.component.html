@@ -1,0 +1,9 @@
+<div class="card" *ngIf="mensagemService.mensagem">
+  <div class="card_header">
+    <h4>Mensagem do Sistema:</h4>
+    <button class="card_button" (click)="close()">X</button>
+  </div>
+  <div class="card_body">
+    <p>{{ mensagemService.mensagem }}</p>
+  </div>
+</div>

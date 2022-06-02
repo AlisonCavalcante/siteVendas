@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { CadastroComponent } from './cadastro.component';
 import { CriarContaComponent } from './criar-conta/criar-conta.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CriarContaComponent } from './criar-conta/criar-conta.component';
     CadastroRoutingModule,
     MatDividerModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedModule
   ],
   exports: [CriarContaComponent]
 })

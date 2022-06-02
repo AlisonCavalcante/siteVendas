@@ -1,3 +1,4 @@
+import { MensagensService } from './../shared/services/mensagens.service';
 import { User } from './../models/users.model';
 import { DataService } from './../data.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -19,6 +20,7 @@ export class CadastroComponent implements OnInit {
   constructor(
     private userService: DataService,
     private authService: AuthserviceService,
+    public mensagemService: MensagensService,
     private route: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -45,8 +47,10 @@ export class CadastroComponent implements OnInit {
           this.formulario1.get('senha')?.value
         );
         if (loginSucess) {
-          alert('Usuário logado');
-          this.route.navigate(['/']);
+          this.mensagemService.addMensagem('Usuário Logado');
+          setTimeout(() => {
+            this.route.navigate(['/']);
+          }, 2000)
         } else {
           alert('Senha incorreta');
           this.resetarCampos();

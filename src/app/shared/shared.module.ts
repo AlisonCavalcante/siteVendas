@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { FiltrosComponent } from './filtros/filtros.component';
 import { DialogEnderecoComponent } from './dialog-endereco/dialog-endereco.component';
+import { MensagensComponent } from './mensagens/mensagens/mensagens.component';
 
 
 
@@ -19,6 +20,7 @@ import { DialogEnderecoComponent } from './dialog-endereco/dialog-endereco.compo
   declarations: [
     FiltrosComponent,
     DialogEnderecoComponent,
+    MensagensComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { DialogEnderecoComponent } from './dialog-endereco/dialog-endereco.compo
     MatButtonModule
   ],
   exports: [
-    FiltrosComponent
+    FiltrosComponent,
+    MensagensComponent
   ]
 })
 export class SharedModule { }
